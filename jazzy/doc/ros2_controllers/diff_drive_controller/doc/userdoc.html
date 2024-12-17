@@ -265,49 +265,169 @@
 <dt>publish_rate (double)</dt><dd><p>Publishing rate (Hz) of the odometry and TF messages.</p>
 <p>Default:  50.0</p>
 </dd>
-<dt>linear.x</dt><dd><p>Joint limits structure for the linear <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis.
-The limiter ignores position limits.
-For details see <code class="docutils literal notranslate"><span class="pre">joint_limits</span></code> package from ros2_control repository.</p>
+<dt>linear.x</dt><dd><p>Joint limits structure for the linear <code class="docutils literal notranslate"><span class="pre">x</span></code>-axis.</p>
 </dd>
-<dt>linear.x.has_velocity_limits (bool)</dt><dd><p>Default:  false</p>
+<dt>linear.x.has_velocity_limits (bool)</dt><dd><p>deprecated, set the respective limits to <code class="docutils literal notranslate"><span class="pre">.NAN</span></code> for deactivation</p>
+<p>Default:  true</p>
 </dd>
-<dt>linear.x.has_acceleration_limits (bool)</dt><dd><p>Default:  false</p>
+<dt>linear.x.has_acceleration_limits (bool)</dt><dd><p>deprecated, set the respective limits to <code class="docutils literal notranslate"><span class="pre">.NAN</span></code> for deactivation</p>
+<p>Default:  true</p>
 </dd>
-<dt>linear.x.has_jerk_limits (bool)</dt><dd><p>Default:  false</p>
+<dt>linear.x.has_jerk_limits (bool)</dt><dd><p>deprecated, set the respective limits to <code class="docutils literal notranslate"><span class="pre">.NAN</span></code> for deactivation</p>
+<p>Default:  true</p>
 </dd>
 <dt>linear.x.max_velocity (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
 <dt>linear.x.min_velocity (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
-<dt>linear.x.max_acceleration (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<dt>linear.x.max_acceleration (double)</dt><dd><p>Maximum acceleration in forward direction.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
-<dt>linear.x.min_acceleration (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<dt>linear.x.max_deceleration (double)</dt><dd><p>Maximum deceleration in forward direction.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>linear.x.min_acceleration (double)</dt><dd><p>deprecated, use max_deceleration</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+</dd>
+<dt>linear.x.max_acceleration_reverse (double)</dt><dd><p>Maximum acceleration in reverse direction. If not set, -max_acceleration will be used.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>linear.x.max_deceleration_reverse (double)</dt><dd><p>Maximum deceleration in reverse direction. If not set, -max_deceleration will be used.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
 <dt>linear.x.max_jerk (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
 <dt>linear.x.min_jerk (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
-<dt>angular.z</dt><dd><p>Joint limits structure for the rotation about <code class="docutils literal notranslate"><span class="pre">z</span></code>-axis.
-The limiter ignores position limits.
-For details see <code class="docutils literal notranslate"><span class="pre">joint_limits</span></code> package from ros2_control repository.</p>
+<dt>angular.z</dt><dd><p>Joint limits structure for the rotation about <code class="docutils literal notranslate"><span class="pre">z</span></code>-axis.</p>
 </dd>
-<dt>angular.z.has_velocity_limits (bool)</dt><dd><p>Default:  false</p>
+<dt>angular.z.has_velocity_limits (bool)</dt><dd><p>deprecated, set the respective limits to <code class="docutils literal notranslate"><span class="pre">.NAN</span></code> for deactivation</p>
+<p>Default:  true</p>
 </dd>
-<dt>angular.z.has_acceleration_limits (bool)</dt><dd><p>Default:  false</p>
+<dt>angular.z.has_acceleration_limits (bool)</dt><dd><p>deprecated, set the respective limits to <code class="docutils literal notranslate"><span class="pre">.NAN</span></code> for deactivation</p>
+<p>Default:  true</p>
 </dd>
-<dt>angular.z.has_jerk_limits (bool)</dt><dd><p>Default:  false</p>
+<dt>angular.z.has_jerk_limits (bool)</dt><dd><p>deprecated, set the respective limits to <code class="docutils literal notranslate"><span class="pre">.NAN</span></code> for deactivation</p>
+<p>Default:  true</p>
 </dd>
 <dt>angular.z.max_velocity (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
 <dt>angular.z.min_velocity (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
-<dt>angular.z.max_acceleration (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<dt>angular.z.max_acceleration (double)</dt><dd><p>Maximum acceleration in positive direction.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
-<dt>angular.z.min_acceleration (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<dt>angular.z.max_deceleration (double)</dt><dd><p>Maximum deceleration in positive direction.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>angular.z.min_acceleration (double)</dt><dd><p>deprecated, use max_deceleration</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+</dd>
+<dt>angular.z.max_acceleration_reverse (double)</dt><dd><p>Maximum acceleration in negative direction. If not set, -max_acceleration will be used.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>angular.z.max_deceleration_reverse (double)</dt><dd><p>Maximum deceleration in negative direction. If not set, -max_deceleration will be used.</p>
+<p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
 <dt>angular.z.max_jerk (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::gt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
 <dt>angular.z.min_jerk (double)</dt><dd><p>Default:  std::numeric_limits&lt;double&gt;::quiet_NaN()</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Custom validator: diff_drive_controller::lt_eq_or_nan: 0.0</p></li>
+</ul>
+</div></blockquote>
 </dd>
 </dl>
 <p>An example parameter file for this controller can be found in <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/blob/master/diff_drive_controller/test/config/test_diff_drive_controller.yaml">the test directory</a>:</p>
@@ -336,24 +456,23 @@ For details see <code class="docutils literal notranslate"><span class="pre">joi
 <span class="w">    </span><span class="nt">publish_limited_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">velocity_rolling_window_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 
-<span class="w">    </span><span class="nt">linear.x.has_velocity_limits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">linear.x.has_acceleration_limits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">linear.x.has_jerk_limits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">linear.x.max_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">linear.x.min_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">linear.x.max_acceleration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">linear.x.max_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">linear.x.min_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">    </span><span class="nt">linear.x.max_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">linear.x.min_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">linear.x.max_acceleration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">linear.x.max_deceleration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">linear.x.max_acceleration_reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">linear.x.max_deceleration_reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">linear.x.max_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">linear.x.min_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
 
-<span class="w">    </span><span class="nt">angular.z.has_velocity_limits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">angular.z.has_acceleration_limits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">angular.z.has_jerk_limits</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">angular.z.max_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">angular.z.min_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">angular.z.max_acceleration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">angular.z.min_acceleration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">angular.z.max_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">angular.z.min_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">    </span><span class="nt">angular.z.max_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">angular.z.min_velocity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">angular.z.max_acceleration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">angular.z.max_deceleration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">angular.z.max_acceleration_reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">angular.z.max_deceleration_reverse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">angular.z.max_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
+<span class="w">    </span><span class="nt">angular.z.min_jerk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.NAN</span>
 </pre></div>
 </div>
 </section>

@@ -83,9 +83,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abd0ef52308aa8f6caa499b20997723b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdiff__drive__controller_1_1SpeedLimiter.html#abd0ef52308aa8f6caa499b20997723b5">SpeedLimiter</a> (bool has_velocity_limits=false, bool has_acceleration_limits=false, bool has_jerk_limits=false, double min_velocity=NAN, double max_velocity=NAN, double min_acceleration=NAN, double max_acceleration=NAN, double min_jerk=NAN, double max_jerk=NAN)</td></tr>
-<tr class="memdesc:abd0ef52308aa8f6caa499b20997723b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classdiff__drive__controller_1_1SpeedLimiter.html#abd0ef52308aa8f6caa499b20997723b5">More...</a><br /></td></tr>
-<tr class="separator:abd0ef52308aa8f6caa499b20997723b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855db632c8b3290ae2a8863178de255f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdiff__drive__controller_1_1SpeedLimiter.html#a855db632c8b3290ae2a8863178de255f">SpeedLimiter</a> (bool has_velocity_limits=true, bool has_acceleration_limits=true, bool has_jerk_limits=true, double min_velocity=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_velocity=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_deceleration=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_acceleration=std::numeric_limits&lt; double &gt;::quiet_NaN(), double min_jerk=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_jerk=std::numeric_limits&lt; double &gt;::quiet_NaN())</td></tr>
+<tr class="memdesc:a855db632c8b3290ae2a8863178de255f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classdiff__drive__controller_1_1SpeedLimiter.html#a855db632c8b3290ae2a8863178de255f">More...</a><br /></td></tr>
+<tr class="separator:a855db632c8b3290ae2a8863178de255f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a69d760fa7c67a9ee5d8e6c6ff6077"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdiff__drive__controller_1_1SpeedLimiter.html#a46a69d760fa7c67a9ee5d8e6c6ff6077">SpeedLimiter</a> (double min_velocity=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_velocity=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_acceleration_reverse=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_acceleration=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_deceleration=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_deceleration_reverse=std::numeric_limits&lt; double &gt;::quiet_NaN(), double min_jerk=std::numeric_limits&lt; double &gt;::quiet_NaN(), double max_jerk=std::numeric_limits&lt; double &gt;::quiet_NaN())</td></tr>
+<tr class="memdesc:a46a69d760fa7c67a9ee5d8e6c6ff6077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classdiff__drive__controller_1_1SpeedLimiter.html#a46a69d760fa7c67a9ee5d8e6c6ff6077">More...</a><br /></td></tr>
+<tr class="separator:a46a69d760fa7c67a9ee5d8e6c6ff6077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c75c610b5a7c81f4768d0bbfb579ad7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdiff__drive__controller_1_1SpeedLimiter.html#a1c75c610b5a7c81f4768d0bbfb579ad7">limit</a> (double &amp;v, double v0, double v1, double dt)</td></tr>
 <tr class="memdesc:a1c75c610b5a7c81f4768d0bbfb579ad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit the velocity and acceleration.  <a href="classdiff__drive__controller_1_1SpeedLimiter.html#a1c75c610b5a7c81f4768d0bbfb579ad7">More...</a><br /></td></tr>
 <tr class="separator:a1c75c610b5a7c81f4768d0bbfb579ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,65 +103,68 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a038e46527de5e153901d0f2b960ff8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abd0ef52308aa8f6caa499b20997723b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd0ef52308aa8f6caa499b20997723b5">&#9670;&nbsp;</a></span>SpeedLimiter()</h2>
+<a id="a855db632c8b3290ae2a8863178de255f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a855db632c8b3290ae2a8863178de255f">&#9670;&nbsp;</a></span>SpeedLimiter() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">diff_drive_controller::SpeedLimiter::SpeedLimiter </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>has_velocity_limits</em> = <code>false</code>, </td>
+          <td class="paramname"><em>has_velocity_limits</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>has_acceleration_limits</em> = <code>false</code>, </td>
+          <td class="paramname"><em>has_acceleration_limits</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>has_jerk_limits</em> = <code>false</code>, </td>
+          <td class="paramname"><em>has_jerk_limits</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>min_velocity</em> = <code>NAN</code>, </td>
+          <td class="paramname"><em>min_velocity</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>max_velocity</em> = <code>NAN</code>, </td>
+          <td class="paramname"><em>max_velocity</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>min_acceleration</em> = <code>NAN</code>, </td>
+          <td class="paramname"><em>max_deceleration</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>max_acceleration</em> = <code>NAN</code>, </td>
+          <td class="paramname"><em>max_acceleration</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>min_jerk</em> = <code>NAN</code>, </td>
+          <td class="paramname"><em>min_jerk</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>max_jerk</em> = <code>NAN</code>&#160;</td>
+          <td class="paramname"><em>max_jerk</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -166,6 +172,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
@@ -176,8 +187,95 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">has_jerk_limits</td><td>if true, applies jerk limits </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min_velocity</td><td>Minimum velocity [m/s], usually &lt;= 0 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">max_velocity</td><td>Maximum velocity [m/s], usually &gt;= 0 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">min_acceleration</td><td>Minimum acceleration [m/s^2], usually &lt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_deceleration</td><td>Maximum deceleration [m/s^2], usually &lt;= 0 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">max_acceleration</td><td>Maximum acceleration [m/s^2], usually &gt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_jerk</td><td>Minimum jerk [m/s^3], usually &lt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_jerk</td><td>Maximum jerk [m/s^3], usually &gt;= 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a46a69d760fa7c67a9ee5d8e6c6ff6077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a69d760fa7c67a9ee5d8e6c6ff6077">&#9670;&nbsp;</a></span>SpeedLimiter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">diff_drive_controller::SpeedLimiter::SpeedLimiter </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>min_velocity</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_velocity</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_acceleration_reverse</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_acceleration</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_deceleration</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_deceleration_reverse</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>min_jerk</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_jerk</em> = <code>std::numeric_limits&lt;double&gt;::quiet_NaN()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_velocity</td><td>Minimum velocity [m/s], usually &lt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_velocity</td><td>Maximum velocity [m/s], usually &gt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_acceleration_reverse</td><td>Maximum acceleration in reverse direction [m/s^2], usually &lt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_acceleration</td><td>Maximum acceleration [m/s^2], usually &gt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_deceleration</td><td>Maximum deceleration [m/s^2], usually &lt;= 0 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_deceleration_reverse</td><td>Maximum deceleration in reverse direction [m/s^2], usually &gt;= 0 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min_jerk</td><td>Minimum jerk [m/s^3], usually &lt;= 0 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">max_jerk</td><td>Maximum jerk [m/s^3], usually &gt;= 0 </td></tr>
   </table>
@@ -192,6 +290,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double diff_drive_controller::SpeedLimiter::limit </td>
@@ -223,6 +324,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Limit the velocity and acceleration. </p>
@@ -244,6 +350,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double diff_drive_controller::SpeedLimiter::limit_acceleration </td>
@@ -269,6 +378,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Limit the acceleration. </p>
@@ -289,6 +403,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double diff_drive_controller::SpeedLimiter::limit_jerk </td>
@@ -320,6 +437,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Limit the jerk. </p>
@@ -342,6 +464,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double diff_drive_controller::SpeedLimiter::limit_velocity </td>
@@ -351,6 +476,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Limit the velocity. </p>
@@ -364,9 +494,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>ros2_controllers/diff_drive_controller/include/diff_drive_controller/<a class="el" href="speed__limiter_8hpp_source.html">speed_limiter.hpp</a></li>
-<li>ros2_controllers/diff_drive_controller/src/speed_limiter.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

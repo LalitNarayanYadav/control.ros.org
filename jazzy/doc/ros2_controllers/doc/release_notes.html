@@ -126,6 +126,8 @@
 <ul class="simple">
 <li><p>The twist message on <code class="docutils literal notranslate"><span class="pre">~/cmd_vel</span></code> is now required to be of stamped type (<a class="reference external" href="https://github.com/ros-controls/ros2_controllers/pull/812">#812</a>).</p></li>
 <li><p>Remove unused parameter <code class="docutils literal notranslate"><span class="pre">wheels_per_side</span></code> (<a class="reference external" href="https://github.com/ros-controls/ros2_controllers/pull/958">#958</a>).</p></li>
+<li><p>Parameters <code class="docutils literal notranslate"><span class="pre">has_velocity_limits</span></code>, <code class="docutils literal notranslate"><span class="pre">has_acceleration_limits</span></code>, and <code class="docutils literal notranslate"><span class="pre">has_jerk_limits</span></code> are removed. Instead, set the respective limits to <code class="docutils literal notranslate"><span class="pre">.NAN</span></code>. (<a class="reference external" href="https://github.com/ros-controls/ros2_controllers/pull/1315">#1315</a>).</p></li>
+<li><p>Parameters <code class="docutils literal notranslate"><span class="pre">max_acceleration_reverse</span></code> and <code class="docutils literal notranslate"><span class="pre">max_deceleration_reverse</span></code> were added to configure asymmetric acceleration/deceleration behavior. (<a class="reference external" href="https://github.com/ros-controls/ros2_controllers/pull/1315">#1315</a>).</p></li>
 </ul>
 </section>
 <section id="joint-trajectory-controller">
