@@ -172,6 +172,7 @@ There are two special values for tolerances:
 <h2>steering_controllers_library<a class="headerlink" href="#steering-controllers-library" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Changing default int values to double in steering controller’s yaml file. The controllers should now initialize successfully without specifying these parameters (<a class="reference external" href="https://github.com/ros-controls/ros2_controllers/pull/927">#927</a>).</p></li>
+<li><p>New parameter <code class="docutils literal notranslate"><span class="pre">reduce_wheel_speed_until_steering_reached</span></code> was added. If set to true, then the wheel speed(s) is reduced until the steering angle has been reached. Only considered if <code class="docutils literal notranslate"><span class="pre">open_loop</span> <span class="pre">=</span> <span class="pre">false</span></code> (<a class="reference external" href="https://github.com/ros-controls/ros2_controllers/pull/1314">#1314</a>).</p></li>
 </ul>
 </section>
 <section id="gpio-controllers">
