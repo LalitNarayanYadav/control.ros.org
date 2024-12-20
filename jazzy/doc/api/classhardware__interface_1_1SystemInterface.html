@@ -149,9 +149,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9b944943314be907806ec3e989e6acd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1da44ec2a9ef354e056e2dac3e95682f"><td class="memItemLeft" align="right" valign="top">virtual return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a1da44ec2a9ef354e056e2dac3e95682f">perform_command_mode_switch</a> (const std::vector&lt; std::string &gt; &amp;, const std::vector&lt; std::string &gt; &amp;)</td></tr>
 <tr class="separator:a1da44ec2a9ef354e056e2dac3e95682f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1ff6dc20ad90730429a11a2bb0d419"><td class="memItemLeft" align="right" valign="top">return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a1c1ff6dc20ad90730429a11a2bb0d419">trigger_read</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
+<tr class="memdesc:a1c1ff6dc20ad90730429a11a2bb0d419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the read method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>.  <a href="classhardware__interface_1_1SystemInterface.html#a1c1ff6dc20ad90730429a11a2bb0d419">More...</a><br /></td></tr>
+<tr class="separator:a1c1ff6dc20ad90730429a11a2bb0d419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae48a70b6c631787f6891370dd40e018e"><td class="memItemLeft" align="right" valign="top">virtual return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#ae48a70b6c631787f6891370dd40e018e">read</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)=0</td></tr>
 <tr class="memdesc:ae48a70b6c631787f6891370dd40e018e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current state values from the actuator.  <a href="classhardware__interface_1_1SystemInterface.html#ae48a70b6c631787f6891370dd40e018e">More...</a><br /></td></tr>
 <tr class="separator:ae48a70b6c631787f6891370dd40e018e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f409470fd949cc56aa8faf8611f8ce4"><td class="memItemLeft" align="right" valign="top">return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a5f409470fd949cc56aa8faf8611f8ce4">trigger_write</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
+<tr class="memdesc:a5f409470fd949cc56aa8faf8611f8ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the write method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>.  <a href="classhardware__interface_1_1SystemInterface.html#a5f409470fd949cc56aa8faf8611f8ce4">More...</a><br /></td></tr>
+<tr class="separator:a5f409470fd949cc56aa8faf8611f8ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af50333e4b0b30c9a1d66f296a33a5d8d"><td class="memItemLeft" align="right" valign="top">virtual return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#af50333e4b0b30c9a1d66f296a33a5d8d">write</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)=0</td></tr>
 <tr class="memdesc:af50333e4b0b30c9a1d66f296a33a5d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the current command values to the actuator.  <a href="classhardware__interface_1_1SystemInterface.html#af50333e4b0b30c9a1d66f296a33a5d8d">More...</a><br /></td></tr>
 <tr class="separator:af50333e4b0b30c9a1d66f296a33a5d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,6 +224,9 @@ std::unordered_map&lt; std::string, <a class="el" href="structhardware__interfac
 <tr class="memitem:a5ccfcd637715cc0c64c4537fd09e74ee"><td class="memItemLeft" align="right" valign="top"><a id="a5ccfcd637715cc0c64c4537fd09e74ee"></a>
 rclcpp_lifecycle::State&#160;</td><td class="memItemRight" valign="bottom"><b>lifecycle_state_</b></td></tr>
 <tr class="separator:a5ccfcd637715cc0c64c4537fd09e74ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55f874952cd1301871a94c2d3f4bb5d"><td class="memItemLeft" align="right" valign="top"><a id="ab55f874952cd1301871a94c2d3f4bb5d"></a>
+std::unique_ptr&lt; <a class="el" href="classrealtime__tools_1_1AsyncFunctionHandler.html">realtime_tools::AsyncFunctionHandler</a>&lt; return_type &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>async_handler_</b></td></tr>
+<tr class="separator:ab55f874952cd1301871a94c2d3f4bb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ac68062577229916ccc2a14404a26c9"><td class="memItemLeft" align="right" valign="top"><a id="a4ac68062577229916ccc2a14404a26c9"></a>
 std::vector&lt; StateInterface::SharedPtr &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>joint_states_</b></td></tr>
 <tr class="separator:a4ac68062577229916ccc2a14404a26c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -880,6 +889,100 @@ All starting and stopping interface keys are passed to all components, so the fu
 
 <p>Set life-cycle state of the actuator hardware. </p>
 <dl class="section return"><dt>Returns</dt><dd>state. </dd></dl>
+
+</div>
+</div>
+<a id="a1c1ff6dc20ad90730429a11a2bb0d419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1ff6dc20ad90730429a11a2bb0d419">&#9670;&nbsp;</a></span>trigger_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">return_type hardware_interface::SystemInterface::trigger_read </td>
+          <td>(</td>
+          <td class="paramtype">const rclcpp::Time &amp;&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rclcpp::Duration &amp;&#160;</td>
+          <td class="paramname"><em>period</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Triggers the read method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>. </p>
+<p>The data readings from the physical hardware has to be updated and reflected accordingly in the exported state interfaces. That is, the data pointed by the interfaces shall be updated. The method is called in the resource_manager's read loop</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>The time at the start of this control loop iteration </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">period</td><td>The measured time taken by the last control loop iteration </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>return_type::OK if the read was successful, return_type::ERROR otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a5f409470fd949cc56aa8faf8611f8ce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f409470fd949cc56aa8faf8611f8ce4">&#9670;&nbsp;</a></span>trigger_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">return_type hardware_interface::SystemInterface::trigger_write </td>
+          <td>(</td>
+          <td class="paramtype">const rclcpp::Time &amp;&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rclcpp::Duration &amp;&#160;</td>
+          <td class="paramname"><em>period</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Triggers the write method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>. </p>
+<p>The physical hardware shall be updated with the latest value from the exported command interfaces. The method is called in the resource_manager's write loop</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>The time at the start of this control loop iteration </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">period</td><td>The measured time taken by the last control loop iteration </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>return_type::OK if the read was successful, return_type::ERROR otherwise. </dd></dl>
 
 </div>
 </div>
