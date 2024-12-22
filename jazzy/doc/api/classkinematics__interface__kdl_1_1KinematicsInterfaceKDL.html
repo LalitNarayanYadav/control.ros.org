@@ -116,6 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae330283904ddd72bcf061a5f567a77e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematics__interface__kdl_1_1KinematicsInterfaceKDL.html#ae330283904ddd72bcf061a5f567a77e9">calculate_jacobian</a> (const Eigen::VectorXd &amp;joint_pos, const std::string &amp;link_name, Eigen::Matrix&lt; double, 6, Eigen::Dynamic &gt; &amp;jacobian) override</td></tr>
 <tr class="memdesc:ae330283904ddd72bcf061a5f567a77e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the jacobian for a specified link using provided joint positions.  <a href="classkinematics__interface__kdl_1_1KinematicsInterfaceKDL.html#ae330283904ddd72bcf061a5f567a77e9">More...</a><br /></td></tr>
 <tr class="separator:ae330283904ddd72bcf061a5f567a77e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d060d2ee79a9435aabf4a917c86a33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkinematics__interface__kdl_1_1KinematicsInterfaceKDL.html#a39d060d2ee79a9435aabf4a917c86a33">calculate_jacobian_inverse</a> (const Eigen::VectorXd &amp;joint_pos, const std::string &amp;link_name, Eigen::Matrix&lt; double, Eigen::Dynamic, 6 &gt; &amp;jacobian_inverse) override</td></tr>
+<tr class="memdesc:a39d060d2ee79a9435aabf4a917c86a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the jacobian inverse for a specified link using provided joint positions.  <a href="classkinematics__interface__kdl_1_1KinematicsInterfaceKDL.html#a39d060d2ee79a9435aabf4a917c86a33">More...</a><br /></td></tr>
+<tr class="separator:a39d060d2ee79a9435aabf4a917c86a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classkinematics__interface_1_1KinematicsInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classkinematics__interface_1_1KinematicsInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classkinematics__interface_1_1KinematicsInterface.html">kinematics_interface::KinematicsInterface</a></td></tr>
 <tr class="memitem:a0566e190ecab08e6b55842d192754a8c inherit pub_methods_classkinematics__interface_1_1KinematicsInterface"><td class="memItemLeft" align="right" valign="top"><a id="a0566e190ecab08e6b55842d192754a8c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>convert_cartesian_deltas_to_joint_deltas</b> (std::vector&lt; double &gt; &amp;joint_pos_vec, const std::vector&lt; double &gt; &amp;delta_x_vec, const std::string &amp;link_name, std::vector&lt; double &gt; &amp;delta_theta_vec)</td></tr>
@@ -129,6 +132,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>calculate_link_transf
 <tr class="memitem:acfbb9ff0738bfcef7545666cb5bf76f1 inherit pub_methods_classkinematics__interface_1_1KinematicsInterface"><td class="memItemLeft" align="right" valign="top"><a id="acfbb9ff0738bfcef7545666cb5bf76f1"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>calculate_jacobian</b> (const std::vector&lt; double &gt; &amp;joint_pos_vec, const std::string &amp;link_name, Eigen::Matrix&lt; double, 6, Eigen::Dynamic &gt; &amp;jacobian)</td></tr>
 <tr class="separator:acfbb9ff0738bfcef7545666cb5bf76f1 inherit pub_methods_classkinematics__interface_1_1KinematicsInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af2c223c111c3da3473066419edaeab inherit pub_methods_classkinematics__interface_1_1KinematicsInterface"><td class="memItemLeft" align="right" valign="top"><a id="a0af2c223c111c3da3473066419edaeab"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>calculate_jacobian_inverse</b> (const std::vector&lt; double &gt; &amp;joint_pos_vec, const std::string &amp;link_name, Eigen::Matrix&lt; double, Eigen::Dynamic, 6 &gt; &amp;jacobian_inverse)</td></tr>
+<tr class="separator:a0af2c223c111c3da3473066419edaeab inherit pub_methods_classkinematics__interface_1_1KinematicsInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae330283904ddd72bcf061a5f567a77e9"></a>
@@ -183,6 +189,61 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>calculate_jacobian</b
 <dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
 
 <p>Implements <a class="el" href="classkinematics__interface_1_1KinematicsInterface.html#aa8088b6de47d261488f055091e3d4135">kinematics_interface::KinematicsInterface</a>.</p>
+
+</div>
+</div>
+<a id="a39d060d2ee79a9435aabf4a917c86a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d060d2ee79a9435aabf4a917c86a33">&#9670;&nbsp;</a></span>calculate_jacobian_inverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool kinematics_interface_kdl::KinematicsInterfaceKDL::calculate_jacobian_inverse </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>joint_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>link_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::Matrix&lt; double, Eigen::Dynamic, 6 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>jacobian_inverse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the jacobian inverse for a specified link using provided joint positions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">joint_pos</td><td>joint positions of the robot in radians </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">link_name</td><td>the name of the link to find the transform for </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">jacobian_inverse</td><td>Jacobian inverse matrix of the specified link in row major format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+<p>Implements <a class="el" href="classkinematics__interface_1_1KinematicsInterface.html#a16f652ede24b5fbbc229190604bb5255">kinematics_interface::KinematicsInterface</a>.</p>
 
 </div>
 </div>
