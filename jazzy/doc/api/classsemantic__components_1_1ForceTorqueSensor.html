@@ -109,19 +109,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae005c85f871c7c89782bc5b1b15d6169"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#ae005c85f871c7c89782bc5b1b15d6169">ForceTorqueSensor</a> (const std::string &amp;interface_force_x, const std::string &amp;interface_force_y, const std::string &amp;interface_force_z, const std::string &amp;interface_torque_x, const std::string &amp;interface_torque_y, const std::string &amp;interface_torque_z)</td></tr>
 <tr class="memdesc:ae005c85f871c7c89782bc5b1b15d6169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for 6D FTS with custom interface names.  <a href="classsemantic__components_1_1ForceTorqueSensor.html#ae005c85f871c7c89782bc5b1b15d6169">More...</a><br /></td></tr>
 <tr class="separator:ae005c85f871c7c89782bc5b1b15d6169"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2372c33b565dfc1d0e151bf6bd29d264"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#a2372c33b565dfc1d0e151bf6bd29d264">get_forces</a> ()</td></tr>
-<tr class="memdesc:a2372c33b565dfc1d0e151bf6bd29d264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return forces.  <a href="classsemantic__components_1_1ForceTorqueSensor.html#a2372c33b565dfc1d0e151bf6bd29d264">More...</a><br /></td></tr>
-<tr class="separator:a2372c33b565dfc1d0e151bf6bd29d264"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85ea6b60c412614f39eb4bb82e32c29e"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#a85ea6b60c412614f39eb4bb82e32c29e">get_torques</a> ()</td></tr>
-<tr class="memdesc:a85ea6b60c412614f39eb4bb82e32c29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return torque.  <a href="classsemantic__components_1_1ForceTorqueSensor.html#a85ea6b60c412614f39eb4bb82e32c29e">More...</a><br /></td></tr>
-<tr class="separator:a85ea6b60c412614f39eb4bb82e32c29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace93319d20f9d9fa794a485411c33cb4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#ace93319d20f9d9fa794a485411c33cb4">get_values_as_message</a> (geometry_msgs::msg::Wrench &amp;message)</td></tr>
-<tr class="memdesc:ace93319d20f9d9fa794a485411c33cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return Wrench message with forces and torques.  <a href="classsemantic__components_1_1ForceTorqueSensor.html#ace93319d20f9d9fa794a485411c33cb4">More...</a><br /></td></tr>
-<tr class="separator:ace93319d20f9d9fa794a485411c33cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa295a98dc396e0cfb67941825ea06709"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#aa295a98dc396e0cfb67941825ea06709">get_forces</a> () const</td></tr>
+<tr class="memdesc:aa295a98dc396e0cfb67941825ea06709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return forces.  <a href="classsemantic__components_1_1ForceTorqueSensor.html#aa295a98dc396e0cfb67941825ea06709">More...</a><br /></td></tr>
+<tr class="separator:aa295a98dc396e0cfb67941825ea06709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab6e4f675d56dd01e1322234fdea9f4"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#acab6e4f675d56dd01e1322234fdea9f4">get_torques</a> () const</td></tr>
+<tr class="memdesc:acab6e4f675d56dd01e1322234fdea9f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return torque.  <a href="classsemantic__components_1_1ForceTorqueSensor.html#acab6e4f675d56dd01e1322234fdea9f4">More...</a><br /></td></tr>
+<tr class="separator:acab6e4f675d56dd01e1322234fdea9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145f13c9a0a6b5cb5fe2f63b160943d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#a145f13c9a0a6b5cb5fe2f63b160943d7">get_values_as_message</a> (geometry_msgs::msg::Wrench &amp;message) const</td></tr>
+<tr class="memdesc:a145f13c9a0a6b5cb5fe2f63b160943d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return Wrench message with forces and torques.  <a href="classsemantic__components_1_1ForceTorqueSensor.html#a145f13c9a0a6b5cb5fe2f63b160943d7">More...</a><br /></td></tr>
+<tr class="separator:a145f13c9a0a6b5cb5fe2f63b160943d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsemantic__components_1_1SemanticComponentInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classsemantic__components_1_1SemanticComponentInterface.html">semantic_components::SemanticComponentInterface&lt; geometry_msgs::msg::Wrench &gt;</a></td></tr>
-<tr class="memitem:a1ccc6eabe2e90089cbe55d162767fb72 inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memItemLeft" align="right" valign="top"><a id="a1ccc6eabe2e90089cbe55d162767fb72"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SemanticComponentInterface</b> (const std::string &amp;name, size_t size=0)</td></tr>
-<tr class="separator:a1ccc6eabe2e90089cbe55d162767fb72 inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3247a5720315f91604d823c48651bd01 inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memItemLeft" align="right" valign="top"><a id="a3247a5720315f91604d823c48651bd01"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SemanticComponentInterface</b> (const std::string &amp;name, const std::vector&lt; std::string &gt; &amp;interface_names)</td></tr>
+<tr class="separator:a3247a5720315f91604d823c48651bd01 inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6200367a77d0d120fa06610b7e5e6d8e inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memItemLeft" align="right" valign="top"><a id="a6200367a77d0d120fa06610b7e5e6d8e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SemanticComponentInterface</b> (const std::string &amp;name, std::size_t size=0)</td></tr>
+<tr class="separator:a6200367a77d0d120fa06610b7e5e6d8e inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8837bf9474bad044bab1e1e791b3be74 inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1SemanticComponentInterface.html#a8837bf9474bad044bab1e1e791b3be74">assign_loaned_state_interfaces</a> (std::vector&lt; <a class="el" href="classhardware__interface_1_1LoanedStateInterface.html">hardware_interface::LoanedStateInterface</a> &gt; &amp;state_interfaces)</td></tr>
 <tr class="memdesc:a8837bf9474bad044bab1e1e791b3be74 inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign loaned state interfaces from the hardware.  <a href="classsemantic__components_1_1SemanticComponentInterface.html#a8837bf9474bad044bab1e1e791b3be74">More...</a><br /></td></tr>
 <tr class="separator:a8837bf9474bad044bab1e1e791b3be74 inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,12 +148,6 @@ Protected Attributes</h2></td></tr>
 std::array&lt; bool, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#a0f8837c929b2b20222d7ea0bb6236e88">existing_axes_</a></td></tr>
 <tr class="memdesc:a0f8837c929b2b20222d7ea0bb6236e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with existing axes for sensors with less then 6D axes. <br /></td></tr>
 <tr class="separator:a0f8837c929b2b20222d7ea0bb6236e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaad4bad6aa542f465caeeb194cde3a2c"><td class="memItemLeft" align="right" valign="top"><a id="aaad4bad6aa542f465caeeb194cde3a2c"></a>
-std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>forces_</b></td></tr>
-<tr class="separator:aaad4bad6aa542f465caeeb194cde3a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70835a246ddca1dce9c828fa09a9e654"><td class="memItemLeft" align="right" valign="top"><a id="a70835a246ddca1dce9c828fa09a9e654"></a>
-std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>torques_</b></td></tr>
-<tr class="separator:a70835a246ddca1dce9c828fa09a9e654"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classsemantic__components_1_1SemanticComponentInterface"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classsemantic__components_1_1SemanticComponentInterface')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classsemantic__components_1_1SemanticComponentInterface.html">semantic_components::SemanticComponentInterface&lt; geometry_msgs::msg::Wrench &gt;</a></td></tr>
 <tr class="memitem:a2ebfb174a052786259d8074dad6684d4 inherit pro_attribs_classsemantic__components_1_1SemanticComponentInterface"><td class="memItemLeft" align="right" valign="top"><a id="a2ebfb174a052786259d8074dad6684d4"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name_</b></td></tr>
@@ -228,8 +225,8 @@ std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classhardware__in
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2372c33b565dfc1d0e151bf6bd29d264"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2372c33b565dfc1d0e151bf6bd29d264">&#9670;&nbsp;</a></span>get_forces()</h2>
+<a id="aa295a98dc396e0cfb67941825ea06709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa295a98dc396e0cfb67941825ea06709">&#9670;&nbsp;</a></span>get_forces()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +238,7 @@ std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classhardware__in
           <td class="memname">std::array&lt;double, 3&gt; semantic_components::ForceTorqueSensor::get_forces </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -253,12 +250,12 @@ std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classhardware__in
 
 <p>Return forces. </p>
 <p>Return forces of a FTS.</p>
-<dl class="section return"><dt>Returns</dt><dd>array of size 3 with force values. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>array of size 3 with force values (x, y, z). </dd></dl>
 
 </div>
 </div>
-<a id="a85ea6b60c412614f39eb4bb82e32c29e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85ea6b60c412614f39eb4bb82e32c29e">&#9670;&nbsp;</a></span>get_torques()</h2>
+<a id="acab6e4f675d56dd01e1322234fdea9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab6e4f675d56dd01e1322234fdea9f4">&#9670;&nbsp;</a></span>get_torques()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +267,7 @@ std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classhardware__in
           <td class="memname">std::array&lt;double, 3&gt; semantic_components::ForceTorqueSensor::get_torques </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -282,12 +279,12 @@ std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classhardware__in
 
 <p>Return torque. </p>
 <p>Return torques of a FTS.</p>
-<dl class="section return"><dt>Returns</dt><dd>array of size 3 with torque values. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>array of size 3 with torque values (x, y, z). </dd></dl>
 
 </div>
 </div>
-<a id="ace93319d20f9d9fa794a485411c33cb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace93319d20f9d9fa794a485411c33cb4">&#9670;&nbsp;</a></span>get_values_as_message()</h2>
+<a id="a145f13c9a0a6b5cb5fe2f63b160943d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a145f13c9a0a6b5cb5fe2f63b160943d7">&#9670;&nbsp;</a></span>get_values_as_message()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +297,7 @@ std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classhardware__in
           <td>(</td>
           <td class="paramtype">geometry_msgs::msg::Wrench &amp;&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
