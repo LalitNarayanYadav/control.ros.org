@@ -387,6 +387,15 @@ ros2<span class="w"> </span>run<span class="w"> </span>ign_ros2_control_demos<sp
 ros2<span class="w"> </span>run<span class="w"> </span>ign_ros2_control_demos<span class="w"> </span>example_ackermann_drive
 </pre></div>
 </div>
+<p>To demonstrate the setup of a namespaced robot, run</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ign_ros2_control_demos<span class="w"> </span>diff_drive_example_namespaced.launch.py
+</pre></div>
+</div>
+<p>which will launch a diff drive robot within the namespace <code class="docutils literal notranslate"><span class="pre">r1</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ros2_control settings for the controller_manager and the controller defined in <code class="docutils literal notranslate"><span class="pre">diff_drive_controller.yaml</span></code> use wildcards to match all namespaces.</p>
+</div>
 </section>
 <section id="gripper">
 <h3>Gripper<a class="headerlink" href="#gripper" title="Link to this heading"></a></h3>

@@ -66,7 +66,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#to-run-the-demo">To run the demo</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#add-ros2-control-tag-to-a-urdf">Add ros2_control tag to a URDF</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-ros2-control-tag-to-a-urdf-or-sdf">Add ros2_control tag to a URDF or SDF</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#simple-setup">Simple setup</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#using-mimic-joints-in-simulation">Using mimic joints in simulation</a></li>
 </ul>
@@ -178,11 +178,11 @@ ros2<span class="w"> </span>run<span class="w"> </span>gz_ros2_control_demos<spa
 </div></blockquote>
 </section>
 </section>
-<section id="add-ros2-control-tag-to-a-urdf">
-<h2>Add ros2_control tag to a URDF<a class="headerlink" href="#add-ros2-control-tag-to-a-urdf" title="Link to this heading"></a></h2>
+<section id="add-ros2-control-tag-to-a-urdf-or-sdf">
+<h2>Add ros2_control tag to a URDF or SDF<a class="headerlink" href="#add-ros2-control-tag-to-a-urdf-or-sdf" title="Link to this heading"></a></h2>
 <section id="simple-setup">
 <h3>Simple setup<a class="headerlink" href="#simple-setup" title="Link to this heading"></a></h3>
-<p>To use <em>ros2_control</em> with your robot, you need to add some additional elements to your URDF.
+<p>To use <em>ros2_control</em> with your robot, you need to add some additional elements to your URDF or SDF.
 You should include the tag <code class="docutils literal notranslate"><span class="pre">&lt;ros2_control&gt;</span></code> to access and control the robot interfaces. We should
 include:</p>
 <ul class="simple">
@@ -210,7 +210,7 @@ include:</p>
 </section>
 <section id="using-mimic-joints-in-simulation">
 <h3>Using mimic joints in simulation<a class="headerlink" href="#using-mimic-joints-in-simulation" title="Link to this heading"></a></h3>
-<p>To use <code class="docutils literal notranslate"><span class="pre">mimic</span></code> joints in <em>gz_ros2_control</em> you should define its parameters in your URDF, i.e, set the <code class="docutils literal notranslate"><span class="pre">&lt;mimic&gt;</span></code> tag to the mimicked joint (see the <a class="reference external" href="https://wiki.ros.org/urdf/XML/joint">URDF specification</a>)</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">mimic</span></code> joints in <em>gz_ros2_control</em> you should define its parameters in your URDF or SDF, i.e, set the <code class="docutils literal notranslate"><span class="pre">&lt;mimic&gt;</span></code> tag to the mimicked joint (see the <a class="reference external" href="https://wiki.ros.org/urdf/XML/joint">URDF specification</a> or the <a class="reference external" href="http://sdformat.org/spec?ver=1.11&amp;elem=joint#axis_mimic">SDF specification</a>)</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;right_finger_joint&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;prismatic&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;axis</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 1 0&quot;</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 -0.48 1&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
@@ -233,11 +233,12 @@ include:</p>
 </section>
 <section id="add-the-gz-ros2-control-plugin">
 <h2>Add the gz_ros2_control plugin<a class="headerlink" href="#add-the-gz-ros2-control-plugin" title="Link to this heading"></a></h2>
-<p>In addition to the <em>ros2_control</em> tags, a Gazebo plugin needs to be added to your URDF that
+<p>In addition to the <em>ros2_control</em> tags, a Gazebo plugin needs to be added to your URDF or SDF that
 actually parses the <em>ros2_control</em> tags and loads the appropriate hardware interfaces and
 controller manager. By default the <em>gz_ros2_control</em> plugin is very simple, though it is also
 extensible via an additional plugin architecture to allow power users to create their own custom
 robot hardware interfaces between <em>ros2_control</em> and Gazebo.</p>
+<p>URDF:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gazebo&gt;</span>
 <span class="w">  </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgz_ros2_control-system.so&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gz_ros2_control::GazeboSimROS2ControlPlugin&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;parameters&gt;</span>$(find<span class="w"> </span>gz_ros2_control_demos)/config/cart_controller.yaml<span class="nt">&lt;/parameters&gt;</span>
@@ -245,12 +246,18 @@ robot hardware interfaces between <em>ros2_control</em> and Gazebo.</p>
 <span class="nt">&lt;/gazebo&gt;</span>
 </pre></div>
 </div>
+<p>SDF:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgz_ros2_control-system.so&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gz_ros2_control::GazeboSimROS2ControlPlugin&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;parameters&gt;</span>$(find<span class="w"> </span>gz_ros2_control_demos)/config/cart_controller.yaml<span class="nt">&lt;/parameters&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
 <p>The <em>gz_ros2_control</em> <code class="docutils literal notranslate"><span class="pre">&lt;plugin&gt;</span></code> tag also has the following optional child elements:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;parameters&gt;</span></code>: A YAML file with the configuration of the controllers. This element can be given multiple times to load multiple files.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_manager_name&gt;</span></code>: Set controller manager name (default: <code class="docutils literal notranslate"><span class="pre">controller_manager</span></code>)</p></li>
 </ul>
-<p>The following additional parameters can be set via child elements in the URDF or via ROS parameters in the YAML file above:</p>
+<p>The following additional parameters can be set via child elements in the URDF/SDF or via ROS parameters in the YAML file above:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;hold_joints&gt;</span></code>: if set to true (default), it will hold the joints’ position if their interface was not claimed, e.g., the controller hasn’t been activated yet.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;position_proportional_gain&gt;</span></code>: Set the proportional gain. (default: 0.1) This determines the setpoint for a position-controlled joint <code class="docutils literal notranslate"><span class="pre">joint_velocity</span> <span class="pre">=</span> <span class="pre">joint_position_error</span> <span class="pre">*</span> <span class="pre">position_proportional_gain</span></code>.</p></li>
@@ -263,6 +270,7 @@ robot hardware interfaces between <em>ros2_control</em> and Gazebo.</p>
 </pre></div>
 </div>
 <p>Additionally, one can specify a namespace and remapping rules, which will be forwarded to the controller_manager and loaded controllers. Add the following <code class="docutils literal notranslate"><span class="pre">&lt;ros&gt;</span></code> section:</p>
+<p>URDF:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gazebo&gt;</span>
 <span class="w">  </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgz_ros2_control-system.so&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gz_ros2_control::GazeboSimROS2ControlPlugin&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span>...
@@ -274,9 +282,19 @@ robot hardware interfaces between <em>ros2_control</em> and Gazebo.</p>
 <span class="nt">&lt;/gazebo&gt;</span>
 </pre></div>
 </div>
+<p>SDF:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgz_ros2_control-system.so&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gz_ros2_control::GazeboSimROS2ControlPlugin&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span>...
+<span class="w">  </span><span class="nt">&lt;ros&gt;</span>
+<span class="w">    </span><span class="nt">&lt;namespace&gt;</span>my_namespace<span class="nt">&lt;/namespace&gt;</span>
+<span class="w">    </span><span class="nt">&lt;remapping&gt;</span>/robot_description:=/robot_description_full<span class="nt">&lt;/remapping&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/ros&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
 <section id="default-gz-ros2-control-behavior">
 <h3>Default gz_ros2_control Behavior<a class="headerlink" href="#default-gz-ros2-control-behavior" title="Link to this heading"></a></h3>
-<p>By default, without a <code class="docutils literal notranslate"><span class="pre">&lt;plugin&gt;</span></code> tag, <em>gz_ros2_control</em> will attempt to get all of the information it needs to interface with a ros2_control-based controller out of the URDF. This is sufficient for most cases, and good for at least getting started.</p>
+<p>By default, without a <code class="docutils literal notranslate"><span class="pre">&lt;plugin&gt;</span></code> tag, <em>gz_ros2_control</em> will attempt to get all of the information it needs to interface with a ros2_control-based controller out of the URDF or SDF. This is sufficient for most cases, and good for at least getting started.</p>
 <p>The default behavior provides the following ros2_control interfaces:</p>
 <ul class="simple">
 <li><p>hardware_interface::JointStateInterface</p></li>
@@ -289,8 +307,9 @@ robot hardware interfaces between <em>ros2_control</em> and Gazebo.</p>
 <p>The <em>gz_ros2_control</em> Gazebo plugin also provides a pluginlib-based interface to implement custom interfaces between Gazebo and <em>ros2_control</em> for simulating more complex mechanisms (nonlinear springs, linkages, etc).</p>
 <p>These plugins must inherit the <code class="docutils literal notranslate"><span class="pre">gz_ros2_control::GazeboSimSystemInterface</span></code>, which implements a simulated <em>ros2_control</em>
 <code class="docutils literal notranslate"><span class="pre">hardware_interface::SystemInterface</span></code>. SystemInterface provides API-level access to read and command joint properties.</p>
-<p>The respective GazeboSimSystemInterface sub-class is specified in a URDF model and is loaded when the
+<p>The respective GazeboSimSystemInterface sub-class is specified in a URDF or SDF model and is loaded when the
 robot model is loaded. For example, the following XML will load the default plugin:</p>
+<p>URDF:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ros2_control</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GazeboSimSystem&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;system&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;hardware&gt;</span>
 <span class="w">    </span><span class="nt">&lt;plugin&gt;</span>gz_ros2_control/GazeboSimSystem<span class="nt">&lt;/plugin&gt;</span>
@@ -304,17 +323,37 @@ robot model is loaded. For example, the following XML will load the default plug
 <span class="nt">&lt;/gazebo&gt;</span>
 </pre></div>
 </div>
+<p>SDF:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ros2_control</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;GazeboSimSystem&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;system&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;hardware&gt;</span>
+<span class="w">    </span><span class="nt">&lt;plugin&gt;</span>gz_ros2_control/GazeboSimSystem<span class="nt">&lt;/plugin&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/hardware&gt;</span>
+<span class="w">  </span>...
+<span class="nt">&lt;ros2_control&gt;</span>
+<span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gz_ros2_control::GazeboSimROS2ControlPlugin&quot;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgz_ros2_control-system&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span>...
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
 </section>
 <section id="set-up-controllers">
 <h3>Set up controllers<a class="headerlink" href="#set-up-controllers" title="Link to this heading"></a></h3>
 <p>Use the tag <code class="docutils literal notranslate"><span class="pre">&lt;parameters&gt;</span></code> inside <code class="docutils literal notranslate"><span class="pre">&lt;plugin&gt;</span></code> to set the YAML file with the controller configuration
 and use the tag <code class="docutils literal notranslate"><span class="pre">&lt;controller_manager_prefix_node_name&gt;</span></code> to set the controller manager node name.</p>
+<p>URDF:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gazebo&gt;</span>
 <span class="w">  </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gz_ros2_control::GazeboSimROS2ControlPlugin&quot;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgz_ros2_control-system&quot;</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;parameters&gt;</span>$(find<span class="w"> </span>gz_ros2_control_demos)/config/cart_controller.yaml<span class="nt">&lt;/parameters&gt;</span>
 <span class="w">    </span><span class="nt">&lt;controller_manager_prefix_node_name&gt;</span>controller_manager<span class="nt">&lt;/controller_manager_prefix_node_name&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/plugin&gt;</span>
 <span class="nt">&lt;gazebo&gt;</span>
+</pre></div>
+</div>
+<p>SDF:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gz_ros2_control::GazeboSimROS2ControlPlugin&quot;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgz_ros2_control-system&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;parameters&gt;</span>$(find<span class="w"> </span>gz_ros2_control_demos)/config/cart_controller.yaml<span class="nt">&lt;/parameters&gt;</span>
+<span class="w">  </span><span class="nt">&lt;controller_manager_prefix_node_name&gt;</span>controller_manager<span class="nt">&lt;/controller_manager_prefix_node_name&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
 </pre></div>
 </div>
 <p>The following is a basic configuration of the controllers:</p>
@@ -345,7 +384,12 @@ and use the tag <code class="docutils literal notranslate"><span class="pre">&lt
 </section>
 <section id="gz-ros2-control-demos">
 <h2>gz_ros2_control_demos<a class="headerlink" href="#gz-ros2-control-demos" title="Link to this heading"></a></h2>
-<p>There are some examples in the <em>gz_ros2_control_demos</em> package.</p>
+<p>There are some examples in the <em>gz_ros2_control_demos</em> package.
+To specify whether to use URDF or SDF, you can launch the demo in the following way (the default is URDF):
+.. code-block:: shell</p>
+<blockquote>
+<div><p>ros2 launch gz_ros2_control_demos &lt;launch file&gt; description_format:=sdf</p>
+</div></blockquote>
 <section id="cart-on-rail">
 <h3>Cart on rail<a class="headerlink" href="#cart-on-rail" title="Link to this heading"></a></h3>
 <p>These examples allow to launch a cart in a 30 meter rail.</p>
