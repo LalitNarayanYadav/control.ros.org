@@ -1,0 +1,5 @@
+<map id="joint_limits::JointSoftLimiter" name="joint_limits::JointSoftLimiter">
+<area shape="rect" id="node1" title=" " alt="" coords="39,199,242,225"/>
+<area shape="rect" id="node2" href="$classjoint__limits_1_1JointSaturationLimiter.html" title=" " alt="" coords="5,109,276,151"/>
+<area shape="rect" id="node3" href="$classjoint__limits_1_1JointLimiterInterface.html" title=" " alt="" coords="26,5,255,61"/>
+</map>

@@ -1,4 +1,6 @@
-<map id="joint_limits::JointLimiterInterface&lt; LimitsType &gt;" name="joint_limits::JointLimiterInterface&lt; LimitsType &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="15,5,195,47"/>
-<area shape="rect" id="node2" href="$classjoint__limits_1_1JointSaturationLimiter.html" title=" " alt="" coords="5,95,204,136"/>
+<map id="joint_limits::JointLimiterInterface&lt; JointLimitsStateDataType &gt;" name="joint_limits::JointLimiterInterface&lt; JointLimitsStateDataType &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,235,87"/>
+<area shape="rect" id="node2" href="$classjoint__limits_1_1JointSaturationLimiter.html" title=" " alt="" coords="283,5,553,47"/>
+<area shape="rect" id="node4" href="$classjoint__limits_1_1JointSaturationLimiter.html" title=" " alt="" coords="287,71,549,112"/>
+<area shape="rect" id="node3" href="$classjoint__limits_1_1JointSoftLimiter.html" title=" " alt="" coords="601,13,804,39"/>
 </map>

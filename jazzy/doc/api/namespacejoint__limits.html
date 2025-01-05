@@ -71,7 +71,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">joint_limits Namespace Reference</div>  </div>
@@ -80,6 +79,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjoint__limits_1_1JointControlInterfacesData.html">JointControlInterfacesData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjoint__limits_1_1JointInterfacesCommandLimiterData.html">JointInterfacesCommandLimiterData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjoint__limits_1_1JointLimiterInterface.html">JointLimiterInterface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjoint__limits_1_1JointLimits.html">JointLimits</a></td></tr>
@@ -88,15 +91,26 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjoint__limits_1_1JointSaturationLimiter.html">JointSaturationLimiter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ae98629492cf5b25ed483356487a31b9c"><td class="memItemLeft" align="right" valign="top"><a id="ae98629492cf5b25ed483356487a31b9c"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>JointLimitsStateDataType</b> = trajectory_msgs::msg::JointTrajectoryPoint</td></tr>
-<tr class="separator:ae98629492cf5b25ed483356487a31b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjoint__limits_1_1JointSoftLimiter.html">JointSoftLimiter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a83bcea6e06e5e2566832224b252da84e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejoint__limits.html#a83bcea6e06e5e2566832224b252da84e">is_limited</a> (double value, double min, double max)</td></tr>
+<tr class="memdesc:a83bcea6e06e5e2566832224b252da84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a value is limited by the given limits.  <a href="namespacejoint__limits.html#a83bcea6e06e5e2566832224b252da84e">More...</a><br /></td></tr>
+<tr class="separator:a83bcea6e06e5e2566832224b252da84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcefc2c76c0dee5efba9caa870291a2b"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejoint__limits.html#adcefc2c76c0dee5efba9caa870291a2b">compute_position_limits</a> (const <a class="el" href="structjoint__limits_1_1JointLimits.html">joint_limits::JointLimits</a> &amp;limits, const std::optional&lt; double &gt; &amp;act_vel, const std::optional&lt; double &gt; &amp;prev_command_pos, double dt)</td></tr>
+<tr class="memdesc:adcefc2c76c0dee5efba9caa870291a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the position limits based on the velocity and acceleration limits.  <a href="namespacejoint__limits.html#adcefc2c76c0dee5efba9caa870291a2b">More...</a><br /></td></tr>
+<tr class="separator:adcefc2c76c0dee5efba9caa870291a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2c60f7fd10b2688ccaaa9497fab554"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejoint__limits.html#a2f2c60f7fd10b2688ccaaa9497fab554">compute_velocity_limits</a> (const std::string &amp;joint_name, const <a class="el" href="structjoint__limits_1_1JointLimits.html">joint_limits::JointLimits</a> &amp;limits, const double &amp;desired_vel, const std::optional&lt; double &gt; &amp;act_pos, const std::optional&lt; double &gt; &amp;prev_command_vel, double dt)</td></tr>
+<tr class="memdesc:a2f2c60f7fd10b2688ccaaa9497fab554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the velocity limits based on the position and acceleration limits.  <a href="namespacejoint__limits.html#a2f2c60f7fd10b2688ccaaa9497fab554">More...</a><br /></td></tr>
+<tr class="separator:a2f2c60f7fd10b2688ccaaa9497fab554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60755db142c88f33c8d2d928af011922"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejoint__limits.html#a60755db142c88f33c8d2d928af011922">compute_effort_limits</a> (const <a class="el" href="structjoint__limits_1_1JointLimits.html">joint_limits::JointLimits</a> &amp;limits, const std::optional&lt; double &gt; &amp;act_pos, const std::optional&lt; double &gt; &amp;act_vel, double)</td></tr>
+<tr class="memdesc:a60755db142c88f33c8d2d928af011922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the effort limits based on the position and velocity limits.  <a href="namespacejoint__limits.html#a60755db142c88f33c8d2d928af011922">More...</a><br /></td></tr>
+<tr class="separator:a60755db142c88f33c8d2d928af011922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4360c75099ee20e5fd21e8e439e7949c"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejoint__limits.html#a4360c75099ee20e5fd21e8e439e7949c">compute_acceleration_limits</a> (const <a class="el" href="structjoint__limits_1_1JointLimits.html">JointLimits</a> &amp;limits, double desired_acceleration, std::optional&lt; double &gt; actual_velocity)</td></tr>
+<tr class="memdesc:a4360c75099ee20e5fd21e8e439e7949c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the acceleration limits based on the change in velocity and acceleration and deceleration limits.  <a href="namespacejoint__limits.html#a4360c75099ee20e5fd21e8e439e7949c">More...</a><br /></td></tr>
+<tr class="separator:a4360c75099ee20e5fd21e8e439e7949c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad419e94052abe78773d49127ed62c0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejoint__limits.html#aad419e94052abe78773d49127ed62c0b">declare_parameters</a> (const std::string &amp;joint_name, const rclcpp::node_interfaces::NodeParametersInterface::SharedPtr &amp;param_itf, const rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr &amp;logging_itf)</td></tr>
 <tr class="separator:aad419e94052abe78773d49127ed62c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81b9a4c8dca9261f88683cd819ffb708"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacejoint__limits.html#a81b9a4c8dca9261f88683cd819ffb708">declare_parameters</a> (const std::string &amp;joint_name, const rclcpp::Node::SharedPtr &amp;node)</td></tr>
@@ -129,9 +143,13 @@ Functions</h2></td></tr>
 <tr class="separator:aab5823d51fe2a7c4f8980db0762fe9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Denis Stogl</dd>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sai Kishor Kothakota</dd>
+<dd>
+Denis Stogl</dd>
 <dd>
 Adolfo Rodriguez Tsouroukdissian</dd>
+<dd>
+Adrià Roig Moreno</dd>
 <dd>
 Dr. Denis Stogl </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -250,6 +268,220 @@ Dr. Denis Stogl </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a4360c75099ee20e5fd21e8e439e7949c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4360c75099ee20e5fd21e8e439e7949c">&#9670;&nbsp;</a></span>compute_acceleration_limits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double, double &gt; joint_limits::compute_acceleration_limits </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structjoint__limits_1_1JointLimits.html">JointLimits</a> &amp;&#160;</td>
+          <td class="paramname"><em>limits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>desired_acceleration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>actual_velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the acceleration limits based on the change in velocity and acceleration and deceleration limits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">limits</td><td>The joint limits. </td></tr>
+    <tr><td class="paramname">desired_acceleration</td><td>The desired acceleration. </td></tr>
+    <tr><td class="paramname">actual_velocity</td><td>The actual velocity of the joint. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The acceleration limits, first is the lower limit and second is the upper limit. </dd></dl>
+
+</div>
+</div>
+<a id="a60755db142c88f33c8d2d928af011922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60755db142c88f33c8d2d928af011922">&#9670;&nbsp;</a></span>compute_effort_limits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double, double &gt; joint_limits::compute_effort_limits </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structjoint__limits_1_1JointLimits.html">joint_limits::JointLimits</a> &amp;&#160;</td>
+          <td class="paramname"><em>limits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>act_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>act_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the effort limits based on the position and velocity limits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">limits</td><td>The joint limits. </td></tr>
+    <tr><td class="paramname">act_pos</td><td>The actual position of the joint. </td></tr>
+    <tr><td class="paramname">act_vel</td><td>The actual velocity of the joint. </td></tr>
+    <tr><td class="paramname">dt</td><td>The time step. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The effort limits, first is the lower limit and second is the upper limit. </dd></dl>
+
+</div>
+</div>
+<a id="adcefc2c76c0dee5efba9caa870291a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcefc2c76c0dee5efba9caa870291a2b">&#9670;&nbsp;</a></span>compute_position_limits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double, double &gt; joint_limits::compute_position_limits </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structjoint__limits_1_1JointLimits.html">joint_limits::JointLimits</a> &amp;&#160;</td>
+          <td class="paramname"><em>limits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>act_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>prev_command_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the position limits based on the velocity and acceleration limits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">limits</td><td>The joint limits. </td></tr>
+    <tr><td class="paramname">act_vel</td><td>The actual velocity of the joint. </td></tr>
+    <tr><td class="paramname">prev_command_pos</td><td>The previous commanded position of the joint. </td></tr>
+    <tr><td class="paramname">dt</td><td>The time step. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The position limits, first is the lower limit and second is the upper limit. </dd></dl>
+
+</div>
+</div>
+<a id="a2f2c60f7fd10b2688ccaaa9497fab554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2c60f7fd10b2688ccaaa9497fab554">&#9670;&nbsp;</a></span>compute_velocity_limits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double, double &gt; joint_limits::compute_velocity_limits </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>joint_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structjoint__limits_1_1JointLimits.html">joint_limits::JointLimits</a> &amp;&#160;</td>
+          <td class="paramname"><em>limits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>desired_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>act_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>prev_command_vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the velocity limits based on the position and acceleration limits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">joint_name</td><td>The name of the joint. </td></tr>
+    <tr><td class="paramname">limits</td><td>The joint limits. </td></tr>
+    <tr><td class="paramname">act_pos</td><td>The actual position of the joint. </td></tr>
+    <tr><td class="paramname">prev_command_vel</td><td>The previous commanded velocity of the joint. </td></tr>
+    <tr><td class="paramname">dt</td><td>The time step. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The velocity limits, first is the lower limit and second is the upper limit. </dd></dl>
 
 </div>
 </div>
@@ -601,7 +833,7 @@ Dr. Denis Stogl </dd></dl>
 <div class="line">        angle_wraparound: <span class="keyword">true</span>       # available only <span class="keywordflow">for</span> continuous joints</div>
 <div class="line">        has_velocity_limits: <span class="keyword">true</span></div>
 <div class="line">        max_velocity: 4.0</div>
-<div class="ttc" id="anamespacejoint__limits_html"><div class="ttname"><a href="namespacejoint__limits.html">joint_limits</a></div><div class="ttdef"><b>Definition:</b> joint_limiter_interface.hpp:30</div></div>
+<div class="ttc" id="anamespacejoint__limits_html"><div class="ttname"><a href="namespacejoint__limits.html">joint_limits</a></div><div class="ttdef"><b>Definition:</b> data_structures.hpp:25</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">joint_name</td><td>Name of joint whose limits are to be fetched, e.g., "foo_joint". </td></tr>
@@ -881,6 +1113,51 @@ Dr. Denis Stogl </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if <em>urdf_joint</em> has a valid soft limits specification, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a83bcea6e06e5e2566832224b252da84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83bcea6e06e5e2566832224b252da84e">&#9670;&nbsp;</a></span>is_limited()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool joint_limits::is_limited </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a value is limited by the given limits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to check. </td></tr>
+    <tr><td class="paramname">min</td><td>The minimum limit. </td></tr>
+    <tr><td class="paramname">max</td><td>The maximum limit. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the value is limited, false otherwise. </dd></dl>
 
 </div>
 </div>
