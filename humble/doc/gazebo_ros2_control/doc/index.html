@@ -76,6 +76,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#default-gazebo-ros2-control-behavior">Default gazebo_ros2_control Behavior</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#advanced-custom-gazebo-ros2-control-simulation-plugins">Advanced: custom gazebo_ros2_control Simulation Plugins</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#set-up-controllers">Set up controllers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#multiple-namespaces">Multiple Namespaces</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#gazebo-ros2-control-demos">gazebo_ros2_control_demos</a><ul>
@@ -426,6 +427,43 @@ robot model is loaded. For example, the following XML will load the default plug
 <span class="w">    </span><span class="nt">state_interfaces</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">position</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">velocity</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-namespaces">
+<h3>Multiple Namespaces<a class="headerlink" href="#multiple-namespaces" title="Link to this heading"></a></h3>
+<p>The gazebo_ros2_control plugin can be launched in multiple namespaces. This is useful if it is desired to have multiple robots of the same description running at the same time.
+It is possible to directly define the namespace in the URDF file, as shown below:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;gazebo&gt;</span>
+<span class="w">  </span><span class="nt">&lt;plugin</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gazebo_ros2_control&quot;</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;libgazebo_ros2_control.so&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;parameters&gt;</span><span class="w"> </span>$(arg<span class="w"> </span>control_yaml)<span class="w"> </span><span class="nt">&lt;/parameters&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ros&gt;</span>
+<span class="w">      </span><span class="nt">&lt;namespace&gt;</span>r1<span class="nt">&lt;/namespace&gt;</span>
+<span class="w">      </span><span class="nt">&lt;remapping&gt;</span>/tf:=tf<span class="nt">&lt;/remapping&gt;</span>
+<span class="w">      </span><span class="nt">&lt;remapping&gt;</span>/tf_static:=tf_static<span class="nt">&lt;/remapping&gt;</span>
+<span class="w">      </span><span class="nt">&lt;remapping&gt;</span>diffdrive_controller/odom:=odom<span class="nt">&lt;/remapping&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ros&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="nt">&lt;/gazebo&gt;</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">r1</span></code> is the namespace associated to the particular instance of the plugin. Please note that the remapping of <code class="docutils literal notranslate"><span class="pre">/tf</span></code> and <code class="docutils literal notranslate"><span class="pre">/tf_static</span></code> is recommended only if you want to have a separate TF buffer for each namespace, e.g <code class="docutils literal notranslate"><span class="pre">/r1/tf</span></code></p>
+<p>As an example, run the following command to launch the diff_drive example within the namespace <code class="docutils literal notranslate"><span class="pre">r1</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>gazebo_ros2_control_demos<span class="w"> </span>diff_drive_namespaced.launch.py
+</pre></div>
+</div>
+<p>A second method to launch an instance with a particular namespace is by using the Gazebo <code class="docutils literal notranslate"><span class="pre">spawn_entity.py</span></code> tool and setting the <code class="docutils literal notranslate"><span class="pre">-robot_namespace</span></code> parameter to the script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>gazebo_ros<span class="w"> </span>spawn_entity.py<span class="w"> </span>-entity<span class="w"> </span>robot_1<span class="w"> </span>-robot_namespace<span class="w"> </span>r1<span class="w"> </span>-topic<span class="w"> </span>robot_description
+</pre></div>
+</div>
+<p>The script calls the <code class="docutils literal notranslate"><span class="pre">spawn_entity</span></code> service to spawn an entity named <code class="docutils literal notranslate"><span class="pre">robot_1</span></code> in the namespace <code class="docutils literal notranslate"><span class="pre">r1</span></code>.  It is assumed that a robot description is being published by a <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code> node on the topic <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>, this will also be used for the <code class="docutils literal notranslate"><span class="pre">gazebo_ros2_control</span></code> plugin.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">spawn_entity.py</span></code> script will rewrite the robot description to include a namespace for every plugin tag. Please note that this method will apply a namespace to every plugin in the robot description. It will also overwrite any existing namespaces set in the description file.</p>
+<p>As an example, run the following command to spawn two diff_drive robots in the namespaces <code class="docutils literal notranslate"><span class="pre">r1</span></code> and <code class="docutils literal notranslate"><span class="pre">r2</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ros2_control settings for the controller_manager and the controller defined in <code class="docutils literal notranslate"><span class="pre">diff_drive_controller_namespaced.yaml</span></code> use wildcards to match both namespaces.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>gazebo_ros2_control_demos<span class="w"> </span>diff_drive_pair_namespaced.launch.py
 </pre></div>
 </div>
 </section>
