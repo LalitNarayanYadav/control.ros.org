@@ -140,53 +140,54 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::make_shared&lt;exponential_filter::ParamListener&gt;(this-&gt;params_interface_,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                         this-&gt;param_prefix_);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">catch</span> (rclcpp::exceptions::ParameterUninitializedException &amp; ex) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      RCLCPP_ERROR((*logger_), <span class="stringliteral">&quot;Exponential filter cannot be configured: %s&quot;</span>, ex.what());</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      parameter_handler_.reset();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">catch</span> (rclcpp::exceptions::InvalidParameterValueException &amp; ex)  {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      RCLCPP_ERROR((*logger_), <span class="stringliteral">&quot;Exponential filter cannot be configured: %s&quot;</span>, ex.what());</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      parameter_handler_.reset();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  parameters_ = parameter_handler_-&gt;get_params();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  last_smoothed_value = std::numeric_limits&lt;double&gt;::quiet_NaN();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classcontrol__filters_1_1ExponentialFilter.html#a3d9562071c43d38651d51e79e0077f90">  108</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classcontrol__filters_1_1ExponentialFilter.html#a3d9562071c43d38651d51e79e0077f90">ExponentialFilter&lt;T&gt;::update</a>(<span class="keyword">const</span> T &amp; data_in, T &amp; data_out)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">if</span> (!this-&gt;configured_)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Filter is not configured&quot;</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="comment">// Update internal parameters if required</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">if</span> (parameter_handler_-&gt;is_old(parameters_))</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    parameters_ = parameter_handler_-&gt;get_params();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">if</span> (std::isnan(last_smoothed_value))</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    last_smoothed_value = data_in;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  data_out = last_smoothed_value =</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    filters::exponentialSmoothing(data_in, last_smoothed_value, parameters_.alpha);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}  <span class="comment">// namespace control_filters</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// CONTROL_FILTERS__EXPONENTIAL_FILTER_HPP_</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp; ex) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      RCLCPP_ERROR((*logger_),</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="stringliteral">&quot;Exponential filter cannot be configured: %s (type : %s)&quot;</span>, ex.what(), <span class="keyword">typeid</span>(ex).name());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      parameter_handler_.reset();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      RCLCPP_ERROR((*logger_), <span class="stringliteral">&quot;Caught unknown exception while configuring Exponential filter&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      parameter_handler_.reset();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  parameters_ = parameter_handler_-&gt;get_params();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  last_smoothed_value = std::numeric_limits&lt;double&gt;::quiet_NaN();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classcontrol__filters_1_1ExponentialFilter.html#a3d9562071c43d38651d51e79e0077f90">  109</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classcontrol__filters_1_1ExponentialFilter.html#a3d9562071c43d38651d51e79e0077f90">ExponentialFilter&lt;T&gt;::update</a>(<span class="keyword">const</span> T &amp; data_in, T &amp; data_out)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">if</span> (!this-&gt;configured_)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Filter is not configured&quot;</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="comment">// Update internal parameters if required</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">if</span> (parameter_handler_-&gt;is_old(parameters_))</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    parameters_ = parameter_handler_-&gt;get_params();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">if</span> (std::isnan(last_smoothed_value))</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    last_smoothed_value = data_in;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  data_out = last_smoothed_value =</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    filters::exponentialSmoothing(data_in, last_smoothed_value, parameters_.alpha);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}  <span class="comment">// namespace control_filters</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// CONTROL_FILTERS__EXPONENTIAL_FILTER_HPP_</span></div>
 <div class="ttc" id="aclasscontrol__filters_1_1ExponentialFilter_html"><div class="ttname"><a href="classcontrol__filters_1_1ExponentialFilter.html">control_filters::ExponentialFilter</a></div><div class="ttdoc">A exponential filter class.</div><div class="ttdef"><b>Definition:</b> exponential_filter.hpp:49</div></div>
-<div class="ttc" id="aclasscontrol__filters_1_1ExponentialFilter_html_a3d9562071c43d38651d51e79e0077f90"><div class="ttname"><a href="classcontrol__filters_1_1ExponentialFilter.html#a3d9562071c43d38651d51e79e0077f90">control_filters::ExponentialFilter::update</a></div><div class="ttdeci">bool update(const T &amp;data_in, T &amp;data_out) override</div><div class="ttdoc">Applies one iteration of the exponential filter.</div><div class="ttdef"><b>Definition:</b> exponential_filter.hpp:108</div></div>
+<div class="ttc" id="aclasscontrol__filters_1_1ExponentialFilter_html_a3d9562071c43d38651d51e79e0077f90"><div class="ttname"><a href="classcontrol__filters_1_1ExponentialFilter.html#a3d9562071c43d38651d51e79e0077f90">control_filters::ExponentialFilter::update</a></div><div class="ttdeci">bool update(const T &amp;data_in, T &amp;data_out) override</div><div class="ttdoc">Applies one iteration of the exponential filter.</div><div class="ttdef"><b>Definition:</b> exponential_filter.hpp:109</div></div>
 <div class="ttc" id="aclasscontrol__filters_1_1ExponentialFilter_html_a84267c17d10a4a73c6a723bf5ca21362"><div class="ttname"><a href="classcontrol__filters_1_1ExponentialFilter.html#a84267c17d10a4a73c6a723bf5ca21362">control_filters::ExponentialFilter::configure</a></div><div class="ttdeci">bool configure() override</div><div class="ttdoc">Configure the ExponentialFilter (access and process params).</div><div class="ttdef"><b>Definition:</b> exponential_filter.hpp:75</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
