@@ -1,5 +1,7 @@
 <map id="hardware_interface::LoanedCommandInterface" name="hardware_interface::LoanedCommandInterface">
-<area shape="rect" id="node1" title=" " alt="" coords="5,200,208,241"/>
-<area shape="rect" id="node2" href="$classhardware__interface_1_1CommandInterface.html" title=" " alt="" coords="29,96,184,137"/>
-<area shape="rect" id="node3" href="$classhardware__interface_1_1Handle.html" title="A handle used to get and set a value on a given interface." alt="" coords="33,5,181,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,197,208,237"/>
+<area shape="rect" id="Node000002" href="$classhardware__interface_1_1CommandInterface.html" title=" " alt="" coords="29,95,184,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,149,109,197,104,197,104,149"/>
+<area shape="rect" id="Node000003" href="$classhardware__interface_1_1Handle.html" title="A handle used to get and set a value on a given interface." alt="" coords="33,5,181,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,59,109,95,104,95,104,59"/>
 </map>

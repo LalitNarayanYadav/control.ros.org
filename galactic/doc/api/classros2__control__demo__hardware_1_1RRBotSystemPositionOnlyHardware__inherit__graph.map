@@ -1,5 +1,7 @@
 <map id="ros2_control_demo_hardware::RRBotSystemPositionOnlyHardware" name="ros2_control_demo_hardware::RRBotSystemPositionOnlyHardware">
-<area shape="rect" id="node1" title=" " alt="" coords="5,184,269,225"/>
-<area shape="rect" id="node2" href="$classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control." alt="" coords="63,95,211,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="11,5,263,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,269,221"/>
+<area shape="rect" id="Node000002" href="$classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control." alt="" coords="63,93,211,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,147,140,181,135,181,135,147"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="11,5,263,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,59,140,93,135,93,135,59"/>
 </map>

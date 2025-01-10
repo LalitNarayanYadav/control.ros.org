@@ -1,12 +1,21 @@
 <map id="controller_interface::ChainableControllerInterface" name="controller_interface::ChainableControllerInterface">
-<area shape="rect" id="node1" title=" " alt="" coords="537,100,755,141"/>
-<area shape="rect" id="node4" href="$classadmittance__controller_1_1AdmittanceController.html" title=" " alt="" coords="819,5,989,47"/>
-<area shape="rect" id="node5" href="$classpassthrough__controller_1_1PassthroughController.html" title=" " alt="" coords="817,71,991,112"/>
-<area shape="rect" id="node6" href="$classpid__controller_1_1PidController.html" title=" " alt="" coords="803,137,1005,163"/>
-<area shape="rect" id="node7" href="$classsteering__controllers__library_1_1SteeringControllersLibrary.html" title=" " alt="" coords="803,187,1005,243"/>
-<area shape="rect" id="node2" href="$classcontroller__interface_1_1ControllerInterfaceBase.html" title=" " alt="" coords="305,100,489,141"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,100,257,141"/>
-<area shape="rect" id="node8" href="$classackermann__steering__controller_1_1AckermannSteeringController.html" title=" " alt="" coords="1053,114,1280,170"/>
-<area shape="rect" id="node9" href="$classbicycle__steering__controller_1_1BicycleSteeringController.html" title=" " alt="" coords="1068,195,1265,236"/>
-<area shape="rect" id="node10" href="$classtricycle__steering__controller_1_1TricycleSteeringController.html" title=" " alt="" coords="1067,260,1266,301"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="537,99,755,139"/>
+<area shape="rect" id="Node000004" href="$classadmittance__controller_1_1AdmittanceController.html" title=" " alt="" coords="819,5,989,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="707,91,802,55,837,43,839,48,804,60,709,96"/>
+<area shape="rect" id="Node000005" href="$classpassthrough__controller_1_1PassthroughController.html" title=" " alt="" coords="817,69,991,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="768,102,817,97,817,102,769,107"/>
+<area shape="rect" id="Node000006" href="$classpid__controller_1_1PidController.html" title=" " alt="" coords="803,134,1005,159"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="769,129,803,133,802,138,768,135"/>
+<area shape="rect" id="Node000007" href="$classsteering__controllers__library_1_1SteeringControllersLibrary.html" title=" " alt="" coords="803,183,1005,238"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="717,141,827,181,826,186,715,146"/>
+<area shape="rect" id="Node000002" href="$classcontroller__interface_1_1ControllerInterfaceBase.html" title=" " alt="" coords="305,99,489,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,116,537,116,537,121,503,121"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,99,257,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="271,116,305,116,305,121,271,121"/>
+<area shape="rect" id="Node000008" href="$classackermann__steering__controller_1_1AckermannSteeringController.html" title=" " alt="" coords="1053,111,1280,166"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1017,177,1066,163,1067,169,1018,182"/>
+<area shape="rect" id="Node000009" href="$classbicycle__steering__controller_1_1BicycleSteeringController.html" title=" " alt="" coords="1068,191,1265,231"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1019,208,1068,208,1068,213,1019,213"/>
+<area shape="rect" id="Node000010" href="$classtricycle__steering__controller_1_1TricycleSteeringController.html" title=" " alt="" coords="1067,255,1266,295"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1020,236,1084,252,1083,257,1018,241"/>
 </map>
