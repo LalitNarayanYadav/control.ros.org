@@ -60,10 +60,8 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Controller Manager</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#determinism">Determinism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#subscribers">Subscribers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#handling-multiple-controller-managers">Handling Multiple Controller Managers</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#handling-multiple-controller-managers">Handling Multiple Controller Managers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#helper-scripts">Helper scripts</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#spawner"><code class="docutils literal notranslate"><span class="pre">spawner</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#unspawner"><code class="docutils literal notranslate"><span class="pre">unspawner</span></code></a></li>
@@ -378,8 +376,9 @@ The full structure of the map is given in the following example:</p>
 <span class="w">    </span><span class="nt">update_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100.0</span>
 </pre></div>
 </div>
+</section>
 <section id="handling-multiple-controller-managers">
-<h3>Handling Multiple Controller Managers<a class="headerlink" href="#handling-multiple-controller-managers" title="Link to this heading"></a></h3>
+<h2>Handling Multiple Controller Managers<a class="headerlink" href="#handling-multiple-controller-managers" title="Link to this heading"></a></h2>
 <p>When dealing with multiple controller managers, you have two options for managing different robot descriptions:</p>
 <ol class="arabic simple">
 <li><p><strong>Using Namespaces:</strong> You can place both the <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code> and the <code class="docutils literal notranslate"><span class="pre">controller_manager</span></code> nodes into the same namespace.</p></li>
@@ -419,7 +418,6 @@ The full structure of the map is given in the following example:</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-</section>
 </section>
 <section id="helper-scripts">
 <h2>Helper scripts<a class="headerlink" href="#helper-scripts" title="Link to this heading"></a></h2>
