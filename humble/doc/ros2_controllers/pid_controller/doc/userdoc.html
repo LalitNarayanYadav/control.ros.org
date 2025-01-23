@@ -278,13 +278,13 @@ Plugin name: pid_controller/PidController</p>
 <dt>gains.&lt;dof_names&gt;.d (double)</dt><dd><p>Derivative gain for PID</p>
 <p>Default:  0.0</p>
 </dd>
-<dt>gains.&lt;dof_names&gt;.antiwindup (bool)</dt><dd><p>Antiwindup functionality.</p>
+<dt>gains.&lt;dof_names&gt;.antiwindup (bool)</dt><dd><p>Antiwindup functionality. When set to true, limits the integral error to prevent windup; otherwise, constrains the integral contribution to the control output. i_clamp_max and i_clamp_min are applied in both scenarios.</p>
 <p>Default:  false</p>
 </dd>
-<dt>gains.&lt;dof_names&gt;.i_clamp_max (double)</dt><dd><p>Upper integral clamp. Only used if antiwindup is activated.</p>
+<dt>gains.&lt;dof_names&gt;.i_clamp_max (double)</dt><dd><p>Upper integral clamp.</p>
 <p>Default:  0.0</p>
 </dd>
-<dt>gains.&lt;dof_names&gt;.i_clamp_min (double)</dt><dd><p>Lower integral clamp. Only used if antiwindup is activated.</p>
+<dt>gains.&lt;dof_names&gt;.i_clamp_min (double)</dt><dd><p>Lower integral clamp.</p>
 <p>Default:  0.0</p>
 </dd>
 <dt>gains.&lt;dof_names&gt;.feedforward_gain (double)</dt><dd><p>Gain for the feed-forward part.</p>
