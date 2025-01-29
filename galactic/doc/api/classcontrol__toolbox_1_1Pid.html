@@ -119,16 +119,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aabee7e5c2c779272da500b63e0b05735" id="r_aabee7e5c2c779272da500b63e0b05735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#aabee7e5c2c779272da500b63e0b05735">initPid</a> (double p, double i, double d, double i_max, double i_min, bool antiwindup=false)</td></tr>
 <tr class="memdesc:aabee7e5c2c779272da500b63e0b05735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeros out <a class="el" href="classcontrol__toolbox_1_1Pid.html" title="A basic pid class.">Pid</a> values and initialize Pid-gains and integral term limits Does not initialize the node's parameter interface for PID gains.  <br /></td></tr>
 <tr class="separator:aabee7e5c2c779272da500b63e0b05735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7205355ee01f4a66bc4237103d65674b" id="r_a7205355ee01f4a66bc4237103d65674b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#a7205355ee01f4a66bc4237103d65674b">reset</a> ()</td></tr>
-<tr class="memdesc:a7205355ee01f4a66bc4237103d65674b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the state of this PID controller.  <br /></td></tr>
+<tr class="memitem:a7205355ee01f4a66bc4237103d65674b" id="r_a7205355ee01f4a66bc4237103d65674b"><td class="memItemLeft" align="right" valign="top"><a id="a7205355ee01f4a66bc4237103d65674b" name="a7205355ee01f4a66bc4237103d65674b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="memdesc:a7205355ee01f4a66bc4237103d65674b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the state of this PID controller. <br /></td></tr>
 <tr class="separator:a7205355ee01f4a66bc4237103d65674b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d48b1a339821d623ec8bf91d62f305" id="r_a69d48b1a339821d623ec8bf91d62f305"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#a69d48b1a339821d623ec8bf91d62f305">reset</a> (bool save_iterm)</td></tr>
-<tr class="memdesc:a69d48b1a339821d623ec8bf91d62f305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the state of this PID controller.  <br /></td></tr>
-<tr class="separator:a69d48b1a339821d623ec8bf91d62f305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c60bc2254850684172c20248bb66b63" id="r_a0c60bc2254850684172c20248bb66b63"><td class="memItemLeft" align="right" valign="top"><a id="a0c60bc2254850684172c20248bb66b63" name="a0c60bc2254850684172c20248bb66b63"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_saved_iterm</b> ()</td></tr>
-<tr class="memdesc:a0c60bc2254850684172c20248bb66b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the saved integrator output of this controller. <br /></td></tr>
-<tr class="separator:a0c60bc2254850684172c20248bb66b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94168b013a704882750076ad0755210c" id="r_a94168b013a704882750076ad0755210c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#a94168b013a704882750076ad0755210c">getGains</a> (double &amp;p, double &amp;i, double &amp;d, double &amp;i_max, double &amp;i_min)</td></tr>
 <tr class="memdesc:a94168b013a704882750076ad0755210c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get PID gains for the controller.  <br /></td></tr>
 <tr class="separator:a94168b013a704882750076ad0755210c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,7 +185,6 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A basic pid class. </p>
 <p>This class implements a generic structure that can be used to create a wide range of pid controllers. It can function independently or be subclassed to provide more specific controls based on a particular control loop.</p>
-<p>This class also allows for retention of integral term on reset. This is useful for control loops that are enabled/disabled with a constant steady-state external disturbance. Once the integrator cancels out the external disturbance, disabling/resetting/ re-enabling closed-loop control does not require the integrator to wind up again.</p>
 <p>In particular, this class implements the standard pid equation:</p>
 <p><picture><source srcset="form_10_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$command  = p_{term} + i_{term} + d_{term} $" src="form_10.png"/></picture></p>
 <p>where: <br  />
@@ -664,52 +657,6 @@ last_time = time;
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>New gains are not applied if i_min_ &gt; i_max_ </dd></dl>
-
-</div>
-</div>
-<a id="a7205355ee01f4a66bc4237103d65674b" name="a7205355ee01f4a66bc4237103d65674b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7205355ee01f4a66bc4237103d65674b">&#9670;&#160;</a></span>reset() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void control_toolbox::Pid::reset </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset the state of this PID controller. </p>
-<dl class="section note"><dt>Note</dt><dd>The integral term is not retained and it is reset to zero </dd></dl>
-
-</div>
-</div>
-<a id="a69d48b1a339821d623ec8bf91d62f305" name="a69d48b1a339821d623ec8bf91d62f305"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69d48b1a339821d623ec8bf91d62f305">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void control_toolbox::Pid::reset </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>save_iterm</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset the state of this PID controller. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">save_iterm</td><td>boolean indicating if integral term is retained on <a class="el" href="classcontrol__toolbox_1_1Pid.html#a7205355ee01f4a66bc4237103d65674b" title="Reset the state of this PID controller.">reset()</a> </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

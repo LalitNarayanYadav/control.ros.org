@@ -179,14 +179,8 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">p</td><td>The proportional gain. </td></tr>
     <tr><td class="paramname">i</td><td>The integral gain. </td></tr>
     <tr><td class="paramname">d</td><td>The derivative gain. </td></tr>
-    <tr><td class="paramname">i_max</td><td>The max integral windup. </td></tr>
-    <tr><td class="paramname">i_min</td><td>The min integral windup.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">An</td><td>std::invalid_argument exception is thrown if i_min &gt; i_max </td></tr>
+    <tr><td class="paramname">i_max</td><td>Upper integral clamp. </td></tr>
+    <tr><td class="paramname">i_min</td><td>Lower integral clamp. </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,15 +251,9 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">p</td><td>The proportional gain. </td></tr>
     <tr><td class="paramname">i</td><td>The integral gain. </td></tr>
     <tr><td class="paramname">d</td><td>The derivative gain. </td></tr>
-    <tr><td class="paramname">i_max</td><td>The max integral windup. </td></tr>
-    <tr><td class="paramname">i_min</td><td>The min integral windup. </td></tr>
-    <tr><td class="paramname">antiwindup</td><td>If true, antiwindup is enabled and i_max/i_min are enforced.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">An</td><td>std::invalid_argument exception is thrown if i_min &gt; i_max </td></tr>
+    <tr><td class="paramname">i_max</td><td>Upper integral clamp. </td></tr>
+    <tr><td class="paramname">i_min</td><td>Lower integral clamp. </td></tr>
+    <tr><td class="paramname">antiwindup</td><td>Antiwindup functionality. When set to true, limits the integral error to prevent windup; otherwise, constrains the integral contribution to the control output. i_max and i_min are applied in both scenarios. </td></tr>
   </table>
   </dd>
 </dl>

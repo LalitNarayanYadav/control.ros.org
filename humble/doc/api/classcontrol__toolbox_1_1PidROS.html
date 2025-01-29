@@ -101,18 +101,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac35a4ab5c94e341f073fe601c744abc7" id="r_ac35a4ab5c94e341f073fe601c744abc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1PidROS.html#ac35a4ab5c94e341f073fe601c744abc7">initPid</a> (double p, double i, double d, double i_max, double i_min, bool antiwindup)</td></tr>
 <tr class="memdesc:ac35a4ab5c94e341f073fe601c744abc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PID controller and set the parameters.  <br /></td></tr>
 <tr class="separator:ac35a4ab5c94e341f073fe601c744abc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac010ebc030b1c4619642cbd005e0e15c" id="r_ac010ebc030b1c4619642cbd005e0e15c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1PidROS.html#ac010ebc030b1c4619642cbd005e0e15c">initPid</a> (double p, double i, double d, double i_max, double i_min, bool antiwindup, bool save_iterm)</td></tr>
-<tr class="memdesc:ac010ebc030b1c4619642cbd005e0e15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PID controller and set the parameters.  <br /></td></tr>
-<tr class="separator:ac010ebc030b1c4619642cbd005e0e15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad1c64bcd3b4a1d5f620c9ea1e6d1289" id="r_aad1c64bcd3b4a1d5f620c9ea1e6d1289"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1PidROS.html#aad1c64bcd3b4a1d5f620c9ea1e6d1289">initPid</a> ()</td></tr>
 <tr class="memdesc:aad1c64bcd3b4a1d5f620c9ea1e6d1289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PID controller based on already set parameters.  <br /></td></tr>
 <tr class="separator:aad1c64bcd3b4a1d5f620c9ea1e6d1289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcfd35c68c2d4dde62d9388e043c0556" id="r_afcfd35c68c2d4dde62d9388e043c0556"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1PidROS.html#afcfd35c68c2d4dde62d9388e043c0556">reset</a> ()</td></tr>
-<tr class="memdesc:afcfd35c68c2d4dde62d9388e043c0556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the state of this PID controller.  <br /></td></tr>
+<tr class="memitem:afcfd35c68c2d4dde62d9388e043c0556" id="r_afcfd35c68c2d4dde62d9388e043c0556"><td class="memItemLeft" align="right" valign="top"><a id="afcfd35c68c2d4dde62d9388e043c0556" name="afcfd35c68c2d4dde62d9388e043c0556"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="memdesc:afcfd35c68c2d4dde62d9388e043c0556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the state of this PID controller. <br /></td></tr>
 <tr class="separator:afcfd35c68c2d4dde62d9388e043c0556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cec3f30950e2da2934ddef6985042f4" id="r_a7cec3f30950e2da2934ddef6985042f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1PidROS.html#a7cec3f30950e2da2934ddef6985042f4">reset</a> (bool save_iterm)</td></tr>
-<tr class="memdesc:a7cec3f30950e2da2934ddef6985042f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the state of this PID controller.  <br /></td></tr>
-<tr class="separator:a7cec3f30950e2da2934ddef6985042f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f4e338ce58d01b41ccf34f4b503f1cb" id="r_a8f4e338ce58d01b41ccf34f4b503f1cb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1PidROS.html#a8f4e338ce58d01b41ccf34f4b503f1cb">computeCommand</a> (double error, rclcpp::Duration dt)</td></tr>
 <tr class="memdesc:a8f4e338ce58d01b41ccf34f4b503f1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the PID error and compute the PID command with nonuniform time step size. The derivative error is computed from the change in the error and the timestep <code>dt</code>.  <br /></td></tr>
 <tr class="separator:a8f4e338ce58d01b41ccf34f4b503f1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -430,7 +425,7 @@ template&lt;class NodeT &gt; </div>
 </div>
 </div>
 <a id="aad1c64bcd3b4a1d5f620c9ea1e6d1289" name="aad1c64bcd3b4a1d5f620c9ea1e6d1289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad1c64bcd3b4a1d5f620c9ea1e6d1289">&#9670;&#160;</a></span>initPid() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aad1c64bcd3b4a1d5f620c9ea1e6d1289">&#9670;&#160;</a></span>initPid() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -450,7 +445,7 @@ template&lt;class NodeT &gt; </div>
 </div>
 </div>
 <a id="ac35a4ab5c94e341f073fe601c744abc7" name="ac35a4ab5c94e341f073fe601c744abc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac35a4ab5c94e341f073fe601c744abc7">&#9670;&#160;</a></span>initPid() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35a4ab5c94e341f073fe601c744abc7">&#9670;&#160;</a></span>initPid() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,125 +507,6 @@ template&lt;class NodeT &gt; </div>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>New gains are not applied if i_min_ &gt; i_max_ </dd></dl>
-
-</div>
-</div>
-<a id="ac010ebc030b1c4619642cbd005e0e15c" name="ac010ebc030b1c4619642cbd005e0e15c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac010ebc030b1c4619642cbd005e0e15c">&#9670;&#160;</a></span>initPid() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void control_toolbox::PidROS::initPid </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>i_max</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>i_min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>antiwindup</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>save_iterm</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialize the PID controller and set the parameters. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>The proportional gain. </td></tr>
-    <tr><td class="paramname">i</td><td>The integral gain. </td></tr>
-    <tr><td class="paramname">d</td><td>The derivative gain. </td></tr>
-    <tr><td class="paramname">i_max</td><td>The max integral windup. </td></tr>
-    <tr><td class="paramname">i_min</td><td>The min integral windup. </td></tr>
-    <tr><td class="paramname">antiwindup</td><td>antiwindup. </td></tr>
-    <tr><td class="paramname">save_iterm</td><td>save integrator output between resets.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>New gains are not applied if i_min_ &gt; i_max_ </dd></dl>
-
-</div>
-</div>
-<a id="afcfd35c68c2d4dde62d9388e043c0556" name="afcfd35c68c2d4dde62d9388e043c0556"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcfd35c68c2d4dde62d9388e043c0556">&#9670;&#160;</a></span>reset() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void control_toolbox::PidROS::reset </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset the state of this PID controller. </p>
-<dl class="section note"><dt>Note</dt><dd>The integral term is not retained and it is reset to zero </dd></dl>
-
-</div>
-</div>
-<a id="a7cec3f30950e2da2934ddef6985042f4" name="a7cec3f30950e2da2934ddef6985042f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cec3f30950e2da2934ddef6985042f4">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void control_toolbox::PidROS::reset </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>save_iterm</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset the state of this PID controller. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">save_iterm</td><td>boolean indicating if integral term is retained on <a class="el" href="classcontrol__toolbox_1_1PidROS.html#afcfd35c68c2d4dde62d9388e043c0556" title="Reset the state of this PID controller.">reset()</a> </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
