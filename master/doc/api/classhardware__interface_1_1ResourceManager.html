@@ -114,6 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a01ac95fd198f60a0eb9f83c2fbcd2799" id="r_a01ac95fd198f60a0eb9f83c2fbcd2799"><td class="memItemLeft" align="right" valign="top"><a id="a01ac95fd198f60a0eb9f83c2fbcd2799" name="a01ac95fd198f60a0eb9f83c2fbcd2799"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ResourceManager</b> (const <a class="el" href="classhardware__interface_1_1ResourceManager.html">ResourceManager</a> &amp;)=delete</td></tr>
 <tr class="separator:a01ac95fd198f60a0eb9f83c2fbcd2799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c7a40de354812552777e3ea90cb9667" id="r_a2c7a40de354812552777e3ea90cb9667"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ResourceManager.html#a2c7a40de354812552777e3ea90cb9667">shutdown_components</a> ()</td></tr>
+<tr class="memdesc:a2c7a40de354812552777e3ea90cb9667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown all hardware components, irrespective of their state.  <br /></td></tr>
+<tr class="separator:a2c7a40de354812552777e3ea90cb9667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154b8ff2aa3100affdbb4c374fa4bbcc" id="r_a154b8ff2aa3100affdbb4c374fa4bbcc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ResourceManager.html#a154b8ff2aa3100affdbb4c374fa4bbcc">load_and_initialize_components</a> (const std::string &amp;urdf, const unsigned int update_rate=100)</td></tr>
 <tr class="memdesc:a154b8ff2aa3100affdbb4c374fa4bbcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load resources from on a given URDF.  <br /></td></tr>
 <tr class="separator:a154b8ff2aa3100affdbb4c374fa4bbcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1343,6 +1346,26 @@ accept_command_resource_claim is called on all actuators and system components a
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>hardware_interface::retun_type::OK if component successfully switched its state and hardware_interface::return_type::ERROR any of state transitions has failed. </dd></dl>
+
+</div>
+</div>
+<a id="a2c7a40de354812552777e3ea90cb9667" name="a2c7a40de354812552777e3ea90cb9667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7a40de354812552777e3ea90cb9667">&#9670;&#160;</a></span>shutdown_components()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hardware_interface::ResourceManager::shutdown_components </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shutdown all hardware components, irrespective of their state. </p>
+<p>The method is called when the controller manager is being shutdown. </p><dl class="section return"><dt>Returns</dt><dd>true if all hardware components are successfully shutdown, false otherwise. </dd></dl>
 
 </div>
 </div>

@@ -123,6 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1264934f3d161bd5b8df2a9ec1b75032" id="r_a1264934f3d161bd5b8df2a9ec1b75032"><td class="memItemLeft" align="right" valign="top"><a id="a1264934f3d161bd5b8df2a9ec1b75032" name="a1264934f3d161bd5b8df2a9ec1b75032"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ControllerManager</b> (std::shared_ptr&lt; rclcpp::Executor &gt; executor, const std::string &amp;urdf, bool activate_all_hw_components, const std::string &amp;manager_node_name=&quot;controller_manager&quot;, const std::string &amp;node_namespace=&quot;&quot;, const rclcpp::NodeOptions &amp;options=get_cm_node_options())</td></tr>
 <tr class="separator:a1264934f3d161bd5b8df2a9ec1b75032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9ceff8e4409d75b1678005742d7bb1" id="r_a8a9ceff8e4409d75b1678005742d7bb1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller__manager_1_1ControllerManager.html#a8a9ceff8e4409d75b1678005742d7bb1">shutdown_controllers</a> ()</td></tr>
+<tr class="memdesc:a8a9ceff8e4409d75b1678005742d7bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown all controllers in the controller manager.  <br /></td></tr>
+<tr class="separator:a8a9ceff8e4409d75b1678005742d7bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4e3da6941a02cea4239eb985908578" id="r_a2e4e3da6941a02cea4239eb985908578"><td class="memItemLeft" align="right" valign="top"><a id="a2e4e3da6941a02cea4239eb985908578" name="a2e4e3da6941a02cea4239eb985908578"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>robot_description_callback</b> (const std_msgs::msg::String &amp;msg)</td></tr>
 <tr class="separator:a2e4e3da6941a02cea4239eb985908578"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -527,6 +530,26 @@ std::unique_ptr&lt; <a class="el" href="classhardware__interface_1_1ResourceMana
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8a9ceff8e4409d75b1678005742d7bb1" name="a8a9ceff8e4409d75b1678005742d7bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a9ceff8e4409d75b1678005742d7bb1">&#9670;&#160;</a></span>shutdown_controllers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool controller_manager::ControllerManager::shutdown_controllers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shutdown all controllers in the controller manager. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if all controllers are successfully shutdown, false otherwise. </dd></dl>
 
 </div>
 </div>

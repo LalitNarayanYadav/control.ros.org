@@ -31,8 +31,9 @@ var searchData=
   ['is_5fin_5fchained_5fmode_28',['is_in_chained_mode',['../classcontroller__interface_1_1ChainableControllerInterface.html#a5add6d3d59bdf470ac241e07c62f4852',1,'controller_interface::ChainableControllerInterface::is_in_chained_mode()'],['../classcontroller__interface_1_1ControllerInterface.html#ac86232dee7173226b28b8ba5d0e2b44d',1,'controller_interface::ControllerInterface::is_in_chained_mode()'],['../classcontroller__interface_1_1ControllerInterfaceBase.html#a8d052e19a586221d71318391515a5714',1,'controller_interface::ControllerInterfaceBase::is_in_chained_mode()']]],
   ['is_5finitialized_29',['is_initialized',['../classrealtime__tools_1_1AsyncFunctionHandler.html#aefa236dd4d561028160e4ec5c3f93f03',1,'realtime_tools::AsyncFunctionHandler']]],
   ['is_5fjoint_5factuated_5f_30',['is_joint_actuated_',['../classgazebo__ros2__control_1_1GazeboSystemPrivate.html#a8e11d6d462ec6496d8e682fe2260a63c',1,'gazebo_ros2_control::GazeboSystemPrivate']]],
-  ['is_5frunning_31',['is_running',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a64cdf96e23ae62a3fdb4586023f00a71',1,'realtime_tools::AsyncFunctionHandler']]],
-  ['is_5fstopped_32',['is_stopped',['../classrealtime__tools_1_1AsyncFunctionHandler.html#ada1a48bddba7e13894292201fa943c0d',1,'realtime_tools::AsyncFunctionHandler']]],
-  ['is_5ftrigger_5fcycle_5fin_5fprogress_33',['is_trigger_cycle_in_progress',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a2bbf1c3b006b37730a18b1831e41f6af',1,'realtime_tools::AsyncFunctionHandler']]],
-  ['is_5furdf_5falready_5floaded_34',['is_urdf_already_loaded',['../classhardware__interface_1_1ResourceManager.html#a5b76be604d59853951423e77bf1ceea8',1,'hardware_interface::ResourceManager']]]
+  ['is_5flock_5ffree_31',['is_lock_free',['../classrealtime__tools_1_1LockFreeQueueBase.html#a560eb5e32a43bd4c1395ddd61f845d32',1,'realtime_tools::LockFreeQueueBase']]],
+  ['is_5frunning_32',['is_running',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a64cdf96e23ae62a3fdb4586023f00a71',1,'realtime_tools::AsyncFunctionHandler']]],
+  ['is_5fstopped_33',['is_stopped',['../classrealtime__tools_1_1AsyncFunctionHandler.html#ada1a48bddba7e13894292201fa943c0d',1,'realtime_tools::AsyncFunctionHandler']]],
+  ['is_5ftrigger_5fcycle_5fin_5fprogress_34',['is_trigger_cycle_in_progress',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a2bbf1c3b006b37730a18b1831e41f6af',1,'realtime_tools::AsyncFunctionHandler']]],
+  ['is_5furdf_5falready_5floaded_35',['is_urdf_already_loaded',['../classhardware__interface_1_1ResourceManager.html#a5b76be604d59853951423e77bf1ceea8',1,'hardware_interface::ResourceManager']]]
 ];

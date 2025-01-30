@@ -94,6 +94,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1AsyncFunctionHandler.html">AsyncFunctionHandler</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to handle asynchronous function calls. <a class="el" href="classrealtime__tools_1_1AsyncFunctionHandler.html" title="Class to handle asynchronous function calls. AsyncFunctionHandler is a class that allows the user to ...">AsyncFunctionHandler</a> is a class that allows the user to have a asynchronous call to the parsed method and be able to set some thread specific parameters.  <a href="classrealtime__tools_1_1AsyncFunctionHandler.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base class for lock-free queues.  <a href="classrealtime__tools_1_1LockFreeQueueBase.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1RealtimeBoxBase.html">RealtimeBoxBase</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1RealtimeBuffer.html">RealtimeBuffer</a></td></tr>
@@ -107,6 +110,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a0006c25a6b08362f13faac23000a599c" id="r_a0006c25a6b08362f13faac23000a599c"><td class="memTemplParams" colspan="2">template&lt;class DataType , std::size_t Capacity = 0&gt; </td></tr>
+<tr class="memitem:a0006c25a6b08362f13faac23000a599c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerealtime__tools.html#a0006c25a6b08362f13faac23000a599c">LockFreeSPSCQueue</a> = std::conditional_t&lt; Capacity==0, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt; DataType, boost::lockfree::spsc_queue&lt; DataType &gt; &gt;, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt; DataType, boost::lockfree::spsc_queue&lt; DataType, boost::lockfree::capacity&lt; Capacity &gt; &gt; &gt; &gt;</td></tr>
+<tr class="memdesc:a0006c25a6b08362f13faac23000a599c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock-free Single Producer Single Consumer Queue.  <br /></td></tr>
+<tr class="separator:a0006c25a6b08362f13faac23000a599c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33b7e4f829615a929b1e1b2579c0295e" id="r_a33b7e4f829615a929b1e1b2579c0295e"><td class="memTemplParams" colspan="2">template&lt;class DataType , std::size_t Capacity = 0, bool FixedSize = true&gt; </td></tr>
+<tr class="memitem:a33b7e4f829615a929b1e1b2579c0295e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerealtime__tools.html#a33b7e4f829615a929b1e1b2579c0295e">LockFreeMPMCQueue</a> = std::conditional_t&lt; Capacity==0, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt; DataType, boost::lockfree::queue&lt; DataType, boost::lockfree::fixed_sized&lt; FixedSize &gt; &gt; &gt;, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt; DataType, boost::lockfree::queue&lt; DataType, boost::lockfree::capacity&lt; Capacity &gt;, boost::lockfree::fixed_sized&lt; FixedSize &gt; &gt; &gt; &gt;</td></tr>
+<tr class="memdesc:a33b7e4f829615a929b1e1b2579c0295e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock-free Multiple Producer Multiple Consumer Queue.  <br /></td></tr>
+<tr class="separator:a33b7e4f829615a929b1e1b2579c0295e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a53fcd166fdefe116ef316523d800fb" id="r_a0a53fcd166fdefe116ef316523d800fb"><td class="memItemLeft" align="right" valign="top"><a id="a0a53fcd166fdefe116ef316523d800fb" name="a0a53fcd166fdefe116ef316523d800fb"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>prio_inherit_mutex</b> = <a class="el" href="classrealtime__tools_1_1detail_1_1mutex.html">detail::mutex</a>&lt; <a class="el" href="structrealtime__tools_1_1detail_1_1error__mutex__type__t.html">detail::error_mutex_type_t</a>, <a class="el" href="structrealtime__tools_1_1detail_1_1robust__robustness__t.html">detail::robust_robustness_t</a> &gt;</td></tr>
 <tr class="separator:a0a53fcd166fdefe116ef316523d800fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +182,59 @@ template&lt;typename T &gt; </td></tr>
 Sai Kishor Kothakota </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This mutex is not recursive.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Stuart Glaser </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a33b7e4f829615a929b1e1b2579c0295e" name="a33b7e4f829615a929b1e1b2579c0295e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33b7e4f829615a929b1e1b2579c0295e">&#9670;&#160;</a></span>LockFreeMPMCQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType , std::size_t Capacity = 0, bool FixedSize = true&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerealtime__tools.html#a33b7e4f829615a929b1e1b2579c0295e">realtime_tools::LockFreeMPMCQueue</a> = typedef std::conditional_t&lt; Capacity == 0, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt; DataType, boost::lockfree::queue&lt;DataType, boost::lockfree::fixed_sized&lt;FixedSize&gt; &gt;&gt;, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt; DataType, boost::lockfree::queue&lt; DataType, boost::lockfree::capacity&lt;Capacity&gt;, boost::lockfree::fixed_sized&lt;FixedSize&gt; &gt;&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lock-free Multiple Producer Multiple Consumer Queue. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>Type of the data to be stored in the queue </td></tr>
+    <tr><td class="paramname">Capacity</td><td>Capacity of the queue </td></tr>
+    <tr><td class="paramname">FixedSize</td><td>Fixed size of the queue </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0006c25a6b08362f13faac23000a599c" name="a0006c25a6b08362f13faac23000a599c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0006c25a6b08362f13faac23000a599c">&#9670;&#160;</a></span>LockFreeSPSCQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType , std::size_t Capacity = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacerealtime__tools.html#a0006c25a6b08362f13faac23000a599c">realtime_tools::LockFreeSPSCQueue</a> = typedef std::conditional_t&lt; Capacity == 0, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt;DataType, boost::lockfree::spsc_queue&lt;DataType&gt; &gt;, <a class="el" href="classrealtime__tools_1_1LockFreeQueueBase.html">LockFreeQueueBase</a>&lt; DataType, boost::lockfree::spsc_queue&lt;DataType, boost::lockfree::capacity&lt;Capacity&gt; &gt;&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lock-free Single Producer Single Consumer Queue. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>Type of the data to be stored in the queue </td></tr>
+    <tr><td class="paramname">Capacity</td><td>Capacity of the queue </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ab31927b72af5e4dbe9fa40d31d9ede98" name="ab31927b72af5e4dbe9fa40d31d9ede98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab31927b72af5e4dbe9fa40d31d9ede98">&#9670;&#160;</a></span>configure_sched_fifo()</h2>
 

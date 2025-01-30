@@ -24,7 +24,8 @@ var searchData=
   ['interfaceinfo_21',['InterfaceInfo',['../structhardware__interface_1_1InterfaceInfo.html',1,'hardware_interface']]],
   ['interpolate_5fbetween_5fpoints_22',['interpolate_between_points',['../classjoint__trajectory__controller_1_1Trajectory.html#a3477e64e79982032b7b60d503a541040',1,'joint_trajectory_controller::Trajectory']]],
   ['is_5finitialized_23',['is_initialized',['../classrealtime__tools_1_1AsyncFunctionHandler.html#aefa236dd4d561028160e4ec5c3f93f03',1,'realtime_tools::AsyncFunctionHandler']]],
-  ['is_5frunning_24',['is_running',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a64cdf96e23ae62a3fdb4586023f00a71',1,'realtime_tools::AsyncFunctionHandler']]],
-  ['is_5fstopped_25',['is_stopped',['../classrealtime__tools_1_1AsyncFunctionHandler.html#ada1a48bddba7e13894292201fa943c0d',1,'realtime_tools::AsyncFunctionHandler']]],
-  ['is_5ftrigger_5fcycle_5fin_5fprogress_26',['is_trigger_cycle_in_progress',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a2bbf1c3b006b37730a18b1831e41f6af',1,'realtime_tools::AsyncFunctionHandler']]]
+  ['is_5flock_5ffree_24',['is_lock_free',['../classrealtime__tools_1_1LockFreeQueueBase.html#a560eb5e32a43bd4c1395ddd61f845d32',1,'realtime_tools::LockFreeQueueBase']]],
+  ['is_5frunning_25',['is_running',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a64cdf96e23ae62a3fdb4586023f00a71',1,'realtime_tools::AsyncFunctionHandler']]],
+  ['is_5fstopped_26',['is_stopped',['../classrealtime__tools_1_1AsyncFunctionHandler.html#ada1a48bddba7e13894292201fa943c0d',1,'realtime_tools::AsyncFunctionHandler']]],
+  ['is_5ftrigger_5fcycle_5fin_5fprogress_27',['is_trigger_cycle_in_progress',['../classrealtime__tools_1_1AsyncFunctionHandler.html#a2bbf1c3b006b37730a18b1831e41f6af',1,'realtime_tools::AsyncFunctionHandler']]]
 ];
