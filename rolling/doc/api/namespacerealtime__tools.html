@@ -101,8 +101,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1RealtimeBuffer.html">RealtimeBuffer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1RealtimeClock.html">RealtimeClock</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1RealtimePublisher.html">RealtimePublisher</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrealtime__tools_1_1RealtimeServerGoalHandle.html">RealtimeServerGoalHandle</a></td></tr>
@@ -124,10 +122,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>prio_inherit_mutex</
 <tr class="memitem:a13ca26452db4d1900900e518e9d0df0f" id="r_a13ca26452db4d1900900e518e9d0df0f"><td class="memItemLeft" align="right" valign="top"><a id="a13ca26452db4d1900900e518e9d0df0f" name="a13ca26452db4d1900900e518e9d0df0f"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>prio_inherit_recursive_mutex</b> = <a class="el" href="classrealtime__tools_1_1detail_1_1mutex.html">detail::mutex</a>&lt; <a class="el" href="structrealtime__tools_1_1detail_1_1recursive__mutex__type__t.html">detail::recursive_mutex_type_t</a>, <a class="el" href="structrealtime__tools_1_1detail_1_1robust__robustness__t.html">detail::robust_robustness_t</a> &gt;</td></tr>
 <tr class="separator:a13ca26452db4d1900900e518e9d0df0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2e880836cb816fb13489a90358fe917" id="r_ad2e880836cb816fb13489a90358fe917"><td class="memTemplParams" colspan="2"><a id="ad2e880836cb816fb13489a90358fe917" name="ad2e880836cb816fb13489a90358fe917"></a>
-template&lt;typename T , typename mutex_type  = std::mutex&gt; </td></tr>
-<tr class="memitem:ad2e880836cb816fb13489a90358fe917"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RealtimeBoxBestEffort</b> = <a class="el" href="classrealtime__tools_1_1RealtimeBoxBase.html">RealtimeBoxBase</a>&lt; T, mutex_type &gt;</td></tr>
-<tr class="separator:ad2e880836cb816fb13489a90358fe917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d3255249d21479d2b42315bae183d5" id="r_aa1d3255249d21479d2b42315bae183d5"><td class="memTemplParams" colspan="2"><a id="aa1d3255249d21479d2b42315bae183d5" name="aa1d3255249d21479d2b42315bae183d5"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa1d3255249d21479d2b42315bae183d5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RealtimeBoxStandard</b> = <a class="el" href="classrealtime__tools_1_1RealtimeBoxBase.html">RealtimeBoxBase</a>&lt; T, std::mutex &gt;</td></tr>
@@ -151,8 +145,6 @@ Functions</h2></td></tr>
 <tr class="separator:ad4cb60d6a9fea8090ae1fd793a2c4222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab31927b72af5e4dbe9fa40d31d9ede98" id="r_ab31927b72af5e4dbe9fa40d31d9ede98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerealtime__tools.html#ab31927b72af5e4dbe9fa40d31d9ede98">configure_sched_fifo</a> (int priority)</td></tr>
 <tr class="separator:ab31927b72af5e4dbe9fa40d31d9ede98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6e8b5ed308b76258690bc84b6ccb003" id="r_ab6e8b5ed308b76258690bc84b6ccb003"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerealtime__tools.html#ab6e8b5ed308b76258690bc84b6ccb003">lock_memory</a> (std::string &amp;message)</td></tr>
-<tr class="separator:ab6e8b5ed308b76258690bc84b6ccb003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeae92aead96ba3906e1a10282395ebaf" id="r_aeae92aead96ba3906e1a10282395ebaf"><td class="memItemLeft" align="right" valign="top">std::pair&lt; bool, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerealtime__tools.html#aeae92aead96ba3906e1a10282395ebaf">lock_memory</a> ()</td></tr>
 <tr class="separator:aeae92aead96ba3906e1a10282395ebaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4792f639f5874d5520123801bcfc2c49" id="r_a4792f639f5874d5520123801bcfc2c49"><td class="memItemLeft" align="right" valign="top">std::pair&lt; bool, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerealtime__tools.html#a4792f639f5874d5520123801bcfc2c49">set_thread_affinity</a> (NATIVE_THREAD_HANDLE thread, const std::vector&lt; int &gt; &amp;cores)</td></tr>
@@ -297,7 +289,7 @@ template&lt;class DataType , std::size_t Capacity = 0&gt; </div>
 </div>
 </div>
 <a id="aeae92aead96ba3906e1a10282395ebaf" name="aeae92aead96ba3906e1a10282395ebaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeae92aead96ba3906e1a10282395ebaf">&#9670;&#160;</a></span>lock_memory() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeae92aead96ba3906e1a10282395ebaf">&#9670;&#160;</a></span>lock_memory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,31 +309,6 @@ template&lt;class DataType , std::size_t Capacity = 0&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pair of a boolean indicating whether the operation succeeded or not and a message describing the result of the operation </dd></dl>
-
-</div>
-</div>
-<a id="ab6e8b5ed308b76258690bc84b6ccb003" name="ab6e8b5ed308b76258690bc84b6ccb003"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6e8b5ed308b76258690bc84b6ccb003">&#9670;&#160;</a></span>lock_memory() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool realtime_tools::lock_memory </td>
-          <td>(</td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Locks the memory pages of the calling thread to prevent page faults. By calling this method, the programs locks all pages mapped into the address space of the calling process and future mappings. This means that the kernel will not swap out the pages to disk i.e., the pages are guaranteed to stay in RAM until later unlocked - which is important for realtime applications. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">message</td><td>a message describing the result of the operation </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if memory locking succeeded, false otherwise. </dd></dl>
 
 </div>
 </div>
