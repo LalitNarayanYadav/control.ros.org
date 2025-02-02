@@ -8,6 +8,5 @@ var searchData=
   ['gazebosystemprivate_5',['GazeboSystemPrivate',['../classgazebo__ros2__control_1_1GazeboSystemPrivate.html',1,'gazebo_ros2_control']]],
   ['genericsystem_6',['GenericSystem',['../classmock__components_1_1GenericSystem.html',1,'mock_components']]],
   ['gpiocommandcontroller_7',['GpioCommandController',['../classgpio__controllers_1_1GpioCommandController.html',1,'gpio_controllers']]],
-  ['gpiocontroller_8',['GPIOController',['../classros2__control__demo__example__10_1_1GPIOController.html',1,'ros2_control_demo_example_10']]],
-  ['gripperactioncontroller_9',['GripperActionController',['../classgripper__action__controller_1_1GripperActionController.html',1,'gripper_action_controller']]]
+  ['gripperactioncontroller_8',['GripperActionController',['../classgripper__action__controller_1_1GripperActionController.html',1,'gripper_action_controller']]]
 ];
