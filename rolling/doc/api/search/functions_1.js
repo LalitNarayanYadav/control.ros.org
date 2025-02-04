@@ -11,8 +11,9 @@ var searchData=
   ['apply_5fparameters_5fupdate_8',['apply_parameters_update',['../classadmittance__controller_1_1AdmittanceRule.html#a8e4c8ca39e9a302f0e5c7a925668cd50',1,'admittance_controller::AdmittanceRule']]],
   ['are_5fcomponents_5finitialized_9',['are_components_initialized',['../classhardware__interface_1_1ResourceManager.html#a25bd1dad46c65fd87dd99696f574936c',1,'hardware_interface::ResourceManager']]],
   ['assign_5finterfaces_10',['assign_interfaces',['../classcontroller__interface_1_1ControllerInterfaceBase.html#ab651c47c448485ac058c50fe888b9fd1',1,'controller_interface::ControllerInterfaceBase']]],
-  ['assign_5floaned_5fstate_5finterfaces_11',['assign_loaned_state_interfaces',['../classsemantic__components_1_1SemanticComponentInterface.html#a8837bf9474bad044bab1e1e791b3be74',1,'semantic_components::SemanticComponentInterface']]],
-  ['auto_5fdeclare_12',['auto_declare',['../classcontroller__interface_1_1ControllerInterfaceBase.html#a04df56d589677c015eb11930d66bbfe4',1,'controller_interface::ControllerInterfaceBase']]],
-  ['available_5fcommand_5finterfaces_13',['available_command_interfaces',['../classhardware__interface_1_1ResourceManager.html#aa12aa4b0368fab0200703f879be6f9a2',1,'hardware_interface::ResourceManager']]],
-  ['available_5fstate_5finterfaces_14',['available_state_interfaces',['../classhardware__interface_1_1ResourceManager.html#acbf95e636f5534b884d49fdde504c16d',1,'hardware_interface::ResourceManager']]]
+  ['assign_5floaned_5fcommand_5finterfaces_11',['assign_loaned_command_interfaces',['../classsemantic__components_1_1SemanticComponentCommandInterface.html#ab5b7327d5b5c4d4396c83793bf03fd41',1,'semantic_components::SemanticComponentCommandInterface']]],
+  ['assign_5floaned_5fstate_5finterfaces_12',['assign_loaned_state_interfaces',['../classsemantic__components_1_1SemanticComponentInterface.html#a8837bf9474bad044bab1e1e791b3be74',1,'semantic_components::SemanticComponentInterface']]],
+  ['auto_5fdeclare_13',['auto_declare',['../classcontroller__interface_1_1ControllerInterfaceBase.html#a04df56d589677c015eb11930d66bbfe4',1,'controller_interface::ControllerInterfaceBase']]],
+  ['available_5fcommand_5finterfaces_14',['available_command_interfaces',['../classhardware__interface_1_1ResourceManager.html#aa12aa4b0368fab0200703f879be6f9a2',1,'hardware_interface::ResourceManager']]],
+  ['available_5fstate_5finterfaces_15',['available_state_interfaces',['../classhardware__interface_1_1ResourceManager.html#acbf95e636f5534b884d49fdde504c16d',1,'hardware_interface::ResourceManager']]]
 ];
