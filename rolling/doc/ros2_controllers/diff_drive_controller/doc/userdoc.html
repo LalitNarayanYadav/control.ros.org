@@ -148,6 +148,7 @@
 <li><p>Odometry publishing</p></li>
 <li><p>Task-space velocity, acceleration and jerk limits</p></li>
 <li><p>Automatic stop after command time-out</p></li>
+<li><p>Chainable Controller</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -155,7 +156,13 @@
 <h2>Description of controller’s interfaces<a class="headerlink" href="#description-of-controller-s-interfaces" title="Link to this heading"></a></h2>
 <section id="references">
 <h3>References<a class="headerlink" href="#references" title="Link to this heading"></a></h3>
-<p>(the controller is not yet implemented as chainable controller)</p>
+<p>When controller is in chained mode, it exposes the following references which can be commanded by the preceding controller:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/linear/velocity</span></code>      double, in m/s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/angular/velocity</span></code>     double, in rad/s</p></li>
+</ul>
+<p>Together, these represent the body twist (which in unchained-mode would be obtained from ~/cmd_vel).
+The <code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;</span></code> is commonly set to <code class="docutils literal notranslate"><span class="pre">diff_drive_controller</span></code>.</p>
 </section>
 <section id="feedback">
 <h3>Feedback<a class="headerlink" href="#feedback" title="Link to this heading"></a></h3>
