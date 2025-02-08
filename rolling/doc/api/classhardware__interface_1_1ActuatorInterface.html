@@ -159,12 +159,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5637509fbe976e3e236d7baa1b91aa50" id="r_a5637509fbe976e3e236d7baa1b91aa50"><td class="memItemLeft" align="right" valign="top">virtual return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ActuatorInterface.html#a5637509fbe976e3e236d7baa1b91aa50">write</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)=0</td></tr>
 <tr class="memdesc:a5637509fbe976e3e236d7baa1b91aa50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the current command values to the actuator.  <br /></td></tr>
 <tr class="separator:a5637509fbe976e3e236d7baa1b91aa50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4676f09c16e91102456e5cb1dffdb4af" id="r_a4676f09c16e91102456e5cb1dffdb4af"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ActuatorInterface.html#a4676f09c16e91102456e5cb1dffdb4af">get_name</a> () const</td></tr>
-<tr class="memdesc:a4676f09c16e91102456e5cb1dffdb4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of the actuator hardware.  <br /></td></tr>
-<tr class="separator:a4676f09c16e91102456e5cb1dffdb4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34d6c0e7c62b06ed89d2414507451718" id="r_a34d6c0e7c62b06ed89d2414507451718"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ActuatorInterface.html#a34d6c0e7c62b06ed89d2414507451718">get_group_name</a> () const</td></tr>
-<tr class="memdesc:a34d6c0e7c62b06ed89d2414507451718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of the actuator hardware group to which it belongs to.  <br /></td></tr>
-<tr class="separator:a34d6c0e7c62b06ed89d2414507451718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d561fb88c675b35d42416a8b1636fb" id="r_aa7d561fb88c675b35d42416a8b1636fb"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ActuatorInterface.html#aa7d561fb88c675b35d42416a8b1636fb">get_name</a> () const</td></tr>
+<tr class="memdesc:aa7d561fb88c675b35d42416a8b1636fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of the actuator hardware.  <br /></td></tr>
+<tr class="separator:aa7d561fb88c675b35d42416a8b1636fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273bbff5613bfa460ce15b8b4b1cb688" id="r_a273bbff5613bfa460ce15b8b4b1cb688"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ActuatorInterface.html#a273bbff5613bfa460ce15b8b4b1cb688">get_group_name</a> () const</td></tr>
+<tr class="memdesc:a273bbff5613bfa460ce15b8b4b1cb688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of the actuator hardware group to which it belongs to.  <br /></td></tr>
+<tr class="separator:a273bbff5613bfa460ce15b8b4b1cb688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d00d506b44fa1e25213e0588df76594" id="r_a8d00d506b44fa1e25213e0588df76594"><td class="memItemLeft" align="right" valign="top">const rclcpp_lifecycle::State &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ActuatorInterface.html#a8d00d506b44fa1e25213e0588df76594">get_lifecycle_state</a> () const</td></tr>
 <tr class="memdesc:a8d00d506b44fa1e25213e0588df76594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get life-cycle state of the actuator hardware.  <br /></td></tr>
 <tr class="separator:a8d00d506b44fa1e25213e0588df76594"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -402,8 +402,8 @@ std::unique_ptr&lt; <a class="el" href="classrealtime__tools_1_1AsyncFunctionHan
 
 </div>
 </div>
-<a id="a34d6c0e7c62b06ed89d2414507451718" name="a34d6c0e7c62b06ed89d2414507451718"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34d6c0e7c62b06ed89d2414507451718">&#9670;&#160;</a></span>get_group_name()</h2>
+<a id="a273bbff5613bfa460ce15b8b4b1cb688" name="a273bbff5613bfa460ce15b8b4b1cb688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273bbff5613bfa460ce15b8b4b1cb688">&#9670;&#160;</a></span>get_group_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,7 +412,7 @@ std::unique_ptr&lt; <a class="el" href="classrealtime__tools_1_1AsyncFunctionHan
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::string hardware_interface::ActuatorInterface::get_group_name </td>
+          <td class="memname">const std::string &amp; hardware_interface::ActuatorInterface::get_group_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -420,7 +420,7 @@ std::unique_ptr&lt; <a class="el" href="classrealtime__tools_1_1AsyncFunctionHan
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -514,8 +514,8 @@ std::unique_ptr&lt; <a class="el" href="classrealtime__tools_1_1AsyncFunctionHan
 
 </div>
 </div>
-<a id="a4676f09c16e91102456e5cb1dffdb4af" name="a4676f09c16e91102456e5cb1dffdb4af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4676f09c16e91102456e5cb1dffdb4af">&#9670;&#160;</a></span>get_name()</h2>
+<a id="aa7d561fb88c675b35d42416a8b1636fb" name="aa7d561fb88c675b35d42416a8b1636fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d561fb88c675b35d42416a8b1636fb">&#9670;&#160;</a></span>get_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,7 +524,7 @@ std::unique_ptr&lt; <a class="el" href="classrealtime__tools_1_1AsyncFunctionHan
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::string hardware_interface::ActuatorInterface::get_name </td>
+          <td class="memname">const std::string &amp; hardware_interface::ActuatorInterface::get_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -532,7 +532,7 @@ std::unique_ptr&lt; <a class="el" href="classrealtime__tools_1_1AsyncFunctionHan
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
