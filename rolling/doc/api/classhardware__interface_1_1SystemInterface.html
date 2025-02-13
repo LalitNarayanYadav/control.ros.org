@@ -148,9 +148,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af117bf00b006cc998f49398ca5a6bab4" id="r_af117bf00b006cc998f49398ca5a6bab4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#af117bf00b006cc998f49398ca5a6bab4">SystemInterface</a> (const <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> &amp;other)=delete</td></tr>
 <tr class="memdesc:af117bf00b006cc998f49398ca5a6bab4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> copy constructor is actively deleted.  <br /></td></tr>
 <tr class="separator:af117bf00b006cc998f49398ca5a6bab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c479dbc6d2330c193ef4b2eea981845" id="r_a2c479dbc6d2330c193ef4b2eea981845"><td class="memItemLeft" align="right" valign="top"><a id="a2c479dbc6d2330c193ef4b2eea981845" name="a2c479dbc6d2330c193ef4b2eea981845"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SystemInterface</b> (<a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> &amp;&amp;other)=default</td></tr>
-<tr class="separator:a2c479dbc6d2330c193ef4b2eea981845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f4de809d3b5fb952dd18b55a2383de" id="r_a70f4de809d3b5fb952dd18b55a2383de"><td class="memItemLeft" align="right" valign="top"><a id="a70f4de809d3b5fb952dd18b55a2383de" name="a70f4de809d3b5fb952dd18b55a2383de"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SystemInterface</b> (<a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> &amp;&amp;other)=delete</td></tr>
+<tr class="separator:a70f4de809d3b5fb952dd18b55a2383de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82a8ae30bd960b4fe24805d4451398a" id="r_ac82a8ae30bd960b4fe24805d4451398a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#ac82a8ae30bd960b4fe24805d4451398a">init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info, rclcpp::Logger logger, rclcpp::node_interfaces::NodeClockInterface::SharedPtr clock_interface)</td></tr>
 <tr class="separator:ac82a8ae30bd960b4fe24805d4451398a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e92fac1a9d82e418452bf597edd22e0" id="r_a4e92fac1a9d82e418452bf597edd22e0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a4e92fac1a9d82e418452bf597edd22e0">on_init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info)</td></tr>
@@ -220,6 +220,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>get_command</b> (co
 <tr class="memitem:a4a64e311ebc141822cb63f96f63ca739" id="r_a4a64e311ebc141822cb63f96f63ca739"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a4a64e311ebc141822cb63f96f63ca739">get_hardware_info</a> () const</td></tr>
 <tr class="memdesc:a4a64e311ebc141822cb63f96f63ca739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>.  <br /></td></tr>
 <tr class="separator:a4a64e311ebc141822cb63f96f63ca739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9d519b6a9b15e6984c6c3f88c4035d" id="r_aef9d519b6a9b15e6984c6c3f88c4035d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#aef9d519b6a9b15e6984c6c3f88c4035d">enable_introspection</a> (bool enable)</td></tr>
+<tr class="memdesc:aef9d519b6a9b15e6984c6c3f88c4035d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable introspection of the hardware.  <br /></td></tr>
+<tr class="separator:aef9d519b6a9b15e6984c6c3f88c4035d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -274,6 +277,9 @@ std::vector&lt; StateInterface::SharedPtr &gt;&#160;</td><td class="memItemRight
 <tr class="memitem:a2b0671e8693ddef6fa3ed8b028bfd2dd" id="r_a2b0671e8693ddef6fa3ed8b028bfd2dd"><td class="memItemLeft" align="right" valign="top"><a id="a2b0671e8693ddef6fa3ed8b028bfd2dd" name="a2b0671e8693ddef6fa3ed8b028bfd2dd"></a>
 std::vector&lt; CommandInterface::SharedPtr &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>unlisted_commands_</b></td></tr>
 <tr class="separator:a2b0671e8693ddef6fa3ed8b028bfd2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8adaf8b7c74544bc2e2f822c214fa886" id="r_a8adaf8b7c74544bc2e2f822c214fa886"><td class="memItemLeft" align="right" valign="top"><a id="a8adaf8b7c74544bc2e2f822c214fa886" name="a8adaf8b7c74544bc2e2f822c214fa886"></a>
+pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bottom"><b>stats_registrations_</b></td></tr>
+<tr class="separator:a8adaf8b7c74544bc2e2f822c214fa886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af117bf00b006cc998f49398ca5a6bab4" name="af117bf00b006cc998f49398ca5a6bab4"></a>
@@ -306,6 +312,40 @@ std::vector&lt; CommandInterface::SharedPtr &gt;&#160;</td><td class="memItemRig
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aef9d519b6a9b15e6984c6c3f88c4035d" name="aef9d519b6a9b15e6984c6c3f88c4035d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9d519b6a9b15e6984c6c3f88c4035d">&#9670;&#160;</a></span>enable_introspection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hardware_interface::SystemInterface::enable_introspection </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable or disable introspection of the hardware. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>Enable introspection if true, disable otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a27acf1216eb50d4ae97f5df3c9fd5eaa" name="a27acf1216eb50d4ae97f5df3c9fd5eaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a27acf1216eb50d4ae97f5df3c9fd5eaa">&#9670;&#160;</a></span>export_command_interfaces()</h2>
 
