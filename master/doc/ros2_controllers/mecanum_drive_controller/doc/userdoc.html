@@ -132,7 +132,7 @@
 
   <section id="mecanum-drive-controller">
 <span id="mecanum-drive-controller-userdoc"></span><h1>mecanum_drive_controller<a class="headerlink" href="#mecanum-drive-controller" title="Link to this heading"></a></h1>
-<p>Library with shared functionalities for mobile robot controllers with mecanum drive (four wheels).
+<p>Library with shared functionalities for mobile robot controllers with mecanum drive (four mecanum wheels).
 The library implements generic odometry and update methods and defines the main interfaces.</p>
 <section id="execution-logic-of-the-controller">
 <h2>Execution logic of the controller<a class="headerlink" href="#execution-logic-of-the-controller" title="Link to this heading"></a></h2>
@@ -154,46 +154,169 @@ We prefer this way of doing so as filtering introduces delay (which makes it dif
 <h2>Description of controller’s interfaces<a class="headerlink" href="#description-of-controller-s-interfaces" title="Link to this heading"></a></h2>
 <section id="references-from-a-preceding-controller">
 <h3>References (from a preceding controller)<a class="headerlink" href="#references-from-a-preceding-controller" title="Link to this heading"></a></h3>
+<p>When controller is in chained mode, it exposes the following references which can be commanded by the preceding controller:</p>
 <ul class="simple">
-<li><p>&lt;reference_names[i]&gt;/&lt;interface_name&gt;  [double]  # in [rad] or [rad/s]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/linear/x/velocity</span></code>, in m/s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/linear/y/velocity</span></code>, in m/s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/angular/z/velocity</span></code>, in rad/s</p></li>
 </ul>
 </section>
 <section id="commands">
 <h3>Commands<a class="headerlink" href="#commands" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>&lt;command_joint_names[i]&gt;/&lt;interface_name&gt;  [double]  # in [rad] or [rad/s]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;*_wheel_command_joint_name&gt;/velocity</span></code>, in rad/s</p></li>
 </ul>
 </section>
 <section id="states">
 <h3>States<a class="headerlink" href="#states" title="Link to this heading"></a></h3>
-<ul>
-<li><p>&lt;joint_names[i]&gt;/&lt;interface_name&gt;  [double]  # in [rad] or [rad/s]
-..note</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>``joint_names[i]`` can be of ``state_joint_names`` parameter (if used), ``command_joint_names`` otherwise.
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;joint_name&gt;/velocity</span></code>, in rad/s</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">joint_name</span></code> can be of <code class="docutils literal notranslate"><span class="pre">*_wheel_state_joint_name</span></code> parameter (if used), <code class="docutils literal notranslate"><span class="pre">*_wheel_command_joint_name</span></code> otherwise.</p>
+</div>
 </section>
 <section id="subscribers">
 <h3>Subscribers<a class="headerlink" href="#subscribers" title="Link to this heading"></a></h3>
 <p>Used when the controller is not in chained mode (<code class="docutils literal notranslate"><span class="pre">in_chained_mode</span> <span class="pre">==</span> <span class="pre">false</span></code>).</p>
 <ul class="simple">
-<li><p>&lt;controller_name&gt;/reference  [geometry_msgs/msg/TwistStamped]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/reference</span></code>  [<code class="docutils literal notranslate"><span class="pre">geometry_msgs/msg/TwistStamped</span></code>]</p></li>
 </ul>
 </section>
 <section id="publishers">
 <h3>Publishers<a class="headerlink" href="#publishers" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>&lt;controller_name&gt;/odometry          [nav_msgs/msg/Odometry]</p></li>
-<li><p>&lt;controller_name&gt;/tf_odometry       [tf2_msgs/msg/TFMessage]</p></li>
-<li><p>&lt;controller_name&gt;/controller_state  [control_msgs/msg/MecanumDriveControllerState]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/odometry</span></code>          [<code class="docutils literal notranslate"><span class="pre">nav_msgs/msg/Odometry</span></code>]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/tf_odometry</span></code>       [<code class="docutils literal notranslate"><span class="pre">tf2_msgs/msg/TFMessage</span></code>]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;controller_name&gt;/controller_state</span></code>  [<code class="docutils literal notranslate"><span class="pre">control_msgs/msg/MecanumDriveControllerState</span></code>]</p></li>
 </ul>
 </section>
 <section id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
-<p>For a list of parameters and their meaning, see the YAML file in the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder of the controller’s package.</p>
-<p>For an exemplary parameterization, see the <code class="docutils literal notranslate"><span class="pre">test</span></code> folder of the controller’s package.</p>
+<p>This controller uses the <a class="reference external" href="https://github.com/PickNikRobotics/generate_parameter_library">generate_parameter_library</a> to handle its parameters. The parameter <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/blob/master/mecanum_drive_controller/src/mecanum_drive_controller.yaml">definition file located in the src folder</a> contains descriptions for all the parameters used by the controller.</p>
+<dl>
+<dt>reference_timeout (double)</dt><dd><p>Timeout for controller references after which they will be reset. This is especially useful for controllers that can cause unwanted and dangerous behavior if reference is not reset, e.g., velocity controllers. If value is 0 the reference is reset after each run.</p>
+<p>Default:  0.0</p>
+</dd>
+<dt>front_left_wheel_command_joint_name (string)</dt><dd><p>Name of the joints for commanding front left wheel.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>parameter is not empty</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>front_right_wheel_command_joint_name (string)</dt><dd><p>Name of the joints for commanding front right wheel.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>parameter is not empty</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>rear_right_wheel_command_joint_name (string)</dt><dd><p>Name of the joints for commanding rear right wheel.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>parameter is not empty</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>rear_left_wheel_command_joint_name (string)</dt><dd><p>Name of the joints for commanding rear left wheel.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>parameter is not empty</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>front_left_wheel_state_joint_name (string)</dt><dd><p>(optional) Specifies a joint name for reading states of front left wheel. This parameter is only relevant when state joints are different then command joint, i.e., when a following controller is used.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+</dd>
+<dt>front_right_wheel_state_joint_name (string)</dt><dd><p>(optional) Specifies a joint name for reading states of front right wheel. This parameter is only relevant when state joints are different then command joint, i.e., when a following controller is used.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+</dd>
+<dt>rear_right_wheel_state_joint_name (string)</dt><dd><p>(optional) Specifies a joint name for reading states of rear right wheel. This parameter is only relevant when state joints are different then command joint, i.e., when a following controller is used.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+</dd>
+<dt>rear_left_wheel_state_joint_name (string)</dt><dd><p>(optional) Specifies a joint name for reading states of rear left wheel. This parameter is only relevant when state joints are different then command joint, i.e., when a following controller is used.</p>
+<p>Read only: True</p>
+<p>Default:  “”</p>
+</dd>
+<dt>kinematics.base_frame_offset.x (double)</dt><dd><p>Base frame offset along X axis of base_frame (base_link frame).</p>
+<p>Read only: True</p>
+<p>Default:  0.0</p>
+</dd>
+<dt>kinematics.base_frame_offset.y (double)</dt><dd><p>Base frame offset along Y axis of base_frame (base_link frame).</p>
+<p>Read only: True</p>
+<p>Default:  0.0</p>
+</dd>
+<dt>kinematics.base_frame_offset.theta (double)</dt><dd><p>Base frame offset along Theta axis of base_frame (base_link frame).</p>
+<p>Read only: True</p>
+<p>Default:  0.0</p>
+</dd>
+<dt>kinematics.wheels_radius (double)</dt><dd><p>Wheel’s radius.</p>
+<p>Default:  0.0</p>
+<p>Constraints:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>greater than 0.0</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>kinematics.sum_of_robot_center_projection_on_X_Y_axis (double)</dt><dd><p>Wheels geometric param used in mecanum wheels’ IK. lx and ly represent the distance from the robot’s center to the wheels projected on the x and y axis with origin at robots center respectively, sum_of_robot_center_projection_on_X_Y_axis = lx+ly</p>
+<p>Default:  0.0</p>
+</dd>
+<dt>base_frame_id (string)</dt><dd><p>Base frame_id set to value of base_frame_id.</p>
+<p>Default:  “base_link”</p>
+</dd>
+<dt>odom_frame_id (string)</dt><dd><p>Odometry frame_id set to value of odom_frame_id.</p>
+<p>Default:  “odom”</p>
+</dd>
+<dt>enable_odom_tf (bool)</dt><dd><p>Publishing to tf is enabled or disabled?</p>
+<p>Default:  true</p>
+</dd>
+<dt>twist_covariance_diagonal (double_array)</dt><dd><p>Diagonal values of twist covariance matrix.</p>
+<p>Default:  {0.1, 0.1, 0.1, 0.1, 0.1, 0.1}</p>
+</dd>
+<dt>pose_covariance_diagonal (double_array)</dt><dd><p>Diagonal values of pose covariance matrix.</p>
+<p>Default:  {0.1, 0.1, 0.1, 0.1, 0.1, 0.1}</p>
+</dd>
+</dl>
+<p>An example parameter file for this controller can be found in <a class="reference external" href="https://github.com/ros-controls/ros2_controllers/blob/master/mecanum_drive_controller/test/mecanum_drive_controller_params.yaml">the test directory</a>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_mecanum_drive_controller</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reference_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.9</span>
+
+<span class="w">    </span><span class="nt">front_left_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;front_left_wheel_joint&quot;</span>
+<span class="w">    </span><span class="nt">front_right_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;front_right_wheel_joint&quot;</span>
+<span class="w">    </span><span class="nt">rear_right_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;back_right_wheel_joint&quot;</span>
+<span class="w">    </span><span class="nt">rear_left_wheel_command_joint_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;back_left_wheel_joint&quot;</span>
+
+<span class="w">    </span><span class="nt">kinematics</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">base_frame_offset</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> theta</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">wheels_radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">      </span><span class="nt">sum_of_robot_center_projection_on_X_Y_axis</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+
+<span class="w">    </span><span class="nt">base_frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;base_link&quot;</span>
+<span class="w">    </span><span class="nt">odom_frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;odom&quot;</span>
+<span class="w">    </span><span class="nt">enable_odom_tf</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">twist_covariance_diagonal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">7.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">14.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">21.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">28.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">35.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">pose_covariance_diagonal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">7.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">14.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">21.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">28.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">35.0</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
