@@ -139,7 +139,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::array&lt;double, 3&gt; position;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0u; i &lt; position.size(); ++i)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      position[i] = state_interfaces_[i].get().get_value();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      position[i] = state_interfaces_[i].get().get_value&lt;<span class="keywordtype">double</span>&gt;().value();</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> position;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
@@ -153,7 +153,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">const</span> std::size_t interface_offset{3};</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0u; i &lt; orientation.size(); ++i)</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      orientation[i] = state_interfaces_[interface_offset + i].get().get_value();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      orientation[i] = state_interfaces_[interface_offset + i].get().get_value&lt;<span class="keywordtype">double</span>&gt;().value();</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">return</span> orientation;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
