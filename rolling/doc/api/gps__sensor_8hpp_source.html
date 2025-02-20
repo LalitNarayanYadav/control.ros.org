@@ -146,68 +146,88 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a69cccb64275f7efd44d952dbdd465fc2">   62</a></span>  int8_t <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a69cccb64275f7efd44d952dbdd465fc2">get_status</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>int8_t<span class="keyword">&gt;</span>(state_interfaces_[0].get().get_value()); }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">   69</a></span>  uint16_t <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">get_service</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(state_interfaces_[1].get().get_value());</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a69cccb64275f7efd44d952dbdd465fc2">   62</a></span>  int8_t <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a69cccb64275f7efd44d952dbdd465fc2">get_status</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>int8_t<span class="keyword">&gt;</span>(state_interfaces_[0].get().template get_value&lt;double&gt;().value());</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
 </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">   79</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">get_latitude</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state_interfaces_[2].get().get_value(); }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">   86</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">get_longitude</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state_interfaces_[3].get().get_value(); }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">   93</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">get_altitude</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> state_interfaces_[4].get().get_value(); }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">template</span> &lt;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">typename</span> U = void,</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">typename</span> = std::enable_if_t&lt;sensor_option == GPSSensorOption::WithCovariance, U&gt;&gt;</div>
-<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">  103</a></span>  <span class="keyword">const</span> std::array&lt;double, 9&gt; &amp; <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">get_covariance</a>()</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    covariance_[0] = state_interfaces_[5].get().get_value();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    covariance_[4] = state_interfaces_[6].get().get_value();</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    covariance_[8] = state_interfaces_[7].get().get_value();</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> covariance_;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">   72</a></span>  uint16_t <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">get_service</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(state_interfaces_[1].get().template get_value&lt;double&gt;().value());</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
 </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a77bde92eccded1959fe73c2fc01e3110">  114</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a77bde92eccded1959fe73c2fc01e3110">get_values_as_message</a>(sensor_msgs::msg::NavSatFix &amp; message)</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    message.status.status = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a69cccb64275f7efd44d952dbdd465fc2">get_status</a>();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    message.status.service = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">get_service</a>();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    message.latitude = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">get_latitude</a>();</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    message.longitude = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">get_longitude</a>();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    message.altitude = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">get_altitude</a>();</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (sensor_option == GPSSensorOption::WithCovariance)</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      message.position_covariance = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">get_covariance</a>();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">   82</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">get_latitude</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span> state_interfaces_[2].get().template get_value&lt;double&gt;().value();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
 </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  std::array&lt;double, 9&gt; covariance_{{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}};</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">   92</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">get_longitude</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> state_interfaces_[3].get().template get_value&lt;double&gt;().value();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
 </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">  102</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">get_altitude</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> state_interfaces_[4].get().template get_value&lt;double&gt;().value();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">typename</span> U = void,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">typename</span> = std::enable_if_t&lt;sensor_option == GPSSensorOption::WithCovariance, U&gt;&gt;</div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">  115</a></span>  <span class="keyword">const</span> std::array&lt;double, 9&gt; &amp; <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">get_covariance</a>()</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    covariance_[0] = state_interfaces_[5].get().template get_value&lt;double&gt;().value();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    covariance_[4] = state_interfaces_[6].get().template get_value&lt;double&gt;().value();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    covariance_[8] = state_interfaces_[7].get().template get_value&lt;double&gt;().value();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> covariance_;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classsemantic__components_1_1GPSSensor.html#a77bde92eccded1959fe73c2fc01e3110">  126</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a77bde92eccded1959fe73c2fc01e3110">get_values_as_message</a>(sensor_msgs::msg::NavSatFix &amp; message)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    message.status.status = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a69cccb64275f7efd44d952dbdd465fc2">get_status</a>();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    message.status.service = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">get_service</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    message.latitude = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">get_latitude</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    message.longitude = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">get_longitude</a>();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    message.altitude = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">get_altitude</a>();</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}  <span class="comment">// namespace semantic_components</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif  </span><span class="comment">// SEMANTIC_COMPONENTS__GPS_SENSOR_HPP_</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (sensor_option == GPSSensorOption::WithCovariance)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      message.position_covariance = <a class="code hl_function" href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">get_covariance</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  }</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  std::array&lt;double, 9&gt; covariance_{{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0}};</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>};</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>}  <span class="comment">// namespace semantic_components</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#endif  </span><span class="comment">// SEMANTIC_COMPONENTS__GPS_SENSOR_HPP_</span></div>
 <div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html">semantic_components::GPSSensor</a></div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:35</div></div>
-<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a1934cf1fb69a8454f28f695c17e56c1d"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">semantic_components::GPSSensor::get_latitude</a></div><div class="ttdeci">double get_latitude() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:79</div></div>
-<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a2b77c24ab06b3c3283e0f847a4b9264e"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">semantic_components::GPSSensor::get_longitude</a></div><div class="ttdeci">double get_longitude() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:86</div></div>
+<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a1934cf1fb69a8454f28f695c17e56c1d"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a1934cf1fb69a8454f28f695c17e56c1d">semantic_components::GPSSensor::get_latitude</a></div><div class="ttdeci">double get_latitude() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:82</div></div>
+<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a2b77c24ab06b3c3283e0f847a4b9264e"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a2b77c24ab06b3c3283e0f847a4b9264e">semantic_components::GPSSensor::get_longitude</a></div><div class="ttdeci">double get_longitude() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:92</div></div>
 <div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a69cccb64275f7efd44d952dbdd465fc2"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a69cccb64275f7efd44d952dbdd465fc2">semantic_components::GPSSensor::get_status</a></div><div class="ttdeci">int8_t get_status() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:62</div></div>
-<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a77bde92eccded1959fe73c2fc01e3110"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a77bde92eccded1959fe73c2fc01e3110">semantic_components::GPSSensor::get_values_as_message</a></div><div class="ttdeci">bool get_values_as_message(sensor_msgs::msg::NavSatFix &amp;message)</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:114</div></div>
-<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a7bc4a637885b98b52f3667fddf3dbf40"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">semantic_components::GPSSensor::get_covariance</a></div><div class="ttdeci">const std::array&lt; double, 9 &gt; &amp; get_covariance()</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:103</div></div>
-<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a7d90094be59fcb0cbb12be4091a9494a"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">semantic_components::GPSSensor::get_altitude</a></div><div class="ttdeci">double get_altitude() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:93</div></div>
-<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_aa2ec8294a97c142018aad2742b8b059a"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">semantic_components::GPSSensor::get_service</a></div><div class="ttdeci">uint16_t get_service() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:69</div></div>
+<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a77bde92eccded1959fe73c2fc01e3110"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a77bde92eccded1959fe73c2fc01e3110">semantic_components::GPSSensor::get_values_as_message</a></div><div class="ttdeci">bool get_values_as_message(sensor_msgs::msg::NavSatFix &amp;message)</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:126</div></div>
+<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a7bc4a637885b98b52f3667fddf3dbf40"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a7bc4a637885b98b52f3667fddf3dbf40">semantic_components::GPSSensor::get_covariance</a></div><div class="ttdeci">const std::array&lt; double, 9 &gt; &amp; get_covariance()</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:115</div></div>
+<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_a7d90094be59fcb0cbb12be4091a9494a"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#a7d90094be59fcb0cbb12be4091a9494a">semantic_components::GPSSensor::get_altitude</a></div><div class="ttdeci">double get_altitude() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:102</div></div>
+<div class="ttc" id="aclasssemantic__components_1_1GPSSensor_html_aa2ec8294a97c142018aad2742b8b059a"><div class="ttname"><a href="classsemantic__components_1_1GPSSensor.html#aa2ec8294a97c142018aad2742b8b059a">semantic_components::GPSSensor::get_service</a></div><div class="ttdeci">uint16_t get_service() const</div><div class="ttdef"><b>Definition</b> gps_sensor.hpp:72</div></div>
 <div class="ttc" id="aclasssemantic__components_1_1SemanticComponentInterface_html"><div class="ttname"><a href="classsemantic__components_1_1SemanticComponentInterface.html">semantic_components::SemanticComponentInterface</a></div><div class="ttdef"><b>Definition</b> semantic_component_interface.hpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
