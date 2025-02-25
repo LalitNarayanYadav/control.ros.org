@@ -59,7 +59,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="controllers_index.html">ros2_controllers</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="controllers_index.html#guidelines-and-best-practices">Guidelines and Best Practices</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Wheeled Mobile Robot Kinematics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#omnidirectional-wheeled-mobile-robots">Omnidirectional Wheeled Mobile Robots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#omnidirectional-wheeled-mobile-robots">Omnidirectional Wheeled Mobile Robots</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#omnidirectional-drive-robots-using-omni-wheels">Omnidirectional Drive Robots using Omni Wheels</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="#nonholonomic-wheeled-mobile-robots">Nonholonomic Wheeled Mobile Robots</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#unicycle-model">Unicycle model</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#differential-drive-robot">Differential Drive Robot</a></li>
@@ -134,7 +137,74 @@
 <p>The forward integration of the kinematic model using the encoders of the wheel actuators — is referred to as <strong>odometric localization</strong> or <strong>passive localization</strong> or <strong>dead reckoning</strong>. We will call it just <strong>odometry</strong>.</p>
 <section id="omnidirectional-wheeled-mobile-robots">
 <h2>Omnidirectional Wheeled Mobile Robots<a class="headerlink" href="#omnidirectional-wheeled-mobile-robots" title="Link to this heading"></a></h2>
-<p>Robots with omniwheels or mecanum wheels. Section will be updated if controllers for these robots are implemented.</p>
+<section id="omnidirectional-drive-robots-using-omni-wheels">
+<h3>Omnidirectional Drive Robots using Omni Wheels<a class="headerlink" href="#omnidirectional-drive-robots-using-omni-wheels" title="Link to this heading"></a></h3>
+<p>The below explains the kinematics of omnidirectional drive robots using 3 or more omni wheels.
+It follows the coordinate conventions defined in <a class="reference external" href="https://www.ros.org/reps/rep-0103.html">ROS REP 103</a>.</p>
+<a class="reference internal image-reference" href="../../../_images/omni_wheel_omnidirectional_drive.svg"><img alt="Omnidirectional Drive Robot using Omni Wheels" class="align-center" src="../../../_images/omni_wheel_omnidirectional_drive.svg" width="550" /></a>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_b,y_b\)</span> is the robot’s body-frame coordinate system, located at the contact point of the wheel on the ground.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_w,y_w\)</span> is the world coordinate system.</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{b,x},\)</span> is the robot’s linear velocity on the x-axis.</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_{b,y}\)</span> is the robot’s linear velocity on the y-axis.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_{b,z}\)</span> is the robot’s angular velocity on the z-axis.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> is the robot’s radius / the distance between the robot’s center and the wheels.</p></li>
+<li><p>Red arrows on the wheel <span class="math notranslate nohighlight">\(i\)</span> signify the positive direction of their rotation <span class="math notranslate nohighlight">\(\omega_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> is the angular offset of the first wheel from <span class="math notranslate nohighlight">\(x_b\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> is the angle between each wheel which can be calculated using the below equation where <span class="math notranslate nohighlight">\(n\)</span> is the number of wheels.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[θ = \frac{2\pi}{n}\]</div>
+<p><strong>Inverse Kinematics</strong></p>
+<p>The necessary angular velocity of the wheels to achieve a desired body twist can be calculated using the below matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A =
+\begin{bmatrix}
+  \sin(\gamma) &amp; -\cos(\gamma) &amp; -R  \\
+  \sin(\theta + \gamma) &amp; -\cos(\theta + \gamma) &amp; -R\\
+  \sin(2\theta + \gamma) &amp; -\cos(2\theta + \gamma) &amp; -R\\
+  \sin(3\theta + \gamma) &amp; -\cos(3\theta + \gamma) &amp; -R\\
+  \vdots &amp; \vdots &amp; \vdots\\
+  \sin((n-1)\theta + \gamma) &amp; -\cos((n-1)\theta + \gamma) &amp; -R\\
+\end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+  \omega_1\\
+  \omega_2\\
+  \omega_3\\
+  \omega_4\\
+  \vdots\\
+  \omega_n
+\end{bmatrix} =
+\frac{1}{r}
+A
+\begin{bmatrix}
+  v_{b,x}\\
+  v_{b,y}\\
+  \omega_{b,z}\\
+\end{bmatrix}\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\omega_1,\ldots,\omega_n\)</span> are the angular velocities of the wheels and <span class="math notranslate nohighlight">\(r\)</span> is the radius of the wheels.
+These equations can be written in algebraic form for any wheel <span class="math notranslate nohighlight">\(i\)</span> like this:</p>
+<div class="math notranslate nohighlight">
+\[\omega_i = \frac{\sin((i-1)\theta + \gamma) v_{b,x} - \cos((i-1)\theta + \gamma) v_{b,y} - R \omega_{b,z}}{r}\]</div>
+<p><strong>Forward Kinematics</strong></p>
+<p>The body twist of the robot can be obtained from the wheel velocities by using the pseudoinverse of matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+  v_{b,x}\\
+  v_{b,y}\\
+  \omega_{b,z}\\
+\end{bmatrix} =
+rA^\dagger
+\begin{bmatrix}
+  \omega_1\\
+  \omega_2\\
+  \omega_3\\
+  \omega_4\\
+  \vdots\\
+  \omega_n
+\end{bmatrix}\end{split}\]</div>
+</section>
 </section>
 <section id="nonholonomic-wheeled-mobile-robots">
 <h2>Nonholonomic Wheeled Mobile Robots<a class="headerlink" href="#nonholonomic-wheeled-mobile-robots" title="Link to this heading"></a></h2>
