@@ -83,6 +83,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classsemantic__components_1_1ForceTorqueSensor-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">semantic_components::ForceTorqueSensor Class Reference</div></div>
@@ -151,8 +152,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>release_interfaces</b
 <tr class="memdesc:a8aacba8b04917a024478fdf73f867b6c inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return values as MessageReturnType.  <br /></td></tr>
 <tr class="separator:a8aacba8b04917a024478fdf73f867b6c inherit pub_methods_classsemantic__components_1_1SemanticComponentInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aae0e7dfe6ccdabc1c11b1f63b3eee17b" id="r_aae0e7dfe6ccdabc1c11b1f63b3eee17b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsemantic__components_1_1ForceTorqueSensor.html#aae0e7dfe6ccdabc1c11b1f63b3eee17b">update_data_from_interfaces</a> () const</td></tr>
+<tr class="memdesc:aae0e7dfe6ccdabc1c11b1f63b3eee17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the data from the state interfaces.  <br /></td></tr>
+<tr class="separator:aae0e7dfe6ccdabc1c11b1f63b3eee17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:aa5282e90eb60c053402d517d6cef4536" id="r_aa5282e90eb60c053402d517d6cef4536"><td class="memItemLeft" align="right" valign="top"><a id="aa5282e90eb60c053402d517d6cef4536" name="aa5282e90eb60c053402d517d6cef4536"></a>
+std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data_</b></td></tr>
+<tr class="memdesc:aa5282e90eb60c053402d517d6cef4536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array to store the data of the FT sensors. <br /></td></tr>
+<tr class="separator:aa5282e90eb60c053402d517d6cef4536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f8837c929b2b20222d7ea0bb6236e88" id="r_a0f8837c929b2b20222d7ea0bb6236e88"><td class="memItemLeft" align="right" valign="top"><a id="a0f8837c929b2b20222d7ea0bb6236e88" name="a0f8837c929b2b20222d7ea0bb6236e88"></a>
 std::array&lt; bool, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>existing_axes_</b></td></tr>
 <tr class="memdesc:a0f8837c929b2b20222d7ea0bb6236e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector with existing axes for sensors with less then 6D axes. <br /></td></tr>
@@ -319,6 +330,36 @@ std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classhardware__in
 <p>Return Wrench message with forces and torques. </p>
 <p>Constructs and return a wrench message from the current values. The method assumes that the interface names on the construction are in the following order: force X, force Y, force Z, torque X, torque Y, torque Z.</p>
 <dl class="section return"><dt>Returns</dt><dd>wrench message from values; </dd></dl>
+
+</div>
+</div>
+<a id="aae0e7dfe6ccdabc1c11b1f63b3eee17b" name="aae0e7dfe6ccdabc1c11b1f63b3eee17b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae0e7dfe6ccdabc1c11b1f63b3eee17b">&#9670;&#160;</a></span>update_data_from_interfaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semantic_components::ForceTorqueSensor::update_data_from_interfaces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the data from the state interfaces. </p>
+<dl class="section note"><dt>Note</dt><dd>The method is thread-safe and non-blocking. </dd>
+<dd>
+This method might return stale data if the data is not updated. This is to ensure that the data from the sensor is not discontinuous. </dd></dl>
 
 </div>
 </div>

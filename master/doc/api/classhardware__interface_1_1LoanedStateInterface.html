@@ -144,10 +144,10 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ge
 <tr class="memitem:a9fa28bbfa38ffa519c8c6d6efa239671" id="r_a9fa28bbfa38ffa519c8c6d6efa239671"><td class="memItemLeft" align="right" valign="top"><a id="a9fa28bbfa38ffa519c8c6d6efa239671" name="a9fa28bbfa38ffa519c8c6d6efa239671"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>get_value</b> () const</td></tr>
 <tr class="separator:a9fa28bbfa38ffa519c8c6d6efa239671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16cdf3dcf4e9237546cd4541cb1f7523" id="r_a16cdf3dcf4e9237546cd4541cb1f7523"><td class="memTemplParams" colspan="2">template&lt;typename T  = double&gt; </td></tr>
-<tr class="memitem:a16cdf3dcf4e9237546cd4541cb1f7523"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1LoanedStateInterface.html#a16cdf3dcf4e9237546cd4541cb1f7523">get_value</a> (unsigned int max_tries=10) const</td></tr>
-<tr class="memdesc:a16cdf3dcf4e9237546cd4541cb1f7523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the state interface.  <br /></td></tr>
-<tr class="separator:a16cdf3dcf4e9237546cd4541cb1f7523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040e05c34b65b77d67094c893fd9d47d" id="r_a040e05c34b65b77d67094c893fd9d47d"><td class="memTemplParams" colspan="2">template&lt;typename T  = double&gt; </td></tr>
+<tr class="memitem:a040e05c34b65b77d67094c893fd9d47d"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1LoanedStateInterface.html#a040e05c34b65b77d67094c893fd9d47d">get_optional</a> (unsigned int max_tries=10) const</td></tr>
+<tr class="memdesc:a040e05c34b65b77d67094c893fd9d47d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the state interface.  <br /></td></tr>
+<tr class="separator:a040e05c34b65b77d67094c893fd9d47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e24b749604e43ee49d59bcc28915b3d" id="r_a5e24b749604e43ee49d59bcc28915b3d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a5e24b749604e43ee49d59bcc28915b3d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1LoanedStateInterface.html#a5e24b749604e43ee49d59bcc28915b3d">get_value</a> (T &amp;value, unsigned int max_tries=10) const</td></tr>
 <tr class="memdesc:a5e24b749604e43ee49d59bcc28915b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the state interface.  <br /></td></tr>
@@ -163,8 +163,56 @@ Deleter&#160;</td><td class="memItemRight" valign="bottom"><b>deleter_</b></td><
 <tr class="separator:adc9a5cad14f07b4a18b0d0ab4c8734ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a040e05c34b65b77d67094c893fd9d47d" name="a040e05c34b65b77d67094c893fd9d47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040e05c34b65b77d67094c893fd9d47d">&#9670;&#160;</a></span>get_optional()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = double&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; T &gt; hardware_interface::LoanedStateInterface::get_optional </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>max_tries</em> = <code>10</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the value of the state interface. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the value to be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the state interface if it accessed successfully, std::nullopt otherwise. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_tries</td><td>The maximum number of tries to get the value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The method is thread-safe and non-blocking. </dd>
+<dd>
+When different threads access the internal handle at same instance, and if they are unable to lock the handle to access the value, the handle returns std::nullopt. If the operation is successful, the value is returned. </dd>
+<dd>
+The method will try to get the value max_tries times before returning std::nullopt. The method will yield the thread between tries. If the value is retrieved successfully, the method returns the value immediately. </dd></dl>
+
+</div>
+</div>
 <a id="a5e24b749604e43ee49d59bcc28915b3d" name="a5e24b749604e43ee49d59bcc28915b3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e24b749604e43ee49d59bcc28915b3d">&#9670;&#160;</a></span>get_value() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e24b749604e43ee49d59bcc28915b3d">&#9670;&#160;</a></span>get_value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,54 +267,6 @@ template&lt;typename T &gt; </div>
 When different threads access the same handle at same instance, and if they are unable to lock the handle to access the value, the handle returns false. If the operation is successful, the value is updated and returns true. </dd>
 <dd>
 The method will try to get the value max_tries times before returning false. The method will yield the thread between tries. If the value is retrieved successfully, the method updates the value and returns true immediately. </dd></dl>
-
-</div>
-</div>
-<a id="a16cdf3dcf4e9237546cd4541cb1f7523" name="a16cdf3dcf4e9237546cd4541cb1f7523"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16cdf3dcf4e9237546cd4541cb1f7523">&#9670;&#160;</a></span>get_value() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T  = double&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::optional&lt; T &gt; hardware_interface::LoanedStateInterface::get_value </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>max_tries</em> = <code>10</code></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the value of the state interface. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the value to be retrieved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the state interface if it accessed successfully, std::nullopt otherwise. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">max_tries</td><td>The maximum number of tries to get the value.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>The method is thread-safe and non-blocking. </dd>
-<dd>
-When different threads access the internal handle at same instance, and if they are unable to lock the handle to access the value, the handle returns std::nullopt. If the operation is successful, the value is returned. </dd>
-<dd>
-The method will try to get the value max_tries times before returning std::nullopt. The method will yield the thread between tries. If the value is retrieved successfully, the method returns the value immediately. </dd></dl>
 
 </div>
 </div>
