@@ -88,12 +88,17 @@ $(function() {
   <div class="headertitle"><div class="title">hardware_interface::SystemInterface Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Virtual Class to implement when integrating a complex system into ros2_control.  
+ <a href="classhardware__interface_1_1SystemInterface.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="system__interface_8hpp_source.html">system_interface.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for hardware_interface::SystemInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classhardware__interface_1_1SystemInterface__inherit__graph.png" border="0" usemap="#ahardware__interface_1_1SystemInterface_inherit__map" alt="Inheritance graph"/></div>
 <map name="ahardware__interface_1_1SystemInterface_inherit__map" id="ahardware__interface_1_1SystemInterface_inherit__map">
-<area shape="rect" title=" " alt="" coords="305,421,453,461"/>
+<area shape="rect" title="Virtual Class to implement when integrating a complex system into ros2_control." alt="" coords="305,421,453,461"/>
 <area shape="rect" href="classgazebo__ros2__control_1_1GazeboSystemInterface.html" title=" " alt="" coords="552,5,739,45"/>
 <area shape="poly" title=" " alt="" coords="378,407,383,334,401,239,416,189,437,140,465,95,500,55,524,39,551,29,553,34,526,44,503,59,469,98,442,143,421,191,406,240,389,335,383,408"/>
 <area shape="rect" href="classgz__ros2__control_1_1GazeboSimSystemInterface.html" title=" " alt="" coords="542,69,749,109"/>
@@ -135,7 +140,7 @@ Collaboration diagram for hardware_interface::SystemInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classhardware__interface_1_1SystemInterface__coll__graph.png" border="0" usemap="#ahardware__interface_1_1SystemInterface_coll__map" alt="Collaboration graph"/></div>
 <map name="ahardware__interface_1_1SystemInterface_coll__map" id="ahardware__interface_1_1SystemInterface_coll__map">
-<area shape="rect" title=" " alt="" coords="343,37,491,77"/>
+<area shape="rect" title="Virtual Class to implement when integrating a complex system into ros2_control." alt="" coords="343,37,491,77"/>
 <area shape="rect" title=" " alt="" coords="5,5,257,45"/>
 <area shape="poly" title=" " alt="" coords="271,38,343,46,342,52,270,44"/>
 <area shape="rect" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF." alt="" coords="57,69,205,109"/>
@@ -146,14 +151,14 @@ Collaboration diagram for hardware_interface::SystemInterface:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af117bf00b006cc998f49398ca5a6bab4" id="r_af117bf00b006cc998f49398ca5a6bab4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#af117bf00b006cc998f49398ca5a6bab4">SystemInterface</a> (const <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> &amp;other)=delete</td></tr>
-<tr class="memdesc:af117bf00b006cc998f49398ca5a6bab4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> copy constructor is actively deleted.  <br /></td></tr>
+<tr class="memdesc:af117bf00b006cc998f49398ca5a6bab4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a> copy constructor is actively deleted.  <br /></td></tr>
 <tr class="separator:af117bf00b006cc998f49398ca5a6bab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70f4de809d3b5fb952dd18b55a2383de" id="r_a70f4de809d3b5fb952dd18b55a2383de"><td class="memItemLeft" align="right" valign="top"><a id="a70f4de809d3b5fb952dd18b55a2383de" name="a70f4de809d3b5fb952dd18b55a2383de"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SystemInterface</b> (<a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> &amp;&amp;other)=delete</td></tr>
 <tr class="separator:a70f4de809d3b5fb952dd18b55a2383de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82a8ae30bd960b4fe24805d4451398a" id="r_ac82a8ae30bd960b4fe24805d4451398a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#ac82a8ae30bd960b4fe24805d4451398a">init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info, rclcpp::Logger logger, rclcpp::node_interfaces::NodeClockInterface::SharedPtr clock_interface)</td></tr>
+<tr class="memitem:ac82a8ae30bd960b4fe24805d4451398a" id="r_ac82a8ae30bd960b4fe24805d4451398a"><td class="memItemLeft" align="right" valign="top">CallbackReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#ac82a8ae30bd960b4fe24805d4451398a">init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info, rclcpp::Logger logger, rclcpp::node_interfaces::NodeClockInterface::SharedPtr clock_interface)</td></tr>
 <tr class="separator:ac82a8ae30bd960b4fe24805d4451398a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e92fac1a9d82e418452bf597edd22e0" id="r_a4e92fac1a9d82e418452bf597edd22e0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a4e92fac1a9d82e418452bf597edd22e0">on_init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info)</td></tr>
+<tr class="memitem:a4e92fac1a9d82e418452bf597edd22e0" id="r_a4e92fac1a9d82e418452bf597edd22e0"><td class="memItemLeft" align="right" valign="top">virtual CallbackReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a4e92fac1a9d82e418452bf597edd22e0">on_init</a> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info)</td></tr>
 <tr class="memdesc:a4e92fac1a9d82e418452bf597edd22e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of the hardware interface from data parsed from the robot's URDF.  <br /></td></tr>
 <tr class="separator:a4e92fac1a9d82e418452bf597edd22e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b0e5d03bdb8f82b2ffc86c2ee79bb60" id="r_a2b0e5d03bdb8f82b2ffc86c2ee79bb60"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classhardware__interface_1_1StateInterface.html">StateInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a2b0e5d03bdb8f82b2ffc86c2ee79bb60">export_state_interfaces</a> ()</td></tr>
@@ -175,15 +180,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9b944943314be907806ec3e989e6acd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1da44ec2a9ef354e056e2dac3e95682f" id="r_a1da44ec2a9ef354e056e2dac3e95682f"><td class="memItemLeft" align="right" valign="top">virtual return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a1da44ec2a9ef354e056e2dac3e95682f">perform_command_mode_switch</a> (const std::vector&lt; std::string &gt; &amp;, const std::vector&lt; std::string &gt; &amp;)</td></tr>
 <tr class="separator:a1da44ec2a9ef354e056e2dac3e95682f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c1ff6dc20ad90730429a11a2bb0d419" id="r_a1c1ff6dc20ad90730429a11a2bb0d419"><td class="memItemLeft" align="right" valign="top">return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a1c1ff6dc20ad90730429a11a2bb0d419">trigger_read</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
-<tr class="memdesc:a1c1ff6dc20ad90730429a11a2bb0d419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the read method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>.  <br /></td></tr>
-<tr class="separator:a1c1ff6dc20ad90730429a11a2bb0d419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dbe24f2a6d88104f8ca78b14caf6776" id="r_a1dbe24f2a6d88104f8ca78b14caf6776"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structhardware__interface_1_1HardwareComponentCycleStatus.html">HardwareComponentCycleStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a1dbe24f2a6d88104f8ca78b14caf6776">trigger_read</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
+<tr class="memdesc:a1dbe24f2a6d88104f8ca78b14caf6776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the read method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>.  <br /></td></tr>
+<tr class="separator:a1dbe24f2a6d88104f8ca78b14caf6776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae48a70b6c631787f6891370dd40e018e" id="r_ae48a70b6c631787f6891370dd40e018e"><td class="memItemLeft" align="right" valign="top">virtual return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#ae48a70b6c631787f6891370dd40e018e">read</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)=0</td></tr>
 <tr class="memdesc:ae48a70b6c631787f6891370dd40e018e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current state values from the actuator.  <br /></td></tr>
 <tr class="separator:ae48a70b6c631787f6891370dd40e018e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f409470fd949cc56aa8faf8611f8ce4" id="r_a5f409470fd949cc56aa8faf8611f8ce4"><td class="memItemLeft" align="right" valign="top">return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a5f409470fd949cc56aa8faf8611f8ce4">trigger_write</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
-<tr class="memdesc:a5f409470fd949cc56aa8faf8611f8ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the write method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>.  <br /></td></tr>
-<tr class="separator:a5f409470fd949cc56aa8faf8611f8ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb7d296a3eab233dbd165dff3b4675e" id="r_addb7d296a3eab233dbd165dff3b4675e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structhardware__interface_1_1HardwareComponentCycleStatus.html">HardwareComponentCycleStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#addb7d296a3eab233dbd165dff3b4675e">trigger_write</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
+<tr class="memdesc:addb7d296a3eab233dbd165dff3b4675e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the write method synchronously or asynchronously depending on the <a class="el" href="structhardware__interface_1_1HardwareInfo.html" title="This structure stores information about hardware defined in a robot&#39;s URDF.">HardwareInfo</a>.  <br /></td></tr>
+<tr class="separator:addb7d296a3eab233dbd165dff3b4675e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af50333e4b0b30c9a1d66f296a33a5d8d" id="r_af50333e4b0b30c9a1d66f296a33a5d8d"><td class="memItemLeft" align="right" valign="top">virtual return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#af50333e4b0b30c9a1d66f296a33a5d8d">write</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)=0</td></tr>
 <tr class="memdesc:af50333e4b0b30c9a1d66f296a33a5d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the current command values to the actuator.  <br /></td></tr>
 <tr class="separator:af50333e4b0b30c9a1d66f296a33a5d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,14 +217,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set_command</b> (cons
 double&#160;</td><td class="memItemRight" valign="bottom"><b>get_command</b> (const std::string &amp;interface_name) const</td></tr>
 <tr class="separator:a3f1f8db219db4c8d01badca02c939415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579bc2136cf3498be097b8ee867efafd" id="r_a579bc2136cf3498be097b8ee867efafd"><td class="memItemLeft" align="right" valign="top">rclcpp::Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a579bc2136cf3498be097b8ee867efafd">get_logger</a> () const</td></tr>
-<tr class="memdesc:a579bc2136cf3498be097b8ee867efafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the logger of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>.  <br /></td></tr>
+<tr class="memdesc:a579bc2136cf3498be097b8ee867efafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the logger of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>.  <br /></td></tr>
 <tr class="separator:a579bc2136cf3498be097b8ee867efafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc5dd1be5d4c67512b31932b6b87a858" id="r_abc5dd1be5d4c67512b31932b6b87a858"><td class="memItemLeft" align="right" valign="top">rclcpp::Clock::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#abc5dd1be5d4c67512b31932b6b87a858">get_clock</a> () const</td></tr>
-<tr class="memdesc:abc5dd1be5d4c67512b31932b6b87a858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clock of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>.  <br /></td></tr>
+<tr class="memdesc:abc5dd1be5d4c67512b31932b6b87a858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clock of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>.  <br /></td></tr>
 <tr class="separator:abc5dd1be5d4c67512b31932b6b87a858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a64e311ebc141822cb63f96f63ca739" id="r_a4a64e311ebc141822cb63f96f63ca739"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a4a64e311ebc141822cb63f96f63ca739">get_hardware_info</a> () const</td></tr>
-<tr class="memdesc:a4a64e311ebc141822cb63f96f63ca739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>.  <br /></td></tr>
+<tr class="memdesc:a4a64e311ebc141822cb63f96f63ca739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>.  <br /></td></tr>
 <tr class="separator:a4a64e311ebc141822cb63f96f63ca739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07275d64bc5316d35336778720c6a1f9" id="r_a07275d64bc5316d35336778720c6a1f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#a07275d64bc5316d35336778720c6a1f9">prepare_for_activation</a> ()</td></tr>
+<tr class="memdesc:a07275d64bc5316d35336778720c6a1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare for the activation of the hardware.  <br /></td></tr>
+<tr class="separator:a07275d64bc5316d35336778720c6a1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef9d519b6a9b15e6984c6c3f88c4035d" id="r_aef9d519b6a9b15e6984c6c3f88c4035d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html#aef9d519b6a9b15e6984c6c3f88c4035d">enable_introspection</a> (bool enable)</td></tr>
 <tr class="memdesc:aef9d519b6a9b15e6984c6c3f88c4035d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable introspection of the hardware.  <br /></td></tr>
 <tr class="separator:aef9d519b6a9b15e6984c6c3f88c4035d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,7 +289,33 @@ std::vector&lt; CommandInterface::SharedPtr &gt;&#160;</td><td class="memItemRig
 pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bottom"><b>stats_registrations_</b></td></tr>
 <tr class="separator:a8adaf8b7c74544bc2e2f822c214fa886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Virtual Class to implement when integrating a complex system into ros2_control. </p>
+<p>The common examples for these types of hardware are multi-joint systems with or without sensors such as industrial or humanoid robots.</p>
+<p>Methods return values have type rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn with the following meaning:</p>
+<dl class="section return"><dt>Returns</dt><dd>CallbackReturn::SUCCESS method execution was successful. </dd>
+<dd>
+CallbackReturn::FAILURE method execution has failed and and can be called again. </dd>
+<dd>
+CallbackReturn::ERROR critical error has happened that should be managed in "on_error" method.</dd></dl>
+<p>The hardware ends after each method in a state with the following meaning:</p>
+<p>UNCONFIGURED (on_init, on_cleanup): Hardware is initialized but communication is not started and therefore no interface is available.</p>
+<p>INACTIVE (on_configure, on_deactivate): Communication with the hardware is started and it is configured. States can be read and command interfaces are available.</p>
+<p>As of now, it is left to the hardware component implementation to continue using the command received from the <code>CommandInterfaces</code> or to skip them completely.</p>
+<p>FINALIZED (on_shutdown): Hardware interface is ready for unloading/destruction. Allocated memory is cleaned up.</p>
+<p>ACTIVE (on_activate): Power circuits of hardware are active and hardware can be moved, e.g., brakes are disabled. Command interfaces available.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Implement<ul>
+<li><a href="https://github.com/ros-controls/ros2_control/issues/931">https://github.com/ros-controls/ros2_control/issues/931</a></li>
+<li><a href="https://github.com/ros-controls/roadmap/pull/51/files">https://github.com/ros-controls/roadmap/pull/51/files</a></li>
+<li>this means in INACTIVE state:<ul>
+<li>States can be read and non-movement hardware interfaces commanded.</li>
+<li>Hardware interfaces for movement will NOT be available.</li>
+<li>Those interfaces are: HW_IF_POSITION, HW_IF_VELOCITY, HW_IF_ACCELERATION, and HW_IF_EFFORT. </li>
+</ul>
+</li>
+</ul>
+</dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af117bf00b006cc998f49398ca5a6bab4" name="af117bf00b006cc998f49398ca5a6bab4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af117bf00b006cc998f49398ca5a6bab4">&#9670;&#160;</a></span>SystemInterface()</h2>
 
@@ -306,7 +340,7 @@ pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bot
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> copy constructor is actively deleted. </p>
+<p><a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a> copy constructor is actively deleted. </p>
 <p>Hardware interfaces are having a unique ownership and thus can't be copied in order to avoid failed or simultaneous access to hardware. </p>
 
 </div>
@@ -487,8 +521,8 @@ pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bot
 </table>
 </div><div class="memdoc">
 
-<p>Get the clock of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>clock of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>. </dd></dl>
+<p>Get the clock of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>clock of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>. </dd></dl>
 
 </div>
 </div>
@@ -543,8 +577,8 @@ pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bot
 </table>
 </div><div class="memdoc">
 
-<p>Get the hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>. </dd></dl>
+<p>Get the hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>hardware info of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>. </dd></dl>
 
 </div>
 </div>
@@ -599,8 +633,8 @@ pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bot
 </table>
 </div><div class="memdoc">
 
-<p>Get the logger of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>logger of the <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a>. </dd></dl>
+<p>Get the logger of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>logger of the <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">SystemInterface</a>. </dd></dl>
 
 </div>
 </div>
@@ -642,7 +676,7 @@ pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bot
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a> hardware_interface::SystemInterface::init </td>
+          <td class="memname">CallbackReturn hardware_interface::SystemInterface::init </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>hardware_info</em>, </td>
@@ -749,7 +783,7 @@ CallbackReturn::ERROR if any error happens or data are missing. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a> hardware_interface::SystemInterface::on_init </td>
+          <td class="memname">virtual CallbackReturn hardware_interface::SystemInterface::on_init </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>hardware_info</em></td><td>)</td>
@@ -880,6 +914,34 @@ All starting and stopping interface keys are passed to all components, so the fu
 
 </div>
 </div>
+<a id="a07275d64bc5316d35336778720c6a1f9" name="a07275d64bc5316d35336778720c6a1f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07275d64bc5316d35336778720c6a1f9">&#9670;&#160;</a></span>prepare_for_activation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hardware_interface::SystemInterface::prepare_for_activation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prepare for the activation of the hardware. </p>
+<p>This method is called before the hardware is activated by the resource manager. </p>
+
+</div>
+</div>
 <a id="ae48a70b6c631787f6891370dd40e018e" name="ae48a70b6c631787f6891370dd40e018e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae48a70b6c631787f6891370dd40e018e">&#9670;&#160;</a></span>read()</h2>
 
@@ -958,8 +1020,8 @@ All starting and stopping interface keys are passed to all components, so the fu
 
 </div>
 </div>
-<a id="a1c1ff6dc20ad90730429a11a2bb0d419" name="a1c1ff6dc20ad90730429a11a2bb0d419"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c1ff6dc20ad90730429a11a2bb0d419">&#9670;&#160;</a></span>trigger_read()</h2>
+<a id="a1dbe24f2a6d88104f8ca78b14caf6776" name="a1dbe24f2a6d88104f8ca78b14caf6776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dbe24f2a6d88104f8ca78b14caf6776">&#9670;&#160;</a></span>trigger_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -968,7 +1030,7 @@ All starting and stopping interface keys are passed to all components, so the fu
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">return_type hardware_interface::SystemInterface::trigger_read </td>
+          <td class="memname"><a class="el" href="structhardware__interface_1_1HardwareComponentCycleStatus.html">HardwareComponentCycleStatus</a> hardware_interface::SystemInterface::trigger_read </td>
           <td>(</td>
           <td class="paramtype">const rclcpp::Time &amp;&#160;</td>
           <td class="paramname"><em>time</em>, </td>
@@ -1005,8 +1067,8 @@ All starting and stopping interface keys are passed to all components, so the fu
 
 </div>
 </div>
-<a id="a5f409470fd949cc56aa8faf8611f8ce4" name="a5f409470fd949cc56aa8faf8611f8ce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f409470fd949cc56aa8faf8611f8ce4">&#9670;&#160;</a></span>trigger_write()</h2>
+<a id="addb7d296a3eab233dbd165dff3b4675e" name="addb7d296a3eab233dbd165dff3b4675e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb7d296a3eab233dbd165dff3b4675e">&#9670;&#160;</a></span>trigger_write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1015,7 +1077,7 @@ All starting and stopping interface keys are passed to all components, so the fu
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">return_type hardware_interface::SystemInterface::trigger_write </td>
+          <td class="memname"><a class="el" href="structhardware__interface_1_1HardwareComponentCycleStatus.html">HardwareComponentCycleStatus</a> hardware_interface::SystemInterface::trigger_write </td>
           <td>(</td>
           <td class="paramtype">const rclcpp::Time &amp;&#160;</td>
           <td class="paramname"><em>time</em>, </td>

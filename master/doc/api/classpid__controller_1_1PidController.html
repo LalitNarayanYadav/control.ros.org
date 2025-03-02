@@ -395,7 +395,7 @@ pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bot
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Virtual method that each chainable controller should implement to export its read/write chainable interfaces. Each chainable controller implements this methods where all input (command) interfaces are exported. The method has the same meaning as <code>export_command_interface</code> method from <a class="el" href="classhardware__interface_1_1SystemInterface.html">hardware_interface::SystemInterface</a> or <a class="el" href="classhardware__interface_1_1ActuatorInterface.html">hardware_interface::ActuatorInterface</a>.</p>
+<p>Virtual method that each chainable controller should implement to export its read/write chainable interfaces. Each chainable controller implements this methods where all input (command) interfaces are exported. The method has the same meaning as <code>export_command_interface</code> method from <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">hardware_interface::SystemInterface</a> or <a class="el" href="classhardware__interface_1_1ActuatorInterface.html" title="Virtual Class to implement when integrating a 1 DoF actuator into ros2_control.">hardware_interface::ActuatorInterface</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>list of CommandInterfaces that other controller can use as their outputs. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classcontroller__interface_1_1ChainableControllerInterface.html#a427fc28e518153be4a5e2d1b37cab953">controller_interface::ChainableControllerInterface</a>.</p>
@@ -424,7 +424,7 @@ pal_statistics::RegistrationsRAII&#160;</td><td class="memItemRight" valign="bot
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Virtual method that each chainable controller should implement to export its read-only chainable interfaces. Each chainable controller implements this methods where all its state(read only) interfaces are exported. The method has the same meaning as <code>export_state_interfaces</code> method from <a class="el" href="classhardware__interface_1_1SystemInterface.html">hardware_interface::SystemInterface</a> or <a class="el" href="classhardware__interface_1_1ActuatorInterface.html">hardware_interface::ActuatorInterface</a>.</p>
+<p>Virtual method that each chainable controller should implement to export its read-only chainable interfaces. Each chainable controller implements this methods where all its state(read only) interfaces are exported. The method has the same meaning as <code>export_state_interfaces</code> method from <a class="el" href="classhardware__interface_1_1SystemInterface.html" title="Virtual Class to implement when integrating a complex system into ros2_control.">hardware_interface::SystemInterface</a> or <a class="el" href="classhardware__interface_1_1ActuatorInterface.html" title="Virtual Class to implement when integrating a 1 DoF actuator into ros2_control.">hardware_interface::ActuatorInterface</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>list of StateInterfaces that other controller can use as their inputs. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classcontroller__interface_1_1ChainableControllerInterface.html#a99c0ebc82f87de51c0bb5e68bdb42d1e">controller_interface::ChainableControllerInterface</a>.</p>

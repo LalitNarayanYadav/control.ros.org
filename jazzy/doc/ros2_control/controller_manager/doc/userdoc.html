@@ -229,7 +229,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controller_manager.periodicity.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller manager’s periodicity. If the mean error exceeds this threshold, a warning diagnostic will be published.</p>
+<dt>diagnostics.threshold.controller_manager.periodicity.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller manager’s periodicity in Hz. If the mean error exceeds this threshold, a warning diagnostic will be published.</p>
 <p>Default:  5.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -238,7 +238,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controller_manager.periodicity.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller manager’s periodicity. If the mean error exceeds this threshold, an error diagnostic will be published.</p>
+<dt>diagnostics.threshold.controller_manager.periodicity.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller manager’s periodicity in Hz. If the mean error exceeds this threshold, an error diagnostic will be published.</p>
 <p>Default:  10.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -247,7 +247,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controller_manager.periodicity.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller manager’s periodicity. If the standard deviation exceeds this threshold, a warning diagnostic will be published.</p>
+<dt>diagnostics.threshold.controller_manager.periodicity.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller manager’s periodicity in Hz. If the standard deviation exceeds this threshold, a warning diagnostic will be published.</p>
 <p>Default:  5.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -256,7 +256,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controller_manager.periodicity.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller manager’s periodicity. If the standard deviation exceeds this threshold, an error diagnostic will be published.</p>
+<dt>diagnostics.threshold.controller_manager.periodicity.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller manager’s periodicity in Hz. If the standard deviation exceeds this threshold, an error diagnostic will be published.</p>
 <p>Default:  10.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -267,7 +267,7 @@ The full structure of the map is given in the following example:</p>
 </dd>
 <dt>diagnostics.threshold.controllers.periodicity</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">periodicity</span></code> diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
 </dd>
-<dt>diagnostics.threshold.controllers.periodicity.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller update loop. If the mean error exceeds this threshold, a warning diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<dt>diagnostics.threshold.controllers.periodicity.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller update loop in Hz. If the mean error exceeds this threshold, a warning diagnostic will be published.</p>
 <p>Default:  5.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -276,7 +276,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controllers.periodicity.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller update loop. If the mean error exceeds this threshold, an error diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<dt>diagnostics.threshold.controllers.periodicity.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller update loop in Hz. If the mean error exceeds this threshold, an error diagnostic will be published.</p>
 <p>Default:  10.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -285,7 +285,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controllers.periodicity.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller update loop. If the standard deviation exceeds this threshold, a warning diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<dt>diagnostics.threshold.controllers.periodicity.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller update loop in Hz. If the standard deviation exceeds this threshold, a warning diagnostic will be published.</p>
 <p>Default:  5.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -294,7 +294,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controllers.periodicity.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller update loop. If the standard deviation exceeds this threshold, an error diagnostic will be published. This diagnostics will be published only for the asynchronous controllers, because any affect to the synchronous controllers will be reflected directly in the controller manager’s periodicity.</p>
+<dt>diagnostics.threshold.controllers.periodicity.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller update loop in Hz. If the standard deviation exceeds this threshold, an error diagnostic will be published.</p>
 <p>Default:  10.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -305,7 +305,7 @@ The full structure of the map is given in the following example:</p>
 </dd>
 <dt>diagnostics.threshold.controllers.execution_time</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">execution_time</span></code> diagnostics will be published for all controllers. The <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for a synchronous controller will be computed against zero, as it should be as low as possible. However, the <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for an asynchronous controller will be computed against the controller’s desired update period, as the controller can take a maximum of the desired period cycle to execute it’s update cycle.</p>
 </dd>
-<dt>diagnostics.threshold.controllers.execution_time.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller’s update cycle execution time in microseconds. If the mean error exceeds this threshold, a warning diagnostic will be published. The <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for a synchronous controller will be computed against zero, as it should be as low as possible. However, the <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for an asynchronous controller will be computed against the controller’s desired update period, as the controller can take a maximum of the desired period cycle to execute it’s update cycle</p>
+<dt>diagnostics.threshold.controllers.execution_time.mean_error.warn (double)</dt><dd><p>The warning threshold for the mean error of the controller’s update cycle execution time in microseconds. If the mean error exceeds this threshold, a warning diagnostic will be published.</p>
 <p>Default:  1000.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -314,7 +314,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controllers.execution_time.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller’s update cycle execution time in microseconds. If the mean error exceeds this threshold, an error diagnostic will be published. The <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for a synchronous controller will be computed against zero, as it should be as low as possible. However, the <code class="docutils literal notranslate"><span class="pre">mean_error</span></code> for an asynchronous controller will be computed against the controller’s desired update period, as the controller can take a maximum of the desired period cycle to execute it’s update cycle</p>
+<dt>diagnostics.threshold.controllers.execution_time.mean_error.error (double)</dt><dd><p>The error threshold for the mean error of the controller’s update cycle execution time in microseconds. If the mean error exceeds this threshold, an error diagnostic will be published.</p>
 <p>Default:  2000.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -323,7 +323,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controllers.execution_time.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller’s update cycle execution time. If the standard deviation exceeds this threshold, a warning diagnostic will be published.</p>
+<dt>diagnostics.threshold.controllers.execution_time.standard_deviation.warn (double)</dt><dd><p>The warning threshold for the standard deviation of the controller’s update cycle execution time in microseconds. If the standard deviation exceeds this threshold, a warning diagnostic will be published.</p>
 <p>Default:  100.0</p>
 <p>Constraints:</p>
 <blockquote>
@@ -332,7 +332,7 @@ The full structure of the map is given in the following example:</p>
 </ul>
 </div></blockquote>
 </dd>
-<dt>diagnostics.threshold.controllers.execution_time.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller’s update cycle execution time. If the standard deviation exceeds this threshold, an error diagnostic will be published.</p>
+<dt>diagnostics.threshold.controllers.execution_time.standard_deviation.error (double)</dt><dd><p>The error threshold for the standard deviation of the controller’s update cycle execution time in microseconds. If the standard deviation exceeds this threshold, an error diagnostic will be published.</p>
 <p>Default:  200.0</p>
 <p>Constraints:</p>
 <blockquote>

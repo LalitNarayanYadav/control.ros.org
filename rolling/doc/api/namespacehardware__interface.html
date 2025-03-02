@@ -95,6 +95,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains semantic info about a given actuator loaded from URDF for a transmission.  <a href="structhardware__interface_1_1ActuatorInfo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ActuatorInterface.html">ActuatorInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Class to implement when integrating a 1 DoF actuator into ros2_control.  <a href="classhardware__interface_1_1ActuatorInterface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1AsyncComponentThread.html">AsyncComponentThread</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,6 +108,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1Handle.html">Handle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle used to get and set a value on a given interface.  <a href="classhardware__interface_1_1Handle.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhardware__interface_1_1HardwareComponentCycleStatus.html">HardwareComponentCycleStatus</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhardware__interface_1_1HardwareComponentInfo.html">HardwareComponentInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware Component Information.  <a href="structhardware__interface_1_1HardwareComponentInfo.html#details">More...</a><br /></td></tr>
@@ -137,12 +140,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1Sensor.html">Sensor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SensorInterface.html">SensorInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Class to implement when integrating a stand-alone sensor into ros2_control.  <a href="classhardware__interface_1_1SensorInterface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1StateInterface.html">StateInterface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1System.html">System</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Class to implement when integrating a complex system into ros2_control.  <a href="classhardware__interface_1_1SystemInterface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhardware__interface_1_1TransmissionInfo.html">TransmissionInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains semantic info about a given transmission loaded from URDF.  <a href="structhardware__interface_1_1TransmissionInfo.html#details">More...</a><br /></td></tr>
@@ -150,8 +155,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:af127ad1f7288042a450a4e783e44cf5c" id="r_af127ad1f7288042a450a4e783e44cf5c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">CallbackReturn</a> = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</td></tr>
-<tr class="memdesc:af127ad1f7288042a450a4e783e44cf5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Class to implement when integrating a 1 DoF actuator into ros2_control.  <br /></td></tr>
+<tr class="memitem:af127ad1f7288042a450a4e783e44cf5c" id="r_af127ad1f7288042a450a4e783e44cf5c"><td class="memItemLeft" align="right" valign="top"><a id="af127ad1f7288042a450a4e783e44cf5c" name="af127ad1f7288042a450a4e783e44cf5c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CallbackReturn</b> = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn</td></tr>
 <tr class="separator:af127ad1f7288042a450a4e783e44cf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67a78e41d3f0f349a6e7e2669ae27128" id="r_a67a78e41d3f0f349a6e7e2669ae27128"><td class="memItemLeft" align="right" valign="top"><a id="a67a78e41d3f0f349a6e7e2669ae27128" name="a67a78e41d3f0f349a6e7e2669ae27128"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>HANDLE_DATATYPE</b> = std::variant&lt; std::monostate, double &gt;</td></tr>
@@ -270,62 +275,7 @@ constexpr char&#160;</td><td class="memItemRight" valign="bottom"><b>HW_IF_FEEDF
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sai Kishor Kothakota</dd>
 <dd>
 : Denis Stogl </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="af127ad1f7288042a450a4e783e44cf5c" name="af127ad1f7288042a450a4e783e44cf5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af127ad1f7288042a450a4e783e44cf5c">&#9670;&#160;</a></span>CallbackReturn</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn <a class="el" href="namespacehardware__interface.html#af127ad1f7288042a450a4e783e44cf5c">hardware_interface::CallbackReturn</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Virtual Class to implement when integrating a 1 DoF actuator into ros2_control. </p>
-<p>Virtual Class to implement when integrating a complex system into ros2_control.</p>
-<p>Virtual Class to implement when integrating a stand-alone sensor into ros2_control.</p>
-<p>The typical examples are conveyors or motors.</p>
-<p>Methods return values have type rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn with the following meaning:</p>
-<dl class="section return"><dt>Returns</dt><dd>CallbackReturn::SUCCESS method execution was successful. </dd>
-<dd>
-CallbackReturn::FAILURE method execution has failed and and can be called again. </dd>
-<dd>
-CallbackReturn::ERROR critical error has happened that should be managed in "on_error" method.</dd></dl>
-<p>The hardware ends after each method in a state with the following meaning:</p>
-<p>UNCONFIGURED (on_init, on_cleanup): Hardware is initialized but communication is not started and therefore no interface is available.</p>
-<p>INACTIVE (on_configure, on_deactivate): Communication with the hardware is started and it is configured. States can be read and non-movement hardware interfaces commanded. Hardware interfaces for movement will NOT be available. Those interfaces are: HW_IF_POSITION, HW_IF_VELOCITY, HW_IF_ACCELERATION, and HW_IF_EFFORT.</p>
-<p>FINALIZED (on_shutdown): Hardware interface is ready for unloading/destruction. Allocated memory is cleaned up.</p>
-<p>ACTIVE (on_activate): Power circuits of hardware are active and hardware can be moved, e.g., brakes are disabled. Command interfaces for movement are available and have to be accepted. Those interfaces are: HW_IF_POSITION, HW_IF_VELOCITY, HW_IF_ACCELERATION, and HW_IF_EFFORT.</p>
-<p>The typical examples are Force-Torque <a class="el" href="classhardware__interface_1_1Sensor.html">Sensor</a> (FTS), Interial Measurement Unit (IMU).</p>
-<p>Methods return values have type rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn with the following meaning:</p>
-<dl class="section return"><dt>Returns</dt><dd>CallbackReturn::SUCCESS method execution was successful. </dd>
-<dd>
-CallbackReturn::FAILURE method execution has failed and and can be called again. </dd>
-<dd>
-CallbackReturn::ERROR critical error has happened that should be managed in "on_error" method.</dd></dl>
-<p>The hardware ends after each method in a state with the following meaning:</p>
-<p>UNCONFIGURED (on_init, on_cleanup): Hardware is initialized but communication is not started and therefore no interface is available.</p>
-<p>INACTIVE (on_configure, on_deactivate): Communication with the hardware is started and it is configured. States can be read and non-movement hardware interfaces commanded. Hardware interfaces for movement will NOT be available. Those interfaces are: HW_IF_POSITION, HW_IF_VELOCITY, HW_IF_ACCELERATION, and HW_IF_EFFORT.</p>
-<p>FINALIZED (on_shutdown): Hardware interface is ready for unloading/destruction. Allocated memory is cleaned up.</p>
-<p>ACTIVE (on_activate): Power circuits of hardware are active and hardware can be moved, e.g., brakes are disabled. Command interfaces for movement are available and have to be accepted. Those interfaces are: HW_IF_POSITION, HW_IF_VELOCITY, HW_IF_ACCELERATION, and HW_IF_EFFORT.</p>
-<p>The common examples for these types of hardware are multi-joint systems with or without sensors such as industrial or humanoid robots.</p>
-<p>Methods return values have type rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn with the following meaning:</p>
-<dl class="section return"><dt>Returns</dt><dd>CallbackReturn::SUCCESS method execution was successful. </dd>
-<dd>
-CallbackReturn::FAILURE method execution has failed and and can be called again. </dd>
-<dd>
-CallbackReturn::ERROR critical error has happened that should be managed in "on_error" method.</dd></dl>
-<p>The hardware ends after each method in a state with the following meaning:</p>
-<p>UNCONFIGURED (on_init, on_cleanup): Hardware is initialized but communication is not started and therefore no interface is available.</p>
-<p>INACTIVE (on_configure, on_deactivate): Communication with the hardware is started and it is configured. States can be read and non-movement hardware interfaces commanded. Hardware interfaces for movement will NOT be available. Those interfaces are: HW_IF_POSITION, HW_IF_VELOCITY, HW_IF_ACCELERATION, and HW_IF_EFFORT.</p>
-<p>FINALIZED (on_shutdown): Hardware interface is ready for unloading/destruction. Allocated memory is cleaned up.</p>
-<p>ACTIVE (on_activate): Power circuits of hardware are active and hardware can be moved, e.g., brakes are disabled. Command interfaces for movement are available and have to be accepted. Those interfaces are: HW_IF_POSITION, HW_IF_VELOCITY, HW_IF_ACCELERATION, and HW_IF_EFFORT. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a7109f5528d32311c5b0bee84ea92cfd8" name="a7109f5528d32311c5b0bee84ea92cfd8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7109f5528d32311c5b0bee84ea92cfd8">&#9670;&#160;</a></span>parse_command_interface_descriptions() <span class="overload">[1/2]</span></h2>
 
