@@ -59,6 +59,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../doc/index.html#concepts">Concepts</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Controller Manager</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#determinism">Determinism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#publishers">Publishers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#subscribers">Subscribers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#handling-multiple-controller-managers">Handling Multiple Controller Managers</a></li>
@@ -173,6 +174,15 @@ Alternatives to the standard kernel include</p>
 </ul>
 <p>Though installing a realtime-kernel will definitely get the best results when it comes to low
 jitter, using a lowlatency kernel can improve things a lot with being really easy to install.</p>
+</section>
+<section id="publishers">
+<h2>Publishers<a class="headerlink" href="#publishers" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>~/activity [controller_manager_msgs::msg::ControllerManagerActivity]</dt><dd><p>A topic that is published every time there is a change of state of the controllers or hardware components managed by the controller manager.
+The message contains the list of the controllers and the hardware components that are managed by the controller manager along with their lifecycle states.
+The topic is published using the “transient local” quality of service, so subscribers should also be “transient local”.</p>
+</dd>
+</dl>
 </section>
 <section id="subscribers">
 <h2>Subscribers<a class="headerlink" href="#subscribers" title="Link to this heading"></a></h2>

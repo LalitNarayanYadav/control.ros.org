@@ -228,6 +228,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a3728e8bbc327359fc54b43f5602928" id="r_a8a3728e8bbc327359fc54b43f5602928"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ResourceManager.html#a8a3728e8bbc327359fc54b43f5602928">state_interface_exists</a> (const std::string &amp;key) const</td></tr>
 <tr class="memdesc:a8a3728e8bbc327359fc54b43f5602928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a state interface is registered under the given key.  <br /></td></tr>
 <tr class="separator:a8a3728e8bbc327359fc54b43f5602928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29bc9e1b84dc92c7d6bb9251ffecdeef" id="r_a29bc9e1b84dc92c7d6bb9251ffecdeef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ResourceManager.html#a29bc9e1b84dc92c7d6bb9251ffecdeef">set_on_component_state_switch_callback</a> (std::function&lt; void()&gt; callback)</td></tr>
+<tr class="memdesc:a29bc9e1b84dc92c7d6bb9251ffecdeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">A method to register a callback to be called when the component state changes.  <br /></td></tr>
+<tr class="separator:a29bc9e1b84dc92c7d6bb9251ffecdeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -1346,6 +1349,32 @@ accept_command_resource_claim is called on all actuators and system components a
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>hardware_interface::retun_type::OK if component successfully switched its state and hardware_interface::return_type::ERROR any of state transitions has failed. </dd></dl>
+
+</div>
+</div>
+<a id="a29bc9e1b84dc92c7d6bb9251ffecdeef" name="a29bc9e1b84dc92c7d6bb9251ffecdeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29bc9e1b84dc92c7d6bb9251ffecdeef">&#9670;&#160;</a></span>set_on_component_state_switch_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hardware_interface::ResourceManager::set_on_component_state_switch_callback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A method to register a callback to be called when the component state changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>function to be called when the component state changes. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
