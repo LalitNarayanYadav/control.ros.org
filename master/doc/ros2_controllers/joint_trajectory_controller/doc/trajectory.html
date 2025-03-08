@@ -191,6 +191,7 @@ I.e., one has to provide position and its derivatives as needed.</p>
 </li>
 </ul>
 <p>Trajectories with velocity fields only, velocity and acceleration only, or acceleration fields only can be processed and are accepted, if <code class="docutils literal notranslate"><span class="pre">allow_integration_in_goal_trajectories</span></code> is true. Position (and velocity) is then integrated from velocity (or acceleration, respectively) by Heun’s method.</p>
+<p>Effort trajectories are allowed for controllers that claim the <code class="docutils literal notranslate"><span class="pre">effort</span></code> command interface and they are treated as feed-forward effort that is added to the position feedback. Effort is handled separately from position, velocity and acceleration. We use linear interpolation for effort when the <code class="docutils literal notranslate"><span class="pre">spline</span></code> interpolation method is selected.</p>
 </section>
 <section id="visualized-examples">
 <h2>Visualized Examples<a class="headerlink" href="#visualized-examples" title="Link to this heading"></a></h2>

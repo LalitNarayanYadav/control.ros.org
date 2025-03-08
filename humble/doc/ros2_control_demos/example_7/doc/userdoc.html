@@ -425,11 +425,15 @@ urdf_to_graphviz<span class="w"> </span>r6bot.urdf<span class="w"> </span>r6bot
 </ol>
 <p>Certain interface methods are called during transitions between these states. During the main control loop, the controller is in the active state.</p>
 <p>The following code blocks will explain the requirements for writing a new controller.</p>
-<p>The controller plugin for the tutorial robot is a class called <code class="docutils literal notranslate"><span class="pre">RobotController</span></code> that inherits from  <code class="docutils literal notranslate"><span class="pre">controller_interface::ControllerInterface</span></code>. The <code class="docutils literal notranslate"><span class="pre">RobotController</span></code> must implement nine public methods. The last six are <a class="reference external" href="https://design.ros2.org/articles/node_lifecycle.html">managed node</a>  transitions callbacks.</p>
+<p>The controller plugin for the tutorial robot is a class called <code class="docutils literal notranslate"><span class="pre">RobotController</span></code> that inherits from  <code class="docutils literal notranslate"><span class="pre">controller_interface::ControllerInterface</span></code>. The <code class="docutils literal notranslate"><span class="pre">RobotController</span></code> must implement the following public methods:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">command_interface_configuration</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">state_interface_configuration</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">update</span></code></p></li>
+</ol>
+<p>The following methods are <a class="reference external" href="https://design.ros2.org/articles/node_lifecycle.html">managed node</a>  transitions callbacks. These overrides are optional and only the <code class="docutils literal notranslate"><span class="pre">on_configure</span></code>, <code class="docutils literal notranslate"><span class="pre">on_activate</span></code> and <code class="docutils literal notranslate"><span class="pre">on_deactivate</span></code> have been used in this example.
+The <code class="docutils literal notranslate"><span class="pre">on_cleanup</span></code> and <code class="docutils literal notranslate"><span class="pre">on_shutdown</span></code> methods are called when the controller’s lifecycle node transitions to the shutdown state. They should handle memory deallocation and general cleanup. The <code class="docutils literal notranslate"><span class="pre">on_error</span></code> method is invoked if the managed node encounters a failure during a state transition.</p>
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">on_configure</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">on_activate</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">on_deactivate</span></code></p></li>
@@ -446,9 +450,6 @@ urdf_to_graphviz<span class="w"> </span>r6bot.urdf<span class="w"> </span>r6bot
 <span class="w">    </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_configure</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
 <span class="w">    </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_activate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
 <span class="w">    </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_deactivate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
-<span class="w">    </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_cleanup</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
-<span class="w">    </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_error</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
-<span class="w">    </span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_shutdown</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
 <span class="c1">// private members</span>
 <span class="c1">// ...</span>
 <span class="p">}</span>
@@ -515,29 +516,6 @@ urdf_to_graphviz<span class="w"> </span>r6bot.urdf<span class="w"> </span>r6bot
 <span class="w">    </span><span class="c1">// The controller should be properly shutdown during this</span>
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">on_cleanup</span></code> and <code class="docutils literal notranslate"><span class="pre">on_shutdown</span></code> are called when the controller’s lifecycle node is transitioning to shutting down. Freeing any allocated memory and general cleanup should be done in these methods.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_cleanup</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">){</span>
-<span class="w">  </span><span class="c1">// Callback function for cleanup transition</span>
-<span class="w">  </span><span class="c1">// ...</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_shutdown</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">){</span>
-<span class="w">  </span><span class="c1">// Callback function for shutdown transition</span>
-<span class="w">  </span><span class="c1">// ...</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">on_error</span></code> method is called if the managed node fails a state transition. This should generally never happen.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">controller_interface</span><span class="o">::</span><span class="n">CallbackReturn</span><span class="w"> </span><span class="nf">on_error</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp_lifecycle</span><span class="o">::</span><span class="n">State</span><span class="w"> </span><span class="o">&amp;</span><span class="n">previous_state</span><span class="p">){</span>
-<span class="w">  </span><span class="c1">// Callback function for erroneous transition</span>
-<span class="w">  </span><span class="c1">// ...</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">CallbackReturn</span><span class="o">::</span><span class="n">SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

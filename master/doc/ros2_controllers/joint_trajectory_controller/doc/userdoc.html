@@ -169,12 +169,15 @@ Waypoints consist of positions, and optionally velocities and accelerations.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">velocity</span></code>, <code class="docutils literal notranslate"><span class="pre">acceleration</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">velocity</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">effort</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">effort</span></code></p></li>
 </ul>
 <p>This means that the joints can have one or more command interfaces, where the following control laws are applied at the same time:</p>
 <ul class="simple">
 <li><p>For command interfaces <code class="docutils literal notranslate"><span class="pre">position</span></code>, the desired positions are simply forwarded to the joints,</p></li>
 <li><p>For command interfaces <code class="docutils literal notranslate"><span class="pre">acceleration</span></code>, desired accelerations are simply forwarded to the joints.</p></li>
 <li><p>For <code class="docutils literal notranslate"><span class="pre">velocity</span></code> (<code class="docutils literal notranslate"><span class="pre">effort</span></code>) command interfaces, the position+velocity trajectory following error is mapped to <code class="docutils literal notranslate"><span class="pre">velocity</span></code> (<code class="docutils literal notranslate"><span class="pre">effort</span></code>) commands through a PID loop if it is configured (<a class="reference internal" href="parameters.html#parameters"><span class="std std-ref">Details about parameters</span></a>).</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">effort</span></code> command interface (without <code class="docutils literal notranslate"><span class="pre">position</span></code> command interface), if the trajectory contains effort, this will be added to the PID commands as a feed forward effort.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">position,</span> <span class="pre">effort</span></code> command interface, if the trajectory contains effort, this will be passed directly to the <code class="docutils literal notranslate"><span class="pre">effort</span></code> interface (PID won’t be used) while the positions will be passed to the <code class="docutils literal notranslate"><span class="pre">position</span></code> interface.</p></li>
 </ul>
 <p>This leads to the following allowed combinations of command and state interfaces:</p>
 <ul class="simple">
@@ -184,7 +187,7 @@ Waypoints consist of positions, and optionally velocities and accelerations.</p>
 <li><p>if command interface <code class="docutils literal notranslate"><span class="pre">velocity</span></code> is the only one, state interfaces must include  <code class="docutils literal notranslate"><span class="pre">position,</span> <span class="pre">velocity</span></code> .</p></li>
 </ul>
 </li>
-<li><p>With command interface <code class="docutils literal notranslate"><span class="pre">effort</span></code>, state interfaces must include  <code class="docutils literal notranslate"><span class="pre">position,</span> <span class="pre">velocity</span></code>.</p></li>
+<li><p>With command interface <code class="docutils literal notranslate"><span class="pre">effort</span></code> or <code class="docutils literal notranslate"><span class="pre">position,</span> <span class="pre">effort</span></code>, state interfaces must include  <code class="docutils literal notranslate"><span class="pre">position,</span> <span class="pre">velocity</span></code>.</p></li>
 <li><p>With command interface <code class="docutils literal notranslate"><span class="pre">acceleration</span></code>, state interfaces must include  <code class="docutils literal notranslate"><span class="pre">position,</span> <span class="pre">velocity</span></code>.</p></li>
 </ul>
 <p>Further restrictions of state interfaces exist:</p>
@@ -236,7 +239,7 @@ A yaml file for using it could be:</p>
 <span class="w">    </span><span class="nt">action_monitor_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20.0</span>
 
 <span class="w">    </span><span class="nt">allow_partial_joints_goal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">open_loop_control</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">interpolate_from_desired_state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">constraints</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">stopped_velocity_tolerance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
 <span class="w">      </span><span class="nt">goal_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>

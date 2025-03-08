@@ -187,12 +187,13 @@
 <dt>allow_partial_joints_goal (bool)</dt><dd><p>Allow joint goals defining trajectory for only some joints.</p>
 <p>Default:  false</p>
 </dd>
-<dt>open_loop_control (bool)</dt><dd><p>Use controller in open-loop control mode</p>
-<ul class="simple">
-<li><p>The controller ignores the states provided by hardware interface but using last commands as states for starting the trajectory interpolation.</p></li>
-<li><p>It deactivates the feedback control, see the <code class="docutils literal notranslate"><span class="pre">gains</span></code> structure.</p></li>
-</ul>
-<p>This is useful if hardware states are not following commands, i.e., an offset between those (typical for hydraulic manipulators).</p>
+<dt>open_loop_control (bool)</dt><dd><p>deprecated: use <code class="docutils literal notranslate"><span class="pre">interpolate_from_desired_state</span></code> and set feedback gains to zero instead</p>
+<p>Read only: True</p>
+<p>Default:  false</p>
+</dd>
+<dt>interpolate_from_desired_state (bool)</dt><dd><p>Interpolate from the current desired state when receiving a new trajectory.</p>
+<p>The controller ignores the states provided by hardware interface but using last commands as states for starting the trajectory interpolation.</p>
+<p>This is useful if hardware states are not following commands, i.e., an offset between those (typical for hydraulic manipulators). Furthermore, it is necessary if you have a reference trajectory that you send over multiple messages (e.g. for MPC-style trajectory planning).</p>
 <p>If this flag is set, the controller tries to read the values from the command interfaces on activation. If they have real numeric values, those will be used instead of state interfaces. Therefore it is important set command interfaces to NaN (i.e., <code class="docutils literal notranslate"><span class="pre">std::numeric_limits&lt;double&gt;::quiet_NaN()</span></code>) or state values when the hardware is started.</p>
 <p>Read only: True</p>
 <p>Default:  false</p>
@@ -203,7 +204,7 @@
 <dt>set_last_command_interface_value_as_state_on_activation (bool)</dt><dd><p>When set to true, the last command interface value is used as both the current state and the last commanded state upon activation. When set to false, the current state is used for both.</p>
 <p>Default:  true</p>
 </dd>
-<dt>action_monitor_rate (double)</dt><dd><p>Rate to monitor status changes when the controller is executing action (control_msgs::action::FollowJointTrajectory)</p>
+<dt>action_monitor_rate (double)</dt><dd><p>Rate to monitor status changes when the controller is executing action (<code class="docutils literal notranslate"><span class="pre">control_msgs::action::FollowJointTrajectory</span></code>)</p>
 <p>Read only: True</p>
 <p>Default:  20.0</p>
 <p>Constraints:</p>
@@ -249,8 +250,7 @@
 <dt>constraints.&lt;joints&gt;.goal (double)</dt><dd><p>Per-joint trajectory offset tolerance at the goal position.</p>
 <p>Default:  0.0</p>
 </dd>
-<dt>gains</dt><dd><p>Only relevant, if <code class="docutils literal notranslate"><span class="pre">open_loop_control</span></code> is not set.</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">velocity</span></code> is the only command interface for all joints or an <code class="docutils literal notranslate"><span class="pre">effort</span></code> command interface is configured, PID controllers are used for every joint.
+<dt>gains</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">velocity</span></code> is the only command interface for all joints or an <code class="docutils literal notranslate"><span class="pre">effort</span></code> command interface is configured, PID controllers are used for every joint.
 This structure contains the controller gains for every joint with the control law</p>
 <div class="math notranslate nohighlight">
 \[u = k_{ff} v_d + k_p e + k_i \sum e dt + k_d (v_d - v)\]</div>
@@ -260,6 +260,7 @@ the controller period <span class="math notranslate nohighlight">\(dt\)</span>, 
 i.e., the shortest rotation to the target position is the desired motion.
 Otherwise  <span class="math notranslate nohighlight">\(e = s_d - s\)</span> is used, with the desired position <span class="math notranslate nohighlight">\(s_d\)</span> and the measured
 position <span class="math notranslate nohighlight">\(s\)</span> from the state interface.</p>
+<p>If you want to turn off the PIDs (open loop control), set the feedback gains to zero.</p>
 </dd>
 <dt>gains.&lt;joints&gt;.p (double)</dt><dd><p>Proportional gain <span class="math notranslate nohighlight">\(k_p\)</span> for PID</p>
 <p>Default:  0.0</p>
@@ -302,6 +303,7 @@ position <span class="math notranslate nohighlight">\(s\)</span> from the state 
 <span class="w">        </span><span class="nt">i</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
 <span class="w">        </span><span class="nt">i_clamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
 <span class="w">        </span><span class="nt">p</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">    </span><span class="nt">interpolate_from_desired_state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">interpolation_method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">splines</span>
 <span class="w">    </span><span class="nt">joints</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{}&#39;</span>
 <span class="w">    </span><span class="nt">open_loop_control</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
