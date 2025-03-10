@@ -227,9 +227,9 @@ However, there might be cases in which not-yet released demos or features are on
 <span class="nb">cd</span><span class="w"> </span>~/ros2_ws/src
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ros-controls/ros2_control_demos<span class="w"> </span>-b<span class="w"> </span>master
 <span class="nb">cd</span><span class="w"> </span>~/ros2_ws/
-rosdep<span class="w"> </span>update<span class="w"> </span>--rosdistro<span class="o">=</span><span class="nv">$ROS_DISTRO</span>
 sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>./<span class="w"> </span>-i<span class="w"> </span>-y<span class="w"> </span>--rosdistro<span class="w"> </span><span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>
+rosdep<span class="w"> </span>update<span class="w"> </span>--rosdistro<span class="o">=</span><span class="nv">$ROS_DISTRO</span>
+rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>./<span class="w"> </span>-i<span class="w"> </span>-y<span class="w"> </span>--rosdistro<span class="w"> </span><span class="si">${</span><span class="nv">ROS_DISTRO</span><span class="si">}</span>
 </pre></div>
 </div>
 <p>Now you can build the repository (source your ROS 2 installation first)</p>
