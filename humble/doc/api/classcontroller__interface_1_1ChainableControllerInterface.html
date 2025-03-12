@@ -96,25 +96,27 @@ Inheritance diagram for controller_interface::ChainableControllerInterface:</div
 <div class="dyncontent">
 <div class="center"><img src="classcontroller__interface_1_1ChainableControllerInterface__inherit__graph.png" border="0" usemap="#acontroller__interface_1_1ChainableControllerInterface_inherit__map" alt="Inheritance graph"/></div>
 <map name="acontroller__interface_1_1ChainableControllerInterface_inherit__map" id="acontroller__interface_1_1ChainableControllerInterface_inherit__map">
-<area shape="rect" title=" " alt="" coords="537,99,755,139"/>
+<area shape="rect" title=" " alt="" coords="537,133,755,173"/>
 <area shape="rect" href="classadmittance__controller_1_1AdmittanceController.html" title=" " alt="" coords="819,5,989,45"/>
-<area shape="poly" title=" " alt="" coords="707,91,802,55,837,43,839,48,804,60,709,96"/>
-<area shape="rect" href="classpassthrough__controller_1_1PassthroughController.html" title=" " alt="" coords="817,69,991,109"/>
-<area shape="poly" title=" " alt="" coords="768,102,817,97,817,102,769,107"/>
-<area shape="rect" href="classpid__controller_1_1PidController.html" title=" " alt="" coords="803,134,1005,159"/>
-<area shape="poly" title=" " alt="" coords="769,129,803,133,802,138,768,135"/>
-<area shape="rect" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html" title=" " alt="" coords="803,183,1005,238"/>
-<area shape="poly" title=" " alt="" coords="717,141,827,181,826,186,715,146"/>
-<area shape="rect" href="classcontroller__interface_1_1ControllerInterfaceBase.html" title=" " alt="" coords="305,99,489,139"/>
-<area shape="poly" title=" " alt="" coords="503,116,537,116,537,121,503,121"/>
-<area shape="rect" title=" " alt="" coords="5,99,257,139"/>
-<area shape="poly" title=" " alt="" coords="271,116,305,116,305,121,271,121"/>
-<area shape="rect" href="classackermann__steering__controller_1_1AckermannSteeringController.html" title=" " alt="" coords="1053,111,1280,166"/>
-<area shape="poly" title=" " alt="" coords="1017,177,1066,163,1067,169,1018,182"/>
-<area shape="rect" href="classbicycle__steering__controller_1_1BicycleSteeringController.html" title=" " alt="" coords="1068,191,1265,231"/>
-<area shape="poly" title=" " alt="" coords="1019,208,1068,208,1068,213,1019,213"/>
-<area shape="rect" href="classtricycle__steering__controller_1_1TricycleSteeringController.html" title=" " alt="" coords="1067,255,1266,295"/>
-<area shape="poly" title=" " alt="" coords="1020,236,1084,252,1083,257,1018,241"/>
+<area shape="poly" title=" " alt="" coords="685,123,739,88,802,55,831,43,833,48,804,60,742,93,688,128"/>
+<area shape="rect" href="classmecanum__drive__controller_1_1MecanumDriveController.html" title=" " alt="" coords="806,69,1002,109"/>
+<area shape="poly" title=" " alt="" coords="740,127,822,107,824,112,741,133"/>
+<area shape="rect" href="classpassthrough__controller_1_1PassthroughController.html" title=" " alt="" coords="817,133,991,173"/>
+<area shape="poly" title=" " alt="" coords="769,151,817,151,817,156,769,156"/>
+<area shape="rect" href="classpid__controller_1_1PidController.html" title=" " alt="" coords="803,198,1005,223"/>
+<area shape="poly" title=" " alt="" coords="751,174,847,195,846,201,749,179"/>
+<area shape="rect" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html" title=" " alt="" coords="803,247,1005,302"/>
+<area shape="poly" title=" " alt="" coords="696,178,804,234,830,245,827,250,802,238,693,183"/>
+<area shape="rect" href="classcontroller__interface_1_1ControllerInterfaceBase.html" title=" " alt="" coords="305,133,489,173"/>
+<area shape="poly" title=" " alt="" coords="503,151,537,151,537,156,503,156"/>
+<area shape="rect" title=" " alt="" coords="5,133,257,173"/>
+<area shape="poly" title=" " alt="" coords="271,151,305,151,305,156,271,156"/>
+<area shape="rect" href="classackermann__steering__controller_1_1AckermannSteeringController.html" title=" " alt="" coords="1053,175,1280,230"/>
+<area shape="poly" title=" " alt="" coords="1017,241,1066,227,1067,233,1018,246"/>
+<area shape="rect" href="classbicycle__steering__controller_1_1BicycleSteeringController.html" title=" " alt="" coords="1068,255,1265,295"/>
+<area shape="poly" title=" " alt="" coords="1019,272,1068,272,1068,277,1019,277"/>
+<area shape="rect" href="classtricycle__steering__controller_1_1TricycleSteeringController.html" title=" " alt="" coords="1067,319,1266,359"/>
+<area shape="poly" title=" " alt="" coords="1020,300,1084,316,1083,321,1018,305"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -334,7 +336,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>update_rate_<
 <p>Virtual method that each chainable controller should implement to export its chainable interfaces. Each chainable controller implements this methods where all input (command) interfaces are exported. The method has the same meaning as <code>export_command_interface</code> method from <a class="el" href="classhardware__interface_1_1SystemInterface.html">hardware_interface::SystemInterface</a> or <a class="el" href="classhardware__interface_1_1ActuatorInterface.html">hardware_interface::ActuatorInterface</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>list of CommandInterfaces that other controller can use as their outputs. </dd></dl>
 
-<p>Implemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#af06aed30d66abb5dc125dc680993a50e">passthrough_controller::PassthroughController</a>, <a class="el" href="classadmittance__controller_1_1AdmittanceController.html#a4ee2935d49f50f18a482f67010f23e81">admittance_controller::AdmittanceController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a6f874c80460ea9a3bea1afcfc06befa1">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#a800034a340a9613bead2885697879e26">steering_controllers_library::SteeringControllersLibrary</a>.</p>
+<p>Implemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#af06aed30d66abb5dc125dc680993a50e">passthrough_controller::PassthroughController</a>, <a class="el" href="classadmittance__controller_1_1AdmittanceController.html#a4ee2935d49f50f18a482f67010f23e81">admittance_controller::AdmittanceController</a>, <a class="el" href="classmecanum__drive__controller_1_1MecanumDriveController.html#acea6ffe475be463c8d1e3733ba19c2ef">mecanum_drive_controller::MecanumDriveController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a6f874c80460ea9a3bea1afcfc06befa1">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#a800034a340a9613bead2885697879e26">steering_controllers_library::SteeringControllersLibrary</a>.</p>
 
 </div>
 </div>
@@ -372,7 +374,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>update_rate_<
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if controller successfully switched between "chained" and "external" mode. \default returns true so the method don't have to be overridden if controller can always switch chained mode. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#adf2b95c4988635c86f1828e5ed2f9f57">passthrough_controller::PassthroughController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a3ada207712580ba0c571ec7da557887f">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#a823ddf2e242a5473ca945741823346e8">steering_controllers_library::SteeringControllersLibrary</a>.</p>
+<p>Reimplemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#adf2b95c4988635c86f1828e5ed2f9f57">passthrough_controller::PassthroughController</a>, <a class="el" href="classmecanum__drive__controller_1_1MecanumDriveController.html#a9ef5d9cdc71f575050947ea2160eee4d">mecanum_drive_controller::MecanumDriveController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a3ada207712580ba0c571ec7da557887f">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#a823ddf2e242a5473ca945741823346e8">steering_controllers_library::SteeringControllersLibrary</a>.</p>
 
 </div>
 </div>
@@ -491,7 +493,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>update_rate_<
 <p>Update method for chainable controllers. In this method is valid to assume that \reference_interfaces_ hold the values for calculation of the commands in the current control step. This means that this method is called after \update_reference_from_subscribers if controller is not in chained mode.</p>
 <dl class="section return"><dt>Returns</dt><dd>return_type::OK if calculation and writing of interface is successfully, otherwise return_type::ERROR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#ac43b08a8348a70a429ebddf3057a1c26">passthrough_controller::PassthroughController</a>, <a class="el" href="classadmittance__controller_1_1AdmittanceController.html#a62aa93792128440bb711bf0378a06dc3">admittance_controller::AdmittanceController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a07a80948b5ecef4247a93661b8c43bd4">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#ab7bd90e5b5c9d8e686801dc1fef521b7">steering_controllers_library::SteeringControllersLibrary</a>.</p>
+<p>Implemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#ac43b08a8348a70a429ebddf3057a1c26">passthrough_controller::PassthroughController</a>, <a class="el" href="classadmittance__controller_1_1AdmittanceController.html#a62aa93792128440bb711bf0378a06dc3">admittance_controller::AdmittanceController</a>, <a class="el" href="classmecanum__drive__controller_1_1MecanumDriveController.html#a46b612378e788b4ce09afedc25e4af65">mecanum_drive_controller::MecanumDriveController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a07a80948b5ecef4247a93661b8c43bd4">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#ab7bd90e5b5c9d8e686801dc1fef521b7">steering_controllers_library::SteeringControllersLibrary</a>.</p>
 
 </div>
 </div>
@@ -522,7 +524,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>update_rate_<
 <p>Each chainable controller implements this method to update reference from subscribers when not in chained mode.</p>
 <dl class="section return"><dt>Returns</dt><dd>return_type::OK if update is successfully, otherwise return_type::ERROR. </dd></dl>
 
-<p>Implemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#a5c75b1fee39e2ec8fd7bab827c875f90">passthrough_controller::PassthroughController</a>, <a class="el" href="classadmittance__controller_1_1AdmittanceController.html#a6c834b176658f3db1d1220a0710d95ef">admittance_controller::AdmittanceController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a1a7483990d383ce05edb3fdc409ebac4">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#a4da79b8bad57aad6ef3ab24eeb794b36">steering_controllers_library::SteeringControllersLibrary</a>.</p>
+<p>Implemented in <a class="el" href="classpassthrough__controller_1_1PassthroughController.html#a5c75b1fee39e2ec8fd7bab827c875f90">passthrough_controller::PassthroughController</a>, <a class="el" href="classadmittance__controller_1_1AdmittanceController.html#a6c834b176658f3db1d1220a0710d95ef">admittance_controller::AdmittanceController</a>, <a class="el" href="classmecanum__drive__controller_1_1MecanumDriveController.html#a9a8d3308054be91478643adf53cbea56">mecanum_drive_controller::MecanumDriveController</a>, <a class="el" href="classpid__controller_1_1PidController.html#a1a7483990d383ce05edb3fdc409ebac4">pid_controller::PidController</a>, and <a class="el" href="classsteering__controllers__library_1_1SteeringControllersLibrary.html#a4da79b8bad57aad6ef3ab24eeb794b36">steering_controllers_library::SteeringControllersLibrary</a>.</p>
 
 </div>
 </div>

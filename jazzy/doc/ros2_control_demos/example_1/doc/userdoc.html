@@ -84,6 +84,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../example_13/doc/userdoc.html">Example 13: Multiple robots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../example_14/doc/userdoc.html">Example 14: Modular robots with actuators not providing states</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../example_15/doc/userdoc.html">Example 15: Using multiple controller managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example_16/doc/userdoc.html">Example 16: DiffBot with chained controllers</a></li>
 </ul>
 </li>
 </ul>
@@ -402,6 +403,35 @@ joint_trajectory_position_controller<span class="o">[</span>joint_trajectory_con
 </div>
 </div></div>
 <p>You can adjust the goals in <a class="reference external" href="https://github.com/ros-controls/ros2_control_demos/tree/master/example_1/bringup/config/rrbot_joint_trajectory_publisher.yaml">rrbot_joint_trajectory_publisher</a>.</p>
+</li>
+<li><p>Alternatively, you can use the <a class="reference internal" href="../../../ros2_controllers/rqt_joint_trajectory_controller/doc/userdoc.html#rqt-joint-trajectory-controller-userdoc"><span class="std std-ref">rqt_joint_trajectory_controller</span></a> GUI to control the robot. First, load and switch to the Joint Trajectory Controller with a single command:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-16-TG9jYWw=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-16-TG9jYWw=" name="TG9jYWw=" role="tab" tabindex="0">Local</button><button aria-controls="panel-16-RG9ja2Vy" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-16-RG9ja2Vy" name="RG9ja2Vy" role="tab" tabindex="-1">Docker</button></div><div aria-labelledby="tab-16-TG9jYWw=" class="sphinx-tabs-panel group-tab" id="panel-16-TG9jYWw=" name="TG9jYWw=" role="tabpanel" tabindex="0"><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>control<span class="w"> </span>load_controller<span class="w"> </span>joint_trajectory_position_controller<span class="w"> </span><span class="k">$(</span>ros2<span class="w"> </span>pkg<span class="w"> </span>prefix<span class="w"> </span>ros2_control_demo_example_1<span class="w"> </span>--share<span class="k">)</span>/config/rrbot_jtc.yaml<span class="w"> </span>--set-state<span class="w"> </span>inactive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ros2<span class="w"> </span>control<span class="w"> </span>switch_controllers<span class="w"> </span>--activate<span class="w"> </span>joint_trajectory_position_controller<span class="w"> </span>--deactivate<span class="w"> </span>forward_position_controller
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-16-RG9ja2Vy" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-16-RG9ja2Vy" name="RG9ja2Vy" role="tabpanel" tabindex="0"><p>(from the docker terminal, see above)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>control<span class="w"> </span>load_controller<span class="w"> </span>joint_trajectory_position_controller<span class="w"> </span>--set-state<span class="w"> </span>inactive<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>ros2<span class="w"> </span>control<span class="w"> </span>switch_controllers<span class="w"> </span>--activate<span class="w"> </span>joint_trajectory_position_controller<span class="w"> </span>--deactivate<span class="w"> </span>forward_position_controller
+</pre></div>
+</div>
+</div></div>
+<p>Then, launch the rqt_joint_trajectory_controller GUI:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-17-TG9jYWw=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-17-TG9jYWw=" name="TG9jYWw=" role="tab" tabindex="0">Local</button><button aria-controls="panel-17-RG9ja2Vy" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-17-RG9ja2Vy" name="RG9ja2Vy" role="tab" tabindex="-1">Docker</button></div><div aria-labelledby="tab-17-TG9jYWw=" class="sphinx-tabs-panel group-tab" id="panel-17-TG9jYWw=" name="TG9jYWw=" role="tabpanel" tabindex="0"><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>rqt_joint_trajectory_controller<span class="w"> </span>rqt_joint_trajectory_controller
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-17-RG9ja2Vy" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-17-RG9ja2Vy" name="RG9ja2Vy" role="tabpanel" tabindex="0"><p>(from the docker terminal, see above)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>rqt_joint_trajectory_controller<span class="w"> </span>rqt_joint_trajectory_controller
+</pre></div>
+</div>
+</div></div>
+<p>This will open a graphical interface that allows you to:</p>
+<ul class="simple">
+<li><p>Select the controller from a dropdown menu</p></li>
+<li><p>Set target positions for each joint using sliders</p></li>
+<li><p>Control the execution time of trajectories</p></li>
+<li><p>Send the trajectory commands to the robot</p></li>
+</ul>
+<p>The rqt_joint_trajectory_controller provides an intuitive way to test different joint positions without having to manually construct trajectory messages.</p>
 </li>
 </ol>
 </section>

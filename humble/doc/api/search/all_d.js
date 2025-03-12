@@ -4,10 +4,11 @@ var searchData=
   ['make_5fcontroller_5freference_5finterfaces_5funavailable_1',['make_controller_reference_interfaces_unavailable',['../classhardware__interface_1_1ResourceManager.html#a957c1ae8d36cda4631a5206ad5faff60',1,'hardware_interface::ResourceManager']]],
   ['mapping_2',['mapping',['../namespacejoint__trajectory__controller.html#af9b0e17f56618c8217dd190a7d2e5948',1,'joint_trajectory_controller']]],
   ['max_3',['max',['../structhardware__interface_1_1InterfaceInfo.html#a0a545a31d01268924814d6f1a8a0fc59',1,'hardware_interface::InterfaceInfo']]],
-  ['mimic_5fjoints_5f_4',['mimic_joints_',['../classgazebo__ros2__control_1_1GazeboSystemPrivate.html#a9f2b78f8366c2f307190516d4fa3998d',1,'gazebo_ros2_control::GazeboSystemPrivate::mimic_joints_'],['../classign__ros2__control_1_1IgnitionSystemPrivate.html#a0967567c775396497690c147f11d81aa',1,'ign_ros2_control::IgnitionSystemPrivate::mimic_joints_']]],
-  ['mimicjoint_5',['mimicjoint',['../structMimicJoint.html',1,'MimicJoint'],['../structmock__components_1_1GenericSystem_1_1MimicJoint.html',1,'mock_components::GenericSystem::MimicJoint']]],
-  ['min_6',['min',['../structhardware__interface_1_1InterfaceInfo.html#a6d725b5d18b04284ce7966d6b4446a1c',1,'hardware_interface::InterfaceInfo']]],
-  ['msg_5f_7',['msg_',['../classrealtime__tools_1_1RealtimePublisher.html#af25936f3c9e27a9d559a23801ffb6eb3',1,'realtime_tools::RealtimePublisher']]],
-  ['multiinterfaceforwardcommandcontroller_8',['MultiInterfaceForwardCommandController',['../classforward__command__controller_1_1MultiInterfaceForwardCommandController.html',1,'forward_command_controller']]],
-  ['mutex_9',['mutex',['../classrealtime__tools_1_1detail_1_1mutex.html',1,'realtime_tools::detail']]]
+  ['mecanumdrivecontroller_4',['MecanumDriveController',['../classmecanum__drive__controller_1_1MecanumDriveController.html',1,'mecanum_drive_controller']]],
+  ['mimic_5fjoints_5f_5',['mimic_joints_',['../classgazebo__ros2__control_1_1GazeboSystemPrivate.html#a9f2b78f8366c2f307190516d4fa3998d',1,'gazebo_ros2_control::GazeboSystemPrivate::mimic_joints_'],['../classign__ros2__control_1_1IgnitionSystemPrivate.html#a0967567c775396497690c147f11d81aa',1,'ign_ros2_control::IgnitionSystemPrivate::mimic_joints_']]],
+  ['mimicjoint_6',['mimicjoint',['../structMimicJoint.html',1,'MimicJoint'],['../structmock__components_1_1GenericSystem_1_1MimicJoint.html',1,'mock_components::GenericSystem::MimicJoint']]],
+  ['min_7',['min',['../structhardware__interface_1_1InterfaceInfo.html#a6d725b5d18b04284ce7966d6b4446a1c',1,'hardware_interface::InterfaceInfo']]],
+  ['msg_5f_8',['msg_',['../classrealtime__tools_1_1RealtimePublisher.html#af25936f3c9e27a9d559a23801ffb6eb3',1,'realtime_tools::RealtimePublisher']]],
+  ['multiinterfaceforwardcommandcontroller_9',['MultiInterfaceForwardCommandController',['../classforward__command__controller_1_1MultiInterfaceForwardCommandController.html',1,'forward_command_controller']]],
+  ['mutex_10',['mutex',['../classrealtime__tools_1_1detail_1_1mutex.html',1,'realtime_tools::detail']]]
 ];
