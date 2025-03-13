@@ -172,6 +172,9 @@ controller_interface::ControllerInterfaceBaseSharedPtr&#160;</td><td class="memI
 <tr class="memitem:a6e52d7a474caec7ec1cbc2f65708c69b" id="r_a6e52d7a474caec7ec1cbc2f65708c69b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller__manager_1_1ControllerManager.html#a6e52d7a474caec7ec1cbc2f65708c69b">get_update_rate</a> () const</td></tr>
 <tr class="memdesc:a6e52d7a474caec7ec1cbc2f65708c69b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update rate of the main control loop in the controller manager.  <br /></td></tr>
 <tr class="separator:a6e52d7a474caec7ec1cbc2f65708c69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e72a6708b267db304d74ecb465715d7" id="r_a9e72a6708b267db304d74ecb465715d7"><td class="memItemLeft" align="right" valign="top">rclcpp::Clock::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller__manager_1_1ControllerManager.html#a9e72a6708b267db304d74ecb465715d7">get_trigger_clock</a> () const</td></tr>
+<tr class="memdesc:a9e72a6708b267db304d74ecb465715d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the trigger clock of the controller manager.  <br /></td></tr>
+<tr class="separator:a9e72a6708b267db304d74ecb465715d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -415,6 +418,28 @@ std::unique_ptr&lt; <a class="el" href="classhardware__interface_1_1ResourceMana
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9e72a6708b267db304d74ecb465715d7" name="a9e72a6708b267db304d74ecb465715d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e72a6708b267db304d74ecb465715d7">&#9670;&#160;</a></span>get_trigger_clock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Clock::SharedPtr controller_manager::ControllerManager::get_trigger_clock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the trigger clock of the controller manager. </p>
+<p>Get the trigger clock of the controller manager. The method is used to get the clock that is used for triggering the controllers and the hardware components.</p>
+<dl class="section note"><dt>Note</dt><dd>When the use_sim_time parameter is set to true, the clock will be the ROS clock. Otherwise, the clock will be the Steady Clock.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>trigger clock of the controller manager. </dd></dl>
 
 </div>
 </div>

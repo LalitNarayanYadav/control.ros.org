@@ -108,9 +108,16 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ResourceManager</b> (rclcpp::node_interfaces::NodeClockInterface::SharedPtr clock_interface, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr logger_interface)</td></tr>
 <tr class="memdesc:a4d32339c9b32a59cf4dfde11df3be27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the Resource Manager. <br /></td></tr>
 <tr class="separator:a4d32339c9b32a59cf4dfde11df3be27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0720e6c182e019b1ce67da568e9c69cc" id="r_a0720e6c182e019b1ce67da568e9c69cc"><td class="memItemLeft" align="right" valign="top"><a id="a0720e6c182e019b1ce67da568e9c69cc" name="a0720e6c182e019b1ce67da568e9c69cc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ResourceManager</b> (rclcpp::Clock::SharedPtr clock, rclcpp::Logger logger)</td></tr>
+<tr class="memdesc:a0720e6c182e019b1ce67da568e9c69cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the Resource Manager. <br /></td></tr>
+<tr class="separator:a0720e6c182e019b1ce67da568e9c69cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab838851ca79e76534e6526f3d2ddc0ff" id="r_ab838851ca79e76534e6526f3d2ddc0ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ResourceManager.html#ab838851ca79e76534e6526f3d2ddc0ff">ResourceManager</a> (const std::string &amp;urdf, rclcpp::node_interfaces::NodeClockInterface::SharedPtr clock_interface, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr logger_interface, bool activate_all=false, const unsigned int update_rate=100)</td></tr>
 <tr class="memdesc:ab838851ca79e76534e6526f3d2ddc0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Resource Manager.  <br /></td></tr>
 <tr class="separator:ab838851ca79e76534e6526f3d2ddc0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29eb05c06a9acaa3debd4c74f23f67f" id="r_af29eb05c06a9acaa3debd4c74f23f67f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhardware__interface_1_1ResourceManager.html#af29eb05c06a9acaa3debd4c74f23f67f">ResourceManager</a> (const std::string &amp;urdf, rclcpp::Clock::SharedPtr clock, rclcpp::Logger logger, bool activate_all=false, const unsigned int update_rate=100)</td></tr>
+<tr class="memdesc:af29eb05c06a9acaa3debd4c74f23f67f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Resource Manager.  <br /></td></tr>
+<tr class="separator:af29eb05c06a9acaa3debd4c74f23f67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01ac95fd198f60a0eb9f83c2fbcd2799" id="r_a01ac95fd198f60a0eb9f83c2fbcd2799"><td class="memItemLeft" align="right" valign="top"><a id="a01ac95fd198f60a0eb9f83c2fbcd2799" name="a01ac95fd198f60a0eb9f83c2fbcd2799"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ResourceManager</b> (const <a class="el" href="classhardware__interface_1_1ResourceManager.html">ResourceManager</a> &amp;)=delete</td></tr>
 <tr class="separator:a01ac95fd198f60a0eb9f83c2fbcd2799"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,7 +265,7 @@ std::recursive_mutex&#160;</td><td class="memItemRight" valign="bottom"><b>resou
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab838851ca79e76534e6526f3d2ddc0ff" name="ab838851ca79e76534e6526f3d2ddc0ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab838851ca79e76534e6526f3d2ddc0ff">&#9670;&#160;</a></span>ResourceManager()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab838851ca79e76534e6526f3d2ddc0ff">&#9670;&#160;</a></span>ResourceManager() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,7 +323,75 @@ std::recursive_mutex&#160;</td><td class="memItemRight" valign="bottom"><b>resou
     <tr><td class="paramdir">[in]</td><td class="paramname">urdf</td><td>string containing the URDF. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">activate_all</td><td>boolean argument indicating if all resources should be immediately activated. Currently used only in tests. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">update_rate</td><td>Update rate of the controller manager to calculate calling frequency of async components. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">clock_interface</td><td>reference to the clock interface of the CM node for getting time used for triggering async components. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clock_interface</td><td>reference to the clock interface of the CM node for getting time used for triggering async components and different read/write component rates. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">logger_interface</td><td>reference to the logger interface of the CM node for logging. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af29eb05c06a9acaa3debd4c74f23f67f" name="af29eb05c06a9acaa3debd4c74f23f67f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29eb05c06a9acaa3debd4c74f23f67f">&#9670;&#160;</a></span>ResourceManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">hardware_interface::ResourceManager::ResourceManager </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>urdf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rclcpp::Clock::SharedPtr&#160;</td>
+          <td class="paramname"><em>clock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rclcpp::Logger&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>activate_all</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>update_rate</em> = <code>100</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the Resource Manager. </p>
+<p>The implementation loads the specified urdf and initializes the hardware components listed within as well as populate their respective state and command interfaces.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">urdf</td><td>string containing the URDF. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">activate_all</td><td>boolean argument indicating if all resources should be immediately activated. Currently used only in tests. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">update_rate</td><td>Update rate of the controller manager to calculate calling frequency of async components. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clock</td><td>reference to the clock of the CM node for getting time used for triggering async components and different read/write component rates. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">logger</td><td>logger of the CM node for logging. </td></tr>
   </table>
   </dd>
 </dl>

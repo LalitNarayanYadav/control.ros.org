@@ -94,6 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a76fb71edaa59000118b770beeb62b7d0" id="r_a76fb71edaa59000118b770beeb62b7d0"><td class="memItemLeft" align="right" valign="top"><a id="a76fb71edaa59000118b770beeb62b7d0" name="a76fb71edaa59000118b770beeb62b7d0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ResourceStorage</b> (rclcpp::node_interfaces::NodeClockInterface::SharedPtr clock_interface, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr logger_interface)</td></tr>
 <tr class="separator:a76fb71edaa59000118b770beeb62b7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf129b0d7b8521faebc4e61534371dd9" id="r_abf129b0d7b8521faebc4e61534371dd9"><td class="memItemLeft" align="right" valign="top"><a id="abf129b0d7b8521faebc4e61534371dd9" name="abf129b0d7b8521faebc4e61534371dd9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ResourceStorage</b> (rclcpp::Clock::SharedPtr clock_interface, rclcpp::Logger logger)</td></tr>
+<tr class="separator:abf129b0d7b8521faebc4e61534371dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f386dafde7c2c155ae846c1b9ef2cf4" id="r_a1f386dafde7c2c155ae846c1b9ef2cf4"><td class="memTemplParams" colspan="2"><a id="a1f386dafde7c2c155ae846c1b9ef2cf4" name="a1f386dafde7c2c155ae846c1b9ef2cf4"></a>
 template&lt;class HardwareT , class HardwareInterfaceT &gt; </td></tr>
 <tr class="memitem:a1f386dafde7c2c155ae846c1b9ef2cf4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>load_hardware</b> (const <a class="el" href="structhardware__interface_1_1HardwareInfo.html">HardwareInfo</a> &amp;hardware_info, pluginlib::ClassLoader&lt; HardwareInterfaceT &gt; &amp;loader, std::vector&lt; HardwareT &gt; &amp;container)</td></tr>
@@ -202,12 +205,9 @@ pluginlib::ClassLoader&lt; <a class="el" href="classhardware__interface_1_1Senso
 <tr class="memitem:a4107d9c3e5af7063bd87d2b2937c7903" id="r_a4107d9c3e5af7063bd87d2b2937c7903"><td class="memItemLeft" align="right" valign="top"><a id="a4107d9c3e5af7063bd87d2b2937c7903" name="a4107d9c3e5af7063bd87d2b2937c7903"></a>
 pluginlib::ClassLoader&lt; <a class="el" href="classhardware__interface_1_1SystemInterface.html">SystemInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>system_loader_</b></td></tr>
 <tr class="separator:a4107d9c3e5af7063bd87d2b2937c7903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71c6e2540d55ee994d033de3566d9f1c" id="r_a71c6e2540d55ee994d033de3566d9f1c"><td class="memItemLeft" align="right" valign="top"><a id="a71c6e2540d55ee994d033de3566d9f1c" name="a71c6e2540d55ee994d033de3566d9f1c"></a>
-rclcpp::node_interfaces::NodeClockInterface::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><b>clock_interface_</b></td></tr>
-<tr class="separator:a71c6e2540d55ee994d033de3566d9f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b03f8f4e373cc0bfeb106cdde06b746" id="r_a7b03f8f4e373cc0bfeb106cdde06b746"><td class="memItemLeft" align="right" valign="top"><a id="a7b03f8f4e373cc0bfeb106cdde06b746" name="a7b03f8f4e373cc0bfeb106cdde06b746"></a>
-rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><b>logger_interface_</b></td></tr>
-<tr class="separator:a7b03f8f4e373cc0bfeb106cdde06b746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9a6ffeb2387a1b58970112bf0c5b27" id="r_a2c9a6ffeb2387a1b58970112bf0c5b27"><td class="memItemLeft" align="right" valign="top"><a id="a2c9a6ffeb2387a1b58970112bf0c5b27" name="a2c9a6ffeb2387a1b58970112bf0c5b27"></a>
+rclcpp::Clock::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><b>rm_clock_</b></td></tr>
+<tr class="separator:a2c9a6ffeb2387a1b58970112bf0c5b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9e80888a58b2c7516875ed99a457c64" id="r_ad9e80888a58b2c7516875ed99a457c64"><td class="memItemLeft" align="right" valign="top"><a id="ad9e80888a58b2c7516875ed99a457c64" name="ad9e80888a58b2c7516875ed99a457c64"></a>
 rclcpp::Logger&#160;</td><td class="memItemRight" valign="bottom"><b>rm_logger_</b></td></tr>
 <tr class="separator:ad9e80888a58b2c7516875ed99a457c64"><td class="memSeparator" colspan="2">&#160;</td></tr>

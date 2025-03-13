@@ -201,10 +201,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>p_error_last_</b></
 <tr class="separator:a8c6519a93f8ed034b9167e502e5f8a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f0503cbf257d7d5ed77a212f2e52f70" id="r_a6f0503cbf257d7d5ed77a212f2e52f70"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#a6f0503cbf257d7d5ed77a212f2e52f70">p_error_</a></td></tr>
 <tr class="separator:a6f0503cbf257d7d5ed77a212f2e52f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe24a1015f7d3f07a12ff3238f376985" id="r_afe24a1015f7d3f07a12ff3238f376985"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#afe24a1015f7d3f07a12ff3238f376985">i_error_</a></td></tr>
-<tr class="separator:afe24a1015f7d3f07a12ff3238f376985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9837edc9d20a2ec00e501935866dfbbc" id="r_a9837edc9d20a2ec00e501935866dfbbc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#a9837edc9d20a2ec00e501935866dfbbc">d_error_</a></td></tr>
 <tr class="separator:a9837edc9d20a2ec00e501935866dfbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed58f10eac176fe579cf3b56b26c2324" id="r_aed58f10eac176fe579cf3b56b26c2324"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#aed58f10eac176fe579cf3b56b26c2324">i_term_</a></td></tr>
+<tr class="separator:aed58f10eac176fe579cf3b56b26c2324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae00329b76bf056d39e9a85d9c67df531" id="r_ae00329b76bf056d39e9a85d9c67df531"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontrol__toolbox_1_1Pid.html#ae00329b76bf056d39e9a85d9c67df531">cmd_</a></td></tr>
 <tr class="separator:ae00329b76bf056d39e9a85d9c67df531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -719,7 +719,7 @@ last_time = time;
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pe</td><td>The proportional error. </td></tr>
-    <tr><td class="paramname">ie</td><td>The integral error. </td></tr>
+    <tr><td class="paramname">ie</td><td>The weighted integral error. </td></tr>
     <tr><td class="paramname">de</td><td>The derivative error. </td></tr>
   </table>
   </dd>
@@ -1095,7 +1095,7 @@ last_time = time;
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Derivative of error. </p>
+<p>Integrator state. </p>
 
 </div>
 </div>
@@ -1118,12 +1118,12 @@ last_time = time;
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Integral of error. </p>
+<p>Error. </p>
 
 </div>
 </div>
-<a id="afe24a1015f7d3f07a12ff3238f376985" name="afe24a1015f7d3f07a12ff3238f376985"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe24a1015f7d3f07a12ff3238f376985">&#9670;&#160;</a></span>i_error_</h2>
+<a id="aed58f10eac176fe579cf3b56b26c2324" name="aed58f10eac176fe579cf3b56b26c2324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed58f10eac176fe579cf3b56b26c2324">&#9670;&#160;</a></span>i_term_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1132,7 +1132,7 @@ last_time = time;
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double control_toolbox::Pid::i_error_</td>
+          <td class="memname">double control_toolbox::Pid::i_term_</td>
         </tr>
       </table>
   </td>
@@ -1141,7 +1141,7 @@ last_time = time;
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Error. </p>
+<p>Derivative of error. </p>
 
 </div>
 </div>
