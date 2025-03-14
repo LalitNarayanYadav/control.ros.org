@@ -157,6 +157,9 @@ controller_interface::ControllerInterfaceBaseSharedPtr&#160;</td><td class="memI
 <tr class="memitem:a47ba7e385d13ad28a0ba067af28256b4" id="r_a47ba7e385d13ad28a0ba067af28256b4"><td class="memItemLeft" align="right" valign="top">controller_interface::return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller__manager_1_1ControllerManager.html#a47ba7e385d13ad28a0ba067af28256b4">switch_controller</a> (const std::vector&lt; std::string &gt; &amp;<a class="el" href="classcontroller__manager_1_1ControllerManager.html#aaf19f50a660d4991ac6701cd9ebd2cc8">activate_controllers</a>, const std::vector&lt; std::string &gt; &amp;<a class="el" href="classcontroller__manager_1_1ControllerManager.html#ad4fd0e0db5892d3016282044432bfabb">deactivate_controllers</a>, int strictness, bool activate_asap=kWaitForAllResources, const rclcpp::Duration &amp;timeout=rclcpp::Duration::from_nanoseconds(kInfiniteTimeout))</td></tr>
 <tr class="memdesc:a47ba7e385d13ad28a0ba067af28256b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">switch_controller Deactivates some controllers and activates others.  <br /></td></tr>
 <tr class="separator:a47ba7e385d13ad28a0ba067af28256b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9724e811e57f819394ebfa3a7e805c74" id="r_a9724e811e57f819394ebfa3a7e805c74"><td class="memItemLeft" align="right" valign="top">controller_interface::return_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller__manager_1_1ControllerManager.html#a9724e811e57f819394ebfa3a7e805c74">switch_controller_cb</a> (const std::vector&lt; std::string &gt; &amp;<a class="el" href="classcontroller__manager_1_1ControllerManager.html#aaf19f50a660d4991ac6701cd9ebd2cc8">activate_controllers</a>, const std::vector&lt; std::string &gt; &amp;<a class="el" href="classcontroller__manager_1_1ControllerManager.html#ad4fd0e0db5892d3016282044432bfabb">deactivate_controllers</a>, int strictness, bool activate_asap, const rclcpp::Duration &amp;timeout, std::string &amp;message)</td></tr>
+<tr class="memdesc:a9724e811e57f819394ebfa3a7e805c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">switch_controller Deactivates some controllers and activates others.  <br /></td></tr>
+<tr class="separator:a9724e811e57f819394ebfa3a7e805c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dde8f9e562489619acd121482a5d6a3" id="r_a2dde8f9e562489619acd121482a5d6a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller__manager_1_1ControllerManager.html#a2dde8f9e562489619acd121482a5d6a3">read</a> (const rclcpp::Time &amp;time, const rclcpp::Duration &amp;period)</td></tr>
 <tr class="memdesc:a2dde8f9e562489619acd121482a5d6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read values to state interfaces.  <br /></td></tr>
 <tr class="separator:a2dde8f9e562489619acd121482a5d6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -675,11 +678,78 @@ std::unique_ptr&lt; <a class="el" href="classhardware__interface_1_1ResourceMana
     <tr><td class="paramdir">[in]</td><td class="paramname">activate_controllers</td><td>is a list of controllers to activate. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">deactivate_controllers</td><td>is a list of controllers to deactivate. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">set</td><td>level of strictness (BEST_EFFORT or STRICT) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">activate_asap</td><td>flag to activate controllers as soon as possible. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>to wait for the controllers to be switched. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd>Documentation in controller_manager_msgs/SwitchController.srv </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The following is the case of the real controllers that are deactivated and doesn't include the chained controllers that are deactivated and activated</dd></dl>
+
+</div>
+</div>
+<a id="a9724e811e57f819394ebfa3a7e805c74" name="a9724e811e57f819394ebfa3a7e805c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9724e811e57f819394ebfa3a7e805c74">&#9670;&#160;</a></span>switch_controller_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">controller_interface::return_type controller_manager::ControllerManager::switch_controller_cb </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>activate_controllers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>deactivate_controllers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>strictness</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>activate_asap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rclcpp::Duration &amp;&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>switch_controller Deactivates some controllers and activates others. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">activate_controllers</td><td>is a list of controllers to activate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">deactivate_controllers</td><td>is a list of controllers to deactivate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">set</td><td>level of strictness (BEST_EFFORT or STRICT) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">activate_asap</td><td>flag to activate controllers as soon as possible. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>to wait for the controllers to be switched. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">message</td><td>describing the result of the switch. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>Documentation in controller_manager_msgs/SwitchController.srv </dd></dl>
 
 </div>
 </div>

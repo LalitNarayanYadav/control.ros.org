@@ -42,6 +42,7 @@ var searchData=
   ['stop_5fthread_39',['stop_thread',['../classrealtime__tools_1_1AsyncFunctionHandler.html#ac450b4737a3a04464a8d5e3588eb154d',1,'realtime_tools::AsyncFunctionHandler']]],
   ['switch_5fchained_5fmode_40',['switch_chained_mode',['../classcontroller__manager_1_1ControllerManager.html#a9990bd8fae1a09ca83420dcd84c5cf36',1,'controller_manager::ControllerManager']]],
   ['switch_5fcontroller_41',['switch_controller',['../classcontroller__manager_1_1ControllerManager.html#a47ba7e385d13ad28a0ba067af28256b4',1,'controller_manager::ControllerManager']]],
-  ['system_5fcomponents_5fsize_42',['system_components_size',['../classhardware__interface_1_1ResourceManager.html#a5b97b997de12432dcbfbabcedca2a52e',1,'hardware_interface::ResourceManager']]],
-  ['systeminterface_43',['SystemInterface',['../classhardware__interface_1_1SystemInterface.html#af117bf00b006cc998f49398ca5a6bab4',1,'hardware_interface::SystemInterface']]]
+  ['switch_5fcontroller_5fcb_42',['switch_controller_cb',['../classcontroller__manager_1_1ControllerManager.html#a9724e811e57f819394ebfa3a7e805c74',1,'controller_manager::ControllerManager']]],
+  ['system_5fcomponents_5fsize_43',['system_components_size',['../classhardware__interface_1_1ResourceManager.html#a5b97b997de12432dcbfbabcedca2a52e',1,'hardware_interface::ResourceManager']]],
+  ['systeminterface_44',['SystemInterface',['../classhardware__interface_1_1SystemInterface.html#af117bf00b006cc998f49398ca5a6bab4',1,'hardware_interface::SystemInterface']]]
 ];

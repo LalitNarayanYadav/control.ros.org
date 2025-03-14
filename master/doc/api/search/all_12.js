@@ -78,8 +78,9 @@ var searchData=
   ['stop_5fthread_75',['stop_thread',['../classrealtime__tools_1_1AsyncFunctionHandler.html#ac450b4737a3a04464a8d5e3588eb154d',1,'realtime_tools::AsyncFunctionHandler']]],
   ['switch_5fchained_5fmode_76',['switch_chained_mode',['../classcontroller__manager_1_1ControllerManager.html#a9990bd8fae1a09ca83420dcd84c5cf36',1,'controller_manager::ControllerManager']]],
   ['switch_5fcontroller_77',['switch_controller',['../classcontroller__manager_1_1ControllerManager.html#a47ba7e385d13ad28a0ba067af28256b4',1,'controller_manager::ControllerManager']]],
-  ['switchcontrollersverb_78',['SwitchControllersVerb',['../classros2controlcli_1_1verb_1_1switch__controllers_1_1SwitchControllersVerb.html',1,'ros2controlcli::verb::switch_controllers']]],
-  ['system_79',['System',['../classhardware__interface_1_1System.html',1,'hardware_interface']]],
-  ['system_5fcomponents_5fsize_80',['system_components_size',['../classhardware__interface_1_1ResourceManager.html#a5b97b997de12432dcbfbabcedca2a52e',1,'hardware_interface::ResourceManager']]],
-  ['systeminterface_81',['systeminterface',['../classhardware__interface_1_1SystemInterface.html#af117bf00b006cc998f49398ca5a6bab4',1,'hardware_interface::SystemInterface::SystemInterface()'],['../classhardware__interface_1_1SystemInterface.html',1,'hardware_interface::SystemInterface']]]
+  ['switch_5fcontroller_5fcb_78',['switch_controller_cb',['../classcontroller__manager_1_1ControllerManager.html#a9724e811e57f819394ebfa3a7e805c74',1,'controller_manager::ControllerManager']]],
+  ['switchcontrollersverb_79',['SwitchControllersVerb',['../classros2controlcli_1_1verb_1_1switch__controllers_1_1SwitchControllersVerb.html',1,'ros2controlcli::verb::switch_controllers']]],
+  ['system_80',['System',['../classhardware__interface_1_1System.html',1,'hardware_interface']]],
+  ['system_5fcomponents_5fsize_81',['system_components_size',['../classhardware__interface_1_1ResourceManager.html#a5b97b997de12432dcbfbabcedca2a52e',1,'hardware_interface::ResourceManager']]],
+  ['systeminterface_82',['systeminterface',['../classhardware__interface_1_1SystemInterface.html#af117bf00b006cc998f49398ca5a6bab4',1,'hardware_interface::SystemInterface::SystemInterface()'],['../classhardware__interface_1_1SystemInterface.html',1,'hardware_interface::SystemInterface']]]
 ];
