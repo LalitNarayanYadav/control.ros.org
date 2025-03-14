@@ -8,10 +8,11 @@ var searchData=
   ['max_5',['max',['../structhardware__interface_1_1InterfaceInfo.html#a0a545a31d01268924814d6f1a8a0fc59',1,'hardware_interface::InterfaceInfo']]],
   ['mecanumdrivecontroller_6',['MecanumDriveController',['../classmecanum__drive__controller_1_1MecanumDriveController.html',1,'mecanum_drive_controller']]],
   ['mimic_5fjoints_7',['mimic_joints',['../structhardware__interface_1_1HardwareInfo.html#a359d379ddb9c5e26f80dc8ecfe38c4d5',1,'hardware_interface::HardwareInfo']]],
-  ['mimicattribute_8',['MimicAttribute',['../namespacehardware__interface.html#a1d0af6c20253fb8fd24cb0ba98daec58',1,'hardware_interface']]],
-  ['mimicjoint_9',['MimicJoint',['../structhardware__interface_1_1MimicJoint.html',1,'hardware_interface']]],
-  ['min_10',['min',['../structhardware__interface_1_1InterfaceInfo.html#a6d725b5d18b04284ce7966d6b4446a1c',1,'hardware_interface::InterfaceInfo']]],
-  ['msg_5f_11',['msg_',['../classrealtime__tools_1_1RealtimePublisher.html#af25936f3c9e27a9d559a23801ffb6eb3',1,'realtime_tools::RealtimePublisher']]],
-  ['multiinterfaceforwardcommandcontroller_12',['MultiInterfaceForwardCommandController',['../classforward__command__controller_1_1MultiInterfaceForwardCommandController.html',1,'forward_command_controller']]],
-  ['mutex_13',['mutex',['../classrealtime__tools_1_1detail_1_1mutex.html',1,'realtime_tools::detail']]]
+  ['mimic_5fjoints_5f_8',['mimic_joints_',['../classgazebo__ros2__control_1_1GazeboSystemPrivate.html#a9f2b78f8366c2f307190516d4fa3998d',1,'gazebo_ros2_control::GazeboSystemPrivate']]],
+  ['mimicattribute_9',['MimicAttribute',['../namespacehardware__interface.html#a1d0af6c20253fb8fd24cb0ba98daec58',1,'hardware_interface']]],
+  ['mimicjoint_10',['mimicjoint',['../structhardware__interface_1_1MimicJoint.html',1,'hardware_interface::MimicJoint'],['../structMimicJoint.html',1,'MimicJoint']]],
+  ['min_11',['min',['../structhardware__interface_1_1InterfaceInfo.html#a6d725b5d18b04284ce7966d6b4446a1c',1,'hardware_interface::InterfaceInfo']]],
+  ['msg_5f_12',['msg_',['../classrealtime__tools_1_1RealtimePublisher.html#af25936f3c9e27a9d559a23801ffb6eb3',1,'realtime_tools::RealtimePublisher']]],
+  ['multiinterfaceforwardcommandcontroller_13',['MultiInterfaceForwardCommandController',['../classforward__command__controller_1_1MultiInterfaceForwardCommandController.html',1,'forward_command_controller']]],
+  ['mutex_14',['mutex',['../classrealtime__tools_1_1detail_1_1mutex.html',1,'realtime_tools::detail']]]
 ];
