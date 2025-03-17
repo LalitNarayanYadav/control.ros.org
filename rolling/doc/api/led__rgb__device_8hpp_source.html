@@ -139,9 +139,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">bool</span> all_set = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    all_set &amp;= command_interfaces_[0].get().set_value(message.r);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    all_set &amp;= command_interfaces_[1].get().set_value(message.g);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    all_set &amp;= command_interfaces_[2].get().set_value(message.b);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    all_set &amp;= command_interfaces_[0].get().set_value(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(message.r));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    all_set &amp;= command_interfaces_[1].get().set_value(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(message.g));</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    all_set &amp;= command_interfaces_[2].get().set_value(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(message.b));</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> all_set;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
 </div>

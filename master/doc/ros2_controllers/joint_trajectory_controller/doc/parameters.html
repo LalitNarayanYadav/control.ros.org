@@ -149,17 +149,22 @@
 <section id="list-of-parameters">
 <h2>List of parameters<a class="headerlink" href="#list-of-parameters" title="Link to this heading"></a></h2>
 <dl>
-<dt>joints (string_array)</dt><dd><p>Joint names to control and listen to</p>
+<dt>joints (string_array)</dt><dd><p>Joint names of the system</p>
 <p>Read only: True</p>
 <p>Default:  {}</p>
 <p>Constraints:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>contains no duplicates</p></li>
+<li><p>length is greater than 0</p></li>
 </ul>
 </div></blockquote>
 </dd>
-<dt>command_joints (string_array)</dt><dd><p>Joint names to control. This parameters is used if JTC is used in a controller chain where command and state interfaces don’t have same names.</p>
+<dt>command_joints (string_array)</dt><dd><p>Joint names to control. If left empty, <code class="docutils literal notranslate"><span class="pre">joints</span></code> will be used. This parameters can be used if:</p>
+<ul class="simple">
+<li><p>JTC is used in a controller chain where command and state interfaces don’t have same names.</p></li>
+<li><p>If the number of command joints is smaller than the degrees-of-freedom. For example to track the state and error of passive joints. <code class="docutils literal notranslate"><span class="pre">command_joints</span></code> must then be a subset of <code class="docutils literal notranslate"><span class="pre">joints</span></code>.</p></li>
+</ul>
 <p>Read only: True</p>
 <p>Default:  {}</p>
 <p>Constraints:</p>
@@ -176,6 +181,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>contains no duplicates</p></li>
+<li><p>length is greater than 0</p></li>
 <li><p>every element is one of the list [‘position’, ‘velocity’, ‘acceleration’, ‘effort’]</p></li>
 <li><p>Custom validator: joint_trajectory_controller::command_interface_type_combinations</p></li>
 </ul>
@@ -188,6 +194,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>contains no duplicates</p></li>
+<li><p>length is greater than 0</p></li>
 <li><p>every element is one of the list [‘position’, ‘velocity’, ‘acceleration’]</p></li>
 <li><p>Custom validator: joint_trajectory_controller::state_interface_type_combinations</p></li>
 </ul>

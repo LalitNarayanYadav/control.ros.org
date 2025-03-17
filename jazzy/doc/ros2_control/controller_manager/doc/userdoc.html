@@ -80,7 +80,10 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#scheduling-behavior">Scheduling Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#monitoring-and-tuning">Monitoring and Tuning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring-and-tuning">Monitoring and Tuning</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#different-clocks-used-by-controller-manager">Different Clocks used by Controller Manager</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="controller_chaining.html">Controller Chaining / Cascade Control</a></li>
@@ -703,6 +706,17 @@ Likewise, if a controller returns <code class="docutils literal notranslate"><sp
 <section id="monitoring-and-tuning">
 <h2>Monitoring and Tuning<a class="headerlink" href="#monitoring-and-tuning" title="Link to this heading"></a></h2>
 <p>ros2_control <code class="docutils literal notranslate"><span class="pre">controller_interface</span></code> has a <code class="docutils literal notranslate"><span class="pre">ControllerUpdateStats</span></code> structure which can be used to monitor the controller update rate and the missed update cycles. The data is published to the <code class="docutils literal notranslate"><span class="pre">/diagnostics</span></code> topic. This can be used to fine tune the controller update rate.</p>
+<section id="different-clocks-used-by-controller-manager">
+<h3>Different Clocks used by Controller Manager<a class="headerlink" href="#different-clocks-used-by-controller-manager" title="Link to this heading"></a></h3>
+<p>The controller manager internally uses the following two different clocks for a non-simulation setup:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RCL_ROS_TIME</span></code>: This clock is used mostly in the non-realtime loops.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RCL_STEADY_TIME</span></code>: This clock is used mostly in the realtime loops for the <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">update</span></code>, and <code class="docutils literal notranslate"><span class="pre">write</span></code> loops. However, when the controller manager is used in a simulation environment, the <code class="docutils literal notranslate"><span class="pre">RCL_ROS_TIME</span></code> clock is used for triggering the <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">update</span></code>, and <code class="docutils literal notranslate"><span class="pre">write</span></code> loops.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code> methods of the hardware components is of type <code class="docutils literal notranslate"><span class="pre">RCL_STEADY_TIME</span></code>, as most of the hardware expects the time to be monotonic and not affected by the system time changes. However, the <code class="docutils literal notranslate"><span class="pre">time</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">update</span></code> method of the controller is of type <code class="docutils literal notranslate"><span class="pre">RCL_ROS_TIME</span></code> as the controller is the one that interacts with other nodes or topics to receive the commands or publish the state. This <code class="docutils literal notranslate"><span class="pre">time</span></code> argument can be used by the controllers to validate the received commands or to publish the state at the correct timestamp.
+The <code class="docutils literal notranslate"><span class="pre">period</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">update</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code> methods is calculated using the trigger clock of type <code class="docutils literal notranslate"><span class="pre">RCL_STEADY_TIME</span></code> so it is always monotonic.</p>
+<p>The reason behind using different clocks is to avoid the issues related to the affect of system time changes in the realtime loops. The <code class="docutils literal notranslate"><span class="pre">ros2_control_node</span></code> now also detects the overruns caused by the system time changes and longer execution times of the controllers and hardware components. The controller manager will print a warning message if the controller or hardware component misses the update cycle due to the system time changes or longer execution times.</p>
+</section>
 </section>
 </section>
 
