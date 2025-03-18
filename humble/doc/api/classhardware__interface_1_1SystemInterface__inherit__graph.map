@@ -1,5 +1,5 @@
 <map id="hardware_interface::SystemInterface" name="hardware_interface::SystemInterface">
-<area shape="rect" id="Node000001" title=" " alt="" coords="305,421,453,461"/>
+<area shape="rect" id="Node000001" title="Virtual Class to implement when integrating a complex system into ros2_control." alt="" coords="305,421,453,461"/>
 <area shape="rect" id="Node000003" href="$classgazebo__ros2__control_1_1GazeboSystemInterface.html" title=" " alt="" coords="552,5,739,45"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="378,407,383,334,401,239,416,189,437,140,465,95,500,55,524,39,551,29,553,34,526,44,503,59,469,98,442,143,421,191,406,240,389,335,383,408"/>
 <area shape="rect" id="Node000005" href="$classign__ros2__control_1_1IgnitionSystemInterface.html" title=" " alt="" coords="552,69,739,109"/>
