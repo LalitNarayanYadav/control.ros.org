@@ -141,46 +141,41 @@
 </div>
 <section id="tutorial-steps">
 <h2>Tutorial steps<a class="headerlink" href="#tutorial-steps" title="Link to this heading"></a></h2>
-<ol class="arabic">
-<li><p>To start <em>DiffBot</em> example open a terminal, source your ROS2-workspace and execute its launch file with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>diffbot.launch.py
-</pre></div>
-</div>
-</li>
+<ol class="arabic simple">
+<li><p>To start <em>DiffBot</em> example open a terminal, source your ROS2-workspace and execute its launch file with</p></li>
 </ol>
 <blockquote>
-<div><p>The launch file loads and starts the robot hardware, controllers and opens <em>RViz</em>.
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>diffbot.launch.py
+</pre></div>
+</div>
+<p>The launch file loads and starts the robot hardware, controllers and opens <em>RViz</em>.
 In the starting terminal you will see a lot of output from the hardware implementation showing its internal states.
 This excessive printing is only added for demonstration. In general, printing to the terminal should be avoided as much as possible in a hardware interface implementation.</p>
 <p>If you can see an orange box in <em>RViz</em> everything has started properly. Let’s introspect the control system before moving <em>DiffBot</em>.</p>
 </div></blockquote>
-<ol class="arabic" start="2">
-<li><p>Check controllers</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>control<span class="w"> </span>list_controllers
-</pre></div>
-</div>
-</li>
+<ol class="arabic simple" start="2">
+<li><p>Check controllers</p></li>
 </ol>
 <blockquote>
-<div><p>You should get</p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>joint_state_broadcaster<span class="w">          </span>joint_state_broadcaster/JointStateBroadcaster<span class="w">  </span>active
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>control<span class="w"> </span>list_controllers
+</pre></div>
+</div>
+<p>You should get</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>joint_state_broadcaster<span class="w">          </span>joint_state_broadcaster/JointStateBroadcaster<span class="w">  </span>active
 diffbot_base_controller<span class="w">          </span>diff_drive_controller/DiffDriveController<span class="w">      </span>active
 pid_controller_right_wheel_joint<span class="w"> </span>pid_controller/PidController<span class="w">                   </span>active
 pid_controller_left_wheel_joint<span class="w">  </span>pid_controller/PidController<span class="w">                   </span>active
 </pre></div>
 </div>
 </div></blockquote>
-</div></blockquote>
-<ol class="arabic" start="3">
-<li><p>Check the hardware interface loaded by opening another terminal and executing</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>control<span class="w"> </span>list_hardware_interfaces
-</pre></div>
-</div>
-</li>
+<ol class="arabic simple" start="3">
+<li><p>Check the hardware interface loaded by opening another terminal and executing</p></li>
 </ol>
 <blockquote>
-<div><p>You should get</p>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>control<span class="w"> </span>list_hardware_interfaces
+</pre></div>
+</div>
+<p>You should get</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">command</span><span class="w"> </span>interfaces
 <span class="w">  </span>diffbot_base_controller/angular/velocity<span class="w"> </span><span class="o">[</span>unavailable<span class="o">]</span><span class="w"> </span><span class="o">[</span>unclaimed<span class="o">]</span>
 <span class="w">  </span>diffbot_base_controller/linear/velocity<span class="w"> </span><span class="o">[</span>unavailable<span class="o">]</span><span class="w"> </span><span class="o">[</span>unclaimed<span class="o">]</span>
@@ -222,9 +217,11 @@ std_srvs.srv.SetBool_Response<span class="o">(</span><span class="nv">success</s
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic" start="6">
-<li><p>Now we are ready to send a command to move the robot. Send a command to <em>Diff Drive Controller</em> by opening another terminal and executing</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </span>--rate<span class="w"> </span><span class="m">10</span><span class="w"> </span>/cmd_vel<span class="w"> </span>geometry_msgs/msg/TwistStamped<span class="w"> </span><span class="s2">&quot;</span>
+<ol class="arabic simple" start="6">
+<li><p>Now we are ready to send a command to move the robot. Send a command to <em>Diff Drive Controller</em> by opening another terminal and executing</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </span>--rate<span class="w"> </span><span class="m">10</span><span class="w"> </span>/cmd_vel<span class="w"> </span>geometry_msgs/msg/TwistStamped<span class="w"> </span><span class="s2">&quot;</span>
 <span class="s2">twist:</span>
 <span class="s2">  linear:</span>
 <span class="s2">    x: 0.7</span>
@@ -236,10 +233,7 @@ std_srvs.srv.SetBool_Response<span class="o">(</span><span class="nv">success</s
 <span class="s2">    z: 1.0&quot;</span>
 </pre></div>
 </div>
-</li>
-</ol>
-<blockquote>
-<div><p>You should now see robot is moving in circles in <em>RViz</em>.</p>
+<p>You should now see robot is moving in circles in <em>RViz</em>.</p>
 </div></blockquote>
 <ol class="arabic simple" start="7">
 <li><p>In the terminal where launch file is started, you should see the commands being sent to the wheels and how they are gradually stabilizing to the target velocity similar to following output.</p></li>
@@ -304,54 +298,58 @@ dof_states:
 <p>In the section below, we will use <em>plotjuggler</em> to observe the convergence of DiffBot’s wheel velocities and commands from PID controllers.</p>
 <p><em>plotjuggler</em> is an open-source data visualization tool and widely embraced by ROS2 community. If you don’t have it installed, you can find the instructions from <a class="reference external" href="https://github.com/facontidavide/PlotJuggler">plotjuggler website</a>.</p>
 <p>Before we proceed, we stop all previous steps from terminal and start from the beginning.</p>
-<ol class="arabic">
-<li><p>To start <em>DiffBot</em> example open a terminal, source your ROS2-workspace and execute its launch file with</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>diffbot.launch.py
-</pre></div>
-</div>
-</li>
+<ol class="arabic simple">
+<li><p>To start <em>DiffBot</em> example open a terminal, source your ROS2-workspace and execute its launch file with</p></li>
 </ol>
-<p>Like before, if you can see an orange box in <em>RViz</em>, everything has started properly.</p>
-<ol class="arabic" start="2">
-<li><p>To start the plotjuggler with a provided layout file(plotjuggler.xml), open another terminal and run following command.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>plotjuggler<span class="w"> </span>plotjuggler<span class="w"> </span>--layout<span class="w"> </span><span class="k">$(</span>ros2<span class="w"> </span>pkg<span class="w"> </span>prefix<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>--share<span class="k">)</span>/config/plotjuggler.xml
-</pre></div>
-</div>
-</li>
-</ol>
-<p>After this, you will see a few dialogs popping up. For example:</p>
 <blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Start<span class="w"> </span>the<span class="w"> </span>previously<span class="w"> </span>used<span class="w"> </span>streaming<span class="w"> </span>plugin?
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>diffbot.launch.py
+</pre></div>
+</div>
+<p>Like before, if you can see an orange box in <em>RViz</em>, everything has started properly.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>To start the plotjuggler with a provided layout file(plotjuggler.xml), open another terminal and run following command.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>plotjuggler<span class="w"> </span>plotjuggler<span class="w"> </span>--layout<span class="w"> </span><span class="k">$(</span>ros2<span class="w"> </span>pkg<span class="w"> </span>prefix<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>--share<span class="k">)</span>/config/plotjuggler.xml
+</pre></div>
+</div>
+<p>After this, you will see a few dialogs popping up. For example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Start<span class="w"> </span>the<span class="w"> </span>previously<span class="w"> </span>used<span class="w"> </span>streaming<span class="w"> </span>plugin?
 
 ROS2<span class="w"> </span>Topic<span class="w"> </span>Subscriber
 </pre></div>
 </div>
-</div></blockquote>
 <p>Click ‘Yes’ for the first dialog and ‘OK” to the following two dialogs, then you will see the plotjuggler window.</p>
-<ol class="arabic" start="3">
-<li><p>To enable feedforward mode and published a command to move the robot, instead of doing these manually, we will use the demo_test.launch.py. Open another terminal and execute</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>demo_test.launch.py
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>To enable feedforward mode and published a command to move the robot, instead of doing these manually, we will use the demo_test.launch.py. Open another terminal and execute</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>ros2_control_demo_example_16<span class="w"> </span>demo_test.launch.py
 </pre></div>
 </div>
-</li>
+</div></blockquote>
+<ol class="arabic simple" start="4">
 <li><p>From the plotjuggler, you can see the controllers’ states and commands being plotted, similar to following figure. From the figure, the DiffBot’s wheel velocities and commands from PID controllers are converged to the target velocity fairly quickly.</p></li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../../../_images/diffbot_velocities.png"><img alt="Plotjuggler visualization of DiffBot velocities and commands" src="../../../../_images/diffbot_velocities.png" style="width: 400px;" /></a>
 </div></blockquote>
-<ol class="arabic" start="5">
-<li><p>Change the <code class="docutils literal notranslate"><span class="pre">gains</span></code> in the <code class="docutils literal notranslate"><span class="pre">diffbot_chained_controllers.yaml</span></code> file with some different values, repeat above steps and observe its effect to the pid_controller commands. For example, to change the <code class="docutils literal notranslate"><span class="pre">feedforward_gain</span></code> of the right wheel to 0.50, you can use the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>param<span class="w"> </span><span class="nb">set</span><span class="w"> </span>/pid_controller_right_wheel_joint<span class="w"> </span>gains.right_wheel_joint.feedforward_gain<span class="w"> </span><span class="m">0</span>.50
+<ol class="arabic simple" start="5">
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">gains</span></code> in the <code class="docutils literal notranslate"><span class="pre">diffbot_chained_controllers.yaml</span></code> file with some different values, repeat above steps and observe its effect to the pid_controller commands. For example, to change the <code class="docutils literal notranslate"><span class="pre">feedforward_gain</span></code> of the right wheel to 0.50, you can use the following command:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>param<span class="w"> </span><span class="nb">set</span><span class="w"> </span>/pid_controller_right_wheel_joint<span class="w"> </span>gains.right_wheel_joint.feedforward_gain<span class="w"> </span><span class="m">0</span>.50
 </pre></div>
 </div>
-</li>
-</ol>
+</div></blockquote>
 </section>
 <section id="files-used-for-this-demo">
 <h2>Files used for this demo<a class="headerlink" href="#files-used-for-this-demo" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Launch file: <a class="reference external" href="https://github.com/ros-controls/ros2_control_demos/tree/master/example_16/bringup/launch/diffbot.launch.py">diffbot.launch.py</a></p></li>
-<li><p>Controllers yaml: <a class="reference external" href="https://github.com/ros-controls/ros2_control_demos/tree/master/example_16/config/diffbot_chained_controllers.yaml">diffbot_chained_controllers.yaml</a></p></li>
+<li><p>Controllers yaml: <a class="reference external" href="https://github.com/ros-controls/ros2_control_demos/tree/master/example_16/bringup/config/diffbot_chained_controllers.yaml">diffbot_chained_controllers.yaml</a></p></li>
 <li><p>URDF file: <a class="reference external" href="https://github.com/ros-controls/ros2_control_demos/tree/master/example_16/description/urdf/diffbot.urdf.xacro">diffbot.urdf.xacro</a></p>
 <ul>
 <li><p>Description: <a class="reference external" href="https://github.com/ros-controls/ros2_control_demos/tree/master/ros2_control_demo_description/diffbot/urdf/diffbot_description.urdf.xacro">diffbot_description.urdf.xacro</a></p></li>
