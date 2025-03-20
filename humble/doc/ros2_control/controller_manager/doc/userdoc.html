@@ -58,6 +58,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../doc/index.html#concepts">Concepts</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Controller Manager</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#determinism">Determinism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#subscribers">Subscribers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#helper-scripts">Helper scripts</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#spawner"><code class="docutils literal notranslate"><span class="pre">spawner</span></code></a></li>
@@ -162,6 +163,13 @@ To give the user such permissions, add a group named realtime and add the user c
 </div>
 <p>The limits will be applied after you log out and in again.</p>
 </section>
+<section id="subscribers">
+<h2>Subscribers<a class="headerlink" href="#subscribers" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>robot_description [std_msgs::msg::String]</dt><dd><p>String with the URDF xml, e.g., from <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code>.</p>
+</dd>
+</dl>
+</section>
 <section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <dl class="simple">
@@ -185,7 +193,13 @@ The full structure of the map is given in the following example:</p>
 </dd>
 <dt>hardware_components_initial_state.inactive (optional; list&lt;string&gt;; default: empty)</dt><dd><p>Defines which hardware components will be configured immediately when controller manager is started.</p>
 </dd>
-<dt>robot_description (mandatory; string)</dt><dd><p>String with the URDF string as robot description.
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Passing the robot description parameter directly to the control_manager node is deprecated. Use <code class="docutils literal notranslate"><span class="pre">~/robot_description</span></code> topic from <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code> instead.</p>
+</div>
+<dl class="simple">
+<dt>robot_description (optional; string; <strong>deprecated</strong>)</dt><dd><p>String with the URDF string as robot description.
 This is usually result of the parsed description files by <code class="docutils literal notranslate"><span class="pre">xacro</span></code> command.</p>
 </dd>
 <dt>update_rate (mandatory; double)</dt><dd><p>The frequency of controller manager’s real-time update loop.
