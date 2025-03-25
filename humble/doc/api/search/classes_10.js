@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['safeenum_0',['safeenum',['../classign__ros2__control_1_1SafeEnum.html',1,'ign_ros2_control::SafeEnum&lt; ENUM, UNDERLYING &gt;'],['../classgazebo__ros2__control_1_1SafeEnum.html',1,'gazebo_ros2_control::SafeEnum&lt; ENUM, UNDERLYING &gt;']]],
+  ['safeenum_0',['safeenum',['../classgz__ros2__control_1_1SafeEnum.html',1,'gz_ros2_control::SafeEnum&lt; ENUM, UNDERLYING &gt;'],['../classgazebo__ros2__control_1_1SafeEnum.html',1,'gazebo_ros2_control::SafeEnum&lt; ENUM, UNDERLYING &gt;']]],
   ['segmenttolerances_1',['SegmentTolerances',['../structjoint__trajectory__controller_1_1SegmentTolerances.html',1,'joint_trajectory_controller']]],
   ['semanticcomponentinterface_2',['SemanticComponentInterface',['../classsemantic__components_1_1SemanticComponentInterface.html',1,'semantic_components']]],
   ['semanticcomponentinterface_3c_20geometry_5fmsgs_3a_3amsg_3a_3apose_20_3e_3',['SemanticComponentInterface&lt; geometry_msgs::msg::Pose &gt;',['../classsemantic__components_1_1SemanticComponentInterface.html',1,'semantic_components']]],

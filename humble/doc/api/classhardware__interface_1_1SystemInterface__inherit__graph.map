@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Virtual Class to implement when integrating a complex system into ros2_control." alt="" coords="305,421,453,461"/>
 <area shape="rect" id="Node000003" href="$classgazebo__ros2__control_1_1GazeboSystemInterface.html" title=" " alt="" coords="552,5,739,45"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="378,407,383,334,401,239,416,189,437,140,465,95,500,55,524,39,551,29,553,34,526,44,503,59,469,98,442,143,421,191,406,240,389,335,383,408"/>
-<area shape="rect" id="Node000005" href="$classign__ros2__control_1_1IgnitionSystemInterface.html" title=" " alt="" coords="552,69,739,109"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="381,407,390,345,410,268,425,227,445,187,469,151,500,119,524,104,551,94,553,99,526,108,503,123,474,154,449,190,430,229,415,269,395,346,386,408"/>
+<area shape="rect" id="Node000005" href="$classgz__ros2__control_1_1GazeboSimSystemInterface.html" title=" " alt="" coords="542,69,749,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="381,407,390,345,410,268,425,227,445,187,469,151,500,119,519,106,541,97,543,102,522,111,503,123,474,154,449,190,430,229,415,269,395,346,386,408"/>
 <area shape="rect" id="Node000007" href="$classmock__components_1_1GenericSystem.html" title=" " alt="" coords="544,133,747,173"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="384,407,397,357,419,296,453,235,474,207,500,183,520,170,543,161,545,166,523,175,503,187,478,211,457,238,424,298,402,359,389,409"/>
 <area shape="rect" id="Node000008" href="$classros2__control__demo__example__10_1_1RRBotSystemWithGPIOHardware.html" title=" " alt="" coords="512,197,779,237"/>
@@ -30,8 +30,8 @@
 <area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="383,475,387,550,404,649,419,701,440,752,468,799,503,839,519,851,516,855,500,843,463,802,435,754,414,703,398,650,382,551,378,475"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,421,257,461"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,439,305,439,305,444,271,444"/>
-<area shape="rect" id="Node000004" href="$classgazebo__ros2__control_1_1GazeboSystem.html" title=" " alt="" coords="853,5,1009,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="752,23,852,23,852,28,752,28"/>
-<area shape="rect" id="Node000006" href="$classign__ros2__control_1_1IgnitionSystem.html" title=" " alt="" coords="837,69,1024,109"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="752,87,837,87,837,92,752,92"/>
+<area shape="rect" id="Node000004" href="$classgazebo__ros2__control_1_1GazeboSystem.html" title=" " alt="" coords="863,5,1019,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="753,23,862,23,862,28,753,28"/>
+<area shape="rect" id="Node000006" href="$classgz__ros2__control_1_1GazeboSimSystem.html" title=" " alt="" coords="837,69,1044,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="763,87,837,87,837,92,763,92"/>
 </map>

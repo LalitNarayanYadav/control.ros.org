@@ -7,5 +7,5 @@ var searchData=
   ['parameters_5ffiles_4',['parameters_files',['../structhardware__interface_1_1ControllerInfo.html#ae4e2d21b2b1261c87e6bd9a8175cccd4',1,'hardware_interface::ControllerInfo']]],
   ['parent_5fmodel_5f_5',['parent_model_',['../classgazebo__ros2__control_1_1GazeboSystemPrivate.html#a6da64dfce90eb93f65b0bd7dee50847e',1,'gazebo_ros2_control::GazeboSystemPrivate']]],
   ['pos_5fpid_6',['pos_pid',['../classgazebo__ros2__control_1_1GazeboSystemPrivate.html#a30685124565113e76420669068f1b9e1',1,'gazebo_ros2_control::GazeboSystemPrivate']]],
-  ['position_5fproportional_5fgain_5f_7',['position_proportional_gain_',['../classign__ros2__control_1_1IgnitionSystemPrivate.html#a82b660ae7d4b9414410abc05eac4d737',1,'ign_ros2_control::IgnitionSystemPrivate']]]
+  ['position_5fproportional_5fgain_5f_7',['position_proportional_gain_',['../classgz__ros2__control_1_1GazeboSimSystemPrivate.html#a07b9c97182b34d54049a2b71a2e88f35',1,'gz_ros2_control::GazeboSimSystemPrivate']]]
 ];
