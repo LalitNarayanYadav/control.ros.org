@@ -246,6 +246,10 @@ rosdep<span class="w"> </span>update<span class="w"> </span>--rosdistro<span cla
 sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </pre></div>
 </div>
+<p>If you want to install the development version of ros2_control having the latest feature, use this repos file instead</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>--input<span class="w"> </span>https://raw.githubusercontent.com/ros-controls/ros2_control_ci/master/ros_controls.rolling-on-<span class="nv">$ROS_DISTRO</span>.repos
+</pre></div>
+</div>
 </li>
 <li><p>Install dependencies:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rosdep<span class="w"> </span>install<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>-r<span class="w"> </span>-y
@@ -319,6 +323,10 @@ rviz2<span class="w"> </span>-d<span class="w"> </span>src/ros2_control_demos/ro
 </div>
 <p>You can also run other commands or launch files from the docker, e.g.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>--name<span class="w"> </span>ros2_control_demos<span class="w"> </span>--net<span class="w"> </span>host<span class="w"> </span>ros2_control_demos<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>ros2_control_demo_example_2<span class="w"> </span>diffbot.launch.py
+</pre></div>
+</div>
+<p>or launch a second terminal inside the docker container by</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>ros2_control_demos<span class="w"> </span>bash
 </pre></div>
 </div>
 </section>

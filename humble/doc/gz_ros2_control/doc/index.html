@@ -331,7 +331,7 @@ and use the tag <code class="docutils literal notranslate"><span class="pre">&lt
 </ul>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller_manager</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">update_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">  </span><span class="c1"># Hz</span>
+<span class="w">    </span><span class="nt">update_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span><span class="w">  </span><span class="c1"># Hz</span>
 
 <span class="w">    </span><span class="nt">joint_trajectory_controller</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joint_trajectory_controller/JointTrajectoryController</span>
@@ -395,6 +395,11 @@ ros2<span class="w"> </span>run<span class="w"> </span>gz_ros2_control_demos<spa
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The ros2_control settings for the controller_manager and the controller defined in <code class="docutils literal notranslate"><span class="pre">diff_drive_controller.yaml</span></code> use wildcards to match all namespaces.</p>
+</div>
+<p>To run the Mecanum mobile robot run the following commands to drive it from the keyboard:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>mecanum_drive_example.launch.py
+ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>--ros-args<span class="w"> </span>-p<span class="w"> </span>stamped:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
 </div>
 </section>
 <section id="gripper">
