@@ -166,9 +166,24 @@ To give the user such permissions, add a group named realtime and add the user c
 <section id="subscribers">
 <h2>Subscribers<a class="headerlink" href="#subscribers" title="Link to this heading"></a></h2>
 <dl class="simple">
-<dt>robot_description [std_msgs::msg::String]</dt><dd><p>String with the URDF xml, e.g., from <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code>.</p>
+<dt>~/robot_description [std_msgs::msg::String]</dt><dd><p>String with the URDF xml, e.g., from <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code>.</p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Typically one would remap the topic to <code class="docutils literal notranslate"><span class="pre">/robot_description</span></code>, which is the default setup with <code class="docutils literal notranslate"><span class="pre">robot_state_publisher</span></code>. An example for a python launchfile is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">control_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
+    <span class="n">package</span><span class="o">=</span><span class="s2">&quot;controller_manager&quot;</span><span class="p">,</span>
+    <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;ros2_control_node&quot;</span><span class="p">,</span>
+    <span class="n">parameters</span><span class="o">=</span><span class="p">[</span><span class="n">robot_controllers</span><span class="p">],</span>
+    <span class="n">output</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span>
+    <span class="n">remappings</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;~/robot_description&quot;</span><span class="p">,</span> <span class="s2">&quot;/robot_description&quot;</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>

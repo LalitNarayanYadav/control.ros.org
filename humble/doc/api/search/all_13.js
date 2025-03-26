@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['testfixture_0',['testfixture',['../classposition__test_1_1TestFixture.html',1,'position_test.TestFixture'],['../classvelocity__test_1_1TestFixture.html',1,'velocity_test.TestFixture'],['../classeffort__test_1_1TestFixture.html',1,'effort_test.TestFixture']]],
+  ['testfixture_0',['testfixture',['../classposition__test_1_1TestFixture.html',1,'position_test.TestFixture'],['../classposition__test__backward__compatibility_1_1TestFixture.html',1,'position_test_backward_compatibility.TestFixture'],['../classvelocity__test_1_1TestFixture.html',1,'velocity_test.TestFixture'],['../classeffort__test_1_1TestFixture.html',1,'effort_test.TestFixture']]],
   ['thread_5fexecutor_5fspin_5f_1',['thread_executor_spin_',['../classgz__ros2__control_1_1GazeboSimROS2ControlPluginPrivate.html#aaf43334ae52000e5f9e09a6b97e67ce3',1,'gz_ros2_control::GazeboSimROS2ControlPluginPrivate']]],
   ['todo_20list_2',['Todo List',['../todo.html',1,'']]],
   ['topicname_3',['topicName',['../classImuData.html#a0581ddec41e1d66e2bb6f2005acf9fed',1,'ImuData']]],
