@@ -85,7 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../supported_robots/supported_robots.html">Supported Robots</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources/resources.html">Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing/contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../project_ideas.html">Project Ideas for GSoC 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project_ideas.html">Project Ideas for GSoC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements/acknowledgements.html">Acknowledgements</a></li>
 </ul>
 
@@ -131,6 +131,7 @@
 <section id="controller-interface">
 <h2>controller_interface<a class="headerlink" href="#controller-interface" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">update_reference_from_subscribers()</span></code> method got time and period parameters <a class="reference external" href="https://github.com/ros-controls/ros2_control/pull/846">(PR #846)</a>.</p></li>
 <li><p>The changes from <a class="reference external" href="https://github.com/ros-controls/ros2_control/pull/1694">(PR #1694)</a> will affect how the controllers will be loading the parameters. Defining parameters in a single yaml file and loading it to the controller_manager node alone will no longer work.
 In order to load the parameters to the controllers properly, it is needed to use <code class="docutils literal notranslate"><span class="pre">--param-file</span></code> option from the spawner. This is because the controllers will now set <code class="docutils literal notranslate"><span class="pre">use_global_arguments</span></code> from <a class="reference external" href="https://docs.ros.org/en/rolling/p/rclcpp/generated/classrclcpp_1_1NodeOptions.html#_CPPv4N6rclcpp11NodeOptions20use_global_argumentsEb">NodeOptions</a> to false, to avoid getting influenced by global arguments.</p></li>
 <li><p>With (<a class="reference external" href="https://github.com/ros-controls/ros2_control/pull/1683">#1683</a>) the <code class="docutils literal notranslate"><span class="pre">rclcpp_lifecycle::State</span> <span class="pre">&amp;</span> <span class="pre">get_state()</span></code> and <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">set_state(const</span> <span class="pre">rclcpp_lifecycle::State</span> <span class="pre">&amp;</span> <span class="pre">new_state)</span></code> are replaced by <code class="docutils literal notranslate"><span class="pre">rclcpp_lifecycle::State</span> <span class="pre">&amp;</span> <span class="pre">get_lifecycle_state()</span></code> and <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">set_lifecycle_state(const</span> <span class="pre">rclcpp_lifecycle::State</span> <span class="pre">&amp;</span> <span class="pre">new_state)</span></code>. This change affects controllers and hardware. This is related to (<a class="reference external" href="https://github.com/ros-controls/ros2_control/pull/1240">#1240</a>) as variant support introduces <code class="docutils literal notranslate"><span class="pre">get_state</span></code> and <code class="docutils literal notranslate"><span class="pre">set_state</span></code> methods for setting/getting state of handles.</p></li>
@@ -225,7 +226,7 @@ warning: ignoring return value of ‘bool hardware_interface::Handle::set_value(
 <p>The old methods are deprecated and will be removed in the future. The new methods are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">std::optional&lt;T&gt;</span> <span class="pre">get_optional()</span></code> or <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">get_value(T</span> <span class="pre">&amp;</span> <span class="pre">value)</span></code> for getting the value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::optional&lt;T&gt;</span> <span class="pre">get_optional()</span></code> for getting the value.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">set_value(const</span> <span class="pre">T</span> <span class="pre">&amp;</span> <span class="pre">value)</span></code> for setting the value.</p></li>
 </ul>
 </div></blockquote>
