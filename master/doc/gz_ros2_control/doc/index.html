@@ -421,26 +421,28 @@ ros2<span class="w"> </span>run<span class="w"> </span>gz_ros2_control_demos<spa
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>diff_drive_example.launch.py
 ros2<span class="w"> </span>launch<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>tricycle_drive_example.launch.py
 ros2<span class="w"> </span>launch<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>ackermann_drive_example.launch.py
+ros2<span class="w"> </span>launch<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>mecanum_drive_example.launch.py
 </pre></div>
 </div>
-<p>When the Gazebo world is launched you can run some of the following commands to move the robots.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>example_diff_drive
-ros2<span class="w"> </span>run<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>example_tricycle_drive
-ros2<span class="w"> </span>run<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>example_ackermann_drive
+<p>When the Gazebo world is launched you can run the following command to move the robots.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>example_mobile_robots
 </pre></div>
 </div>
-<p>To demonstrate the setup of a namespaced robot, run</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>diff_drive_example_namespaced.launch.py
+<p>You can also drive the robots from the keyboard using the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>--ros-args<span class="w"> </span>-p<span class="w"> </span>stamped:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
-<p>which will launch a diff drive robot within the namespace <code class="docutils literal notranslate"><span class="pre">r1</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The ros2_control settings for the controller_manager and the controller defined in <code class="docutils literal notranslate"><span class="pre">diff_drive_controller.yaml</span></code> use wildcards to match all namespaces.</p>
-</div>
-<p>To run the Mecanum mobile robot run the following commands to drive it from the keyboard:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>gz_ros2_control_demos<span class="w"> </span>mecanum_drive_example.launch.py
-ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>--ros-args<span class="w"> </span>-p<span class="w"> </span>stamped:<span class="o">=</span><span class="nb">true</span>
+<p>You can also manually publish on the <code class="docutils literal notranslate"><span class="pre">/cmd_vel</span></code> topic to drive the robots:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>topic<span class="w"> </span>pub<span class="w"> </span>--rate<span class="w"> </span><span class="m">10</span><span class="w"> </span>/cmd_vel<span class="w"> </span>geometry_msgs/msg/TwistStamped<span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2">twist:</span>
+<span class="s2">  linear:</span>
+<span class="s2">    x: 0.7</span>
+<span class="s2">    y: 0.0</span>
+<span class="s2">    z: 0.0</span>
+<span class="s2">  angular:</span>
+<span class="s2">    x: 0.0</span>
+<span class="s2">    y: 0.0</span>
+<span class="s2">    z: 1.0&quot;</span>
 </pre></div>
 </div>
 </section>
