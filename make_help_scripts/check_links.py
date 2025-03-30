@@ -14,10 +14,6 @@
 # limitations under the License.
 
 # This script is used to check the links in the ROS documentation.
-# due to a bug in the sphinx linkchecker, github anchors are false positives and
-# have to be explicitly ignored
-# https://github.com/sphinx-doc/sphinx/issues/9016
-
 import os
 import shutil
 import subprocess
